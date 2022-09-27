@@ -78,3 +78,4 @@
 .\objects\sercom.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
 .\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\sercom.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h

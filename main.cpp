@@ -13,5 +13,7 @@ int main(){
 
 //************************INTERRUPT HANDLERS**************************??
 extern "C"{
-	
+	void SERCOM0_Handler(void){
+		
+	}
 }

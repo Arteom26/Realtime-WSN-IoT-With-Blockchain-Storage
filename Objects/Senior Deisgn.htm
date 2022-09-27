@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Senior Deisgn.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Senior Deisgn.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Sep 27 15:12:34 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Sep 27 15:57:31 2022
 <BR><P>
 <H3>Maximum Stack Usage =         40 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -40,7 +40,7 @@ Function Pointers
  <LI><a href="#[a]">PendSV_Handler</a> from port.o(.emb_text) referenced from startup_saml21g18b.o(RESET)
  <LI><a href="#[e]">RTC_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
  <LI><a href="#[6]">Reset_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
- <LI><a href="#[14]">SERCOM0_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
+ <LI><a href="#[14]">SERCOM0_Handler</a> from main.o(i.SERCOM0_Handler) referenced from startup_saml21g18b.o(RESET)
  <LI><a href="#[15]">SERCOM1_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
  <LI><a href="#[16]">SERCOM2_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
  <LI><a href="#[17]">SERCOM3_Handler</a> from startup_saml21g18b.o(.text) referenced from startup_saml21g18b.o(RESET)
@@ -274,9 +274,6 @@ Global Symbols
 <P><STRONG><a name="[e]"></a>RTC_Handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_saml21g18b.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_saml21g18b.o(RESET)
 </UL>
-<P><STRONG><a name="[14]"></a>SERCOM0_Handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_saml21g18b.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_saml21g18b.o(RESET)
-</UL>
 <P><STRONG><a name="[15]"></a>SERCOM1_Handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_saml21g18b.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_saml21g18b.o(RESET)
 </UL>
@@ -387,11 +384,14 @@ Global Symbols
 
 <P><STRONG><a name="[9f]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[9]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, port.o(i.SVC_Handler))
+<P><STRONG><a name="[14]"></a>SERCOM0_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.SERCOM0_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_saml21g18b.o(RESET)
 </UL>
 <P><STRONG><a name="[a0]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
 
+<P><STRONG><a name="[9]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, port.o(i.SVC_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_saml21g18b.o(RESET)
+</UL>
 <P><STRONG><a name="[b]"></a>SysTick_Handler</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, cmsis_os2.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SysTick_Handler &rArr; xPortSysTickHandler &rArr; xTaskIncrementTick
 </UL>
