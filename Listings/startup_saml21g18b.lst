@@ -1,0 +1,906 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/******************************************************
+                       ***********************
+    2 00000000         ; * \file     startup_saml21g18b.s
+    3 00000000         ; * \brief    ARMCC startup file for ATSAML21G18B
+    4 00000000         ; *
+    5 00000000         ; * \note
+    6 00000000         ; * Copyright (C) 2022 Microchip Technology Inc.
+    7 00000000         ; *
+    8 00000000         ; * \par
+    9 00000000         ; * SPDX-License-Identifier: Apache-2.0
+   10 00000000         ; *
+   11 00000000         ; * Licensed under the Apache License, Version 2.0 (the 
+                       "License");
+   12 00000000         ; * you may not use this file except in compliance with 
+                       the License.
+   13 00000000         ; * You may obtain a copy of the License at
+   14 00000000         ; *
+   15 00000000         ; *   http://www.apache.org/licenses/LICENSE-2.0
+   16 00000000         ; *
+   17 00000000         ; * Unless required by applicable law or agreed to in wr
+                       iting, software
+   18 00000000         ; * distributed under the License is distributed on an "
+                       AS IS" BASIS,
+   19 00000000         ; * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+                        express or implied.
+   20 00000000         ; * See the License for the specific language governing 
+                       permissions and
+   21 00000000         ; * limitations under the License.
+   22 00000000         ; *
+   23 00000000         ; ******************************************************
+                       ************************/
+   24 00000000         
+   25 00000000         
+   26 00000000         ; <h> Stack Configuration
+   27 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   28 00000000         ; </h>
+   29 00000000         
+   30 00000000 00000200 
+                       Stack_Size
+                               EQU              0x00000200
+   31 00000000         
+   32 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+   33 00000000         Stack_Mem
+                               SPACE            Stack_Size
+   34 00000200         __initial_sp
+   35 00000200         
+   36 00000200         
+   37 00000200         ; <h> Heap Configuration
+   38 00000200         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   39 00000200         ; </h>
+   40 00000200         
+   41 00000200 00000000 
+                       Heap_Size
+                               EQU              0x00000000
+   42 00000200         
+   43 00000200                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
+3
+   44 00000000         __heap_base
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   45 00000000         Heap_Mem
+                               SPACE            Heap_Size
+   46 00000000         __heap_limit
+   47 00000000         
+   48 00000000         
+   49 00000000                 PRESERVE8
+   50 00000000                 THUMB
+   51 00000000         
+   52 00000000         
+   53 00000000         ; Vector Table Mapped to Address 0 at Reset
+   54 00000000         
+   55 00000000                 AREA             RESET, DATA, READONLY
+   56 00000000                 EXPORT           __Vectors
+   57 00000000                 EXPORT           __Vectors_End
+   58 00000000                 EXPORT           __Vectors_Size
+   59 00000000         
+   60 00000000 00000000 
+                       __Vectors
+                               DCD              __initial_sp ; Top of Stack
+   61 00000004 00000000        DCD              Reset_Handler ; Reset Handler
+   62 00000008 00000000        DCD              NonMaskableInt_Handler ; NonMas
+                                                            kableInt Handler
+   63 0000000C 00000000        DCD              HardFault_Handler 
+                                                            ; HardFault Handler
+                                                            
+   64 00000010 00000000        DCD              0           ; Reserved
+   65 00000014 00000000        DCD              0           ; Reserved
+   66 00000018 00000000        DCD              0           ; Reserved
+   67 0000001C 00000000        DCD              0           ; Reserved
+   68 00000020 00000000        DCD              0           ; Reserved
+   69 00000024 00000000        DCD              0           ; Reserved
+   70 00000028 00000000        DCD              0           ; Reserved
+   71 0000002C 00000000        DCD              SVC_Handler ; SVC Handler
+   72 00000030 00000000        DCD              0           ; Reserved
+   73 00000034 00000000        DCD              0           ; Reserved
+   74 00000038 00000000        DCD              PendSV_Handler ; PendSV Handler
+                                                            
+   75 0000003C 00000000        DCD              SysTick_Handler 
+                                                            ; SysTick Handler
+   76 00000040         
+   77 00000040         ; External Interrupts
+   78 00000040 00000000        DCD              SYSTEM_Handler ; 0  Main Clock 
+                                                            Handler
+   79 00000044 00000000        DCD              WDT_Handler ; 1  Watchdog Timer
+                                                             Handler
+   80 00000048 00000000        DCD              RTC_Handler ; 2  Real-Time Coun
+                                                            ter Handler
+   81 0000004C 00000000        DCD              EIC_Handler ; 3  External Inter
+                                                            rupt Controller Han
+                                                            dler
+   82 00000050 00000000        DCD              NVMCTRL_Handler ; 4  Non-Volati
+                                                            le Memory Controlle
+                                                            r Handler
+   83 00000054 00000000        DCD              DMAC_Handler ; 5  Direct Memory
+                                                             Access Controller 
+                                                            Handler
+   84 00000058 00000000        DCD              USB_Handler ; 6  Universal Seri
+                                                            al Bus Handler
+   85 0000005C 00000000        DCD              EVSYS_Handler ; 7  Event System
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                                                             Interface Handler
+   86 00000060 00000000        DCD              SERCOM0_Handler ; 8  Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   87 00000064 00000000        DCD              SERCOM1_Handler ; 9  Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   88 00000068 00000000        DCD              SERCOM2_Handler ; 10 Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   89 0000006C 00000000        DCD              SERCOM3_Handler ; 11 Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   90 00000070 00000000        DCD              SERCOM4_Handler ; 12 Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   91 00000074 00000000        DCD              SERCOM5_Handler ; 13 Serial Com
+                                                            munication Interfac
+                                                            e Handler
+   92 00000078 00000000        DCD              TCC0_Handler ; 14 Timer Counter
+                                                             Control Handler
+   93 0000007C 00000000        DCD              TCC1_Handler ; 15 Timer Counter
+                                                             Control Handler
+   94 00000080 00000000        DCD              TCC2_Handler ; 16 Timer Counter
+                                                             Control Handler
+   95 00000084 00000000        DCD              TC0_Handler ; 17 Basic Timer Co
+                                                            unter Handler
+   96 00000088 00000000        DCD              TC1_Handler ; 18 Basic Timer Co
+                                                            unter Handler
+   97 0000008C 00000000        DCD              0           ; 19 Reserved
+   98 00000090 00000000        DCD              0           ; 20 Reserved
+   99 00000094 00000000        DCD              TC4_Handler ; 21 Basic Timer Co
+                                                            unter Handler
+  100 00000098 00000000        DCD              ADC_Handler ; 22 Analog Digital
+                                                             Converter Handler
+  101 0000009C 00000000        DCD              AC_Handler  ; 23 Analog Compara
+                                                            tors Handler
+  102 000000A0 00000000        DCD              DAC_Handler ; 24 Digital-to-Ana
+                                                            log Converter Handl
+                                                            er
+  103 000000A4 00000000        DCD              PTC_Handler ; 25 Peripheral Tou
+                                                            ch Controller Handl
+                                                            er
+  104 000000A8 00000000        DCD              AES_Handler ; 26 Advanced Encry
+                                                            ption Standard Hand
+                                                            ler
+  105 000000AC 00000000        DCD              TRNG_Handler ; 27 True Random G
+                                                            enerator Handler
+  106 000000B0         __Vectors_End
+  107 000000B0         
+  108 000000B0 000000B0 
+                       __Vectors_Size
+                               EQU              __Vectors_End - __Vectors
+  109 000000B0         
+  110 000000B0                 AREA             |.text|, CODE, READONLY
+  111 00000000         
+  112 00000000         
+  113 00000000         ; Reset Handler
+  114 00000000         
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  115 00000000         Reset_Handler
+                               PROC
+  116 00000000                 EXPORT           Reset_Handler             [WEAK
+]
+  117 00000000                 IMPORT           SystemInit
+  118 00000000                 IMPORT           __main
+  119 00000000 4807            LDR              R0, =SystemInit
+  120 00000002 4780            BLX              R0
+  121 00000004 4807            LDR              R0, =__main
+  122 00000006 4700            BX               R0
+  123 00000008                 ENDP
+  124 00000008         
+  125 00000008         
+  126 00000008         ; Dummy Exception Handlers (infinite loops which can be 
+                       modified)
+  127 00000008         
+  128 00000008         NonMaskableInt_Handler
+                               PROC
+  129 00000008                 EXPORT           NonMaskableInt_Handler    [WEAK
+]
+  130 00000008 E7FE            B                .
+  131 0000000A                 ENDP
+  132 0000000A         HardFault_Handler
+                               PROC
+  133 0000000A                 EXPORT           HardFault_Handler         [WEAK
+]
+  134 0000000A E7FE            B                .
+  135 0000000C                 ENDP
+  136 0000000C         SVC_Handler
+                               PROC
+  137 0000000C                 EXPORT           SVC_Handler               [WEAK
+]
+  138 0000000C E7FE            B                .
+  139 0000000E                 ENDP
+  140 0000000E         PendSV_Handler
+                               PROC
+  141 0000000E                 EXPORT           PendSV_Handler            [WEAK
+]
+  142 0000000E E7FE            B                .
+  143 00000010                 ENDP
+  144 00000010         SysTick_Handler
+                               PROC
+  145 00000010                 EXPORT           SysTick_Handler           [WEAK
+]
+  146 00000010 E7FE            B                .
+  147 00000012                 ENDP
+  148 00000012         
+  149 00000012         Default_Handler
+                               PROC
+  150 00000012                 EXPORT           SYSTEM_Handler            [WEAK
+]
+  151 00000012                 EXPORT           WDT_Handler               [WEAK
+]
+  152 00000012                 EXPORT           RTC_Handler               [WEAK
+]
+  153 00000012                 EXPORT           EIC_Handler               [WEAK
+]
+  154 00000012                 EXPORT           NVMCTRL_Handler           [WEAK
+]
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  155 00000012                 EXPORT           DMAC_Handler              [WEAK
+]
+  156 00000012                 EXPORT           USB_Handler               [WEAK
+]
+  157 00000012                 EXPORT           EVSYS_Handler             [WEAK
+]
+  158 00000012                 EXPORT           SERCOM0_Handler           [WEAK
+]
+  159 00000012                 EXPORT           SERCOM1_Handler           [WEAK
+]
+  160 00000012                 EXPORT           SERCOM2_Handler           [WEAK
+]
+  161 00000012                 EXPORT           SERCOM3_Handler           [WEAK
+]
+  162 00000012                 EXPORT           SERCOM4_Handler           [WEAK
+]
+  163 00000012                 EXPORT           SERCOM5_Handler           [WEAK
+]
+  164 00000012                 EXPORT           TCC0_Handler              [WEAK
+]
+  165 00000012                 EXPORT           TCC1_Handler              [WEAK
+]
+  166 00000012                 EXPORT           TCC2_Handler              [WEAK
+]
+  167 00000012                 EXPORT           TC0_Handler               [WEAK
+]
+  168 00000012                 EXPORT           TC1_Handler               [WEAK
+]
+  169 00000012                 EXPORT           TC4_Handler               [WEAK
+]
+  170 00000012                 EXPORT           ADC_Handler               [WEAK
+]
+  171 00000012                 EXPORT           AC_Handler                [WEAK
+]
+  172 00000012                 EXPORT           DAC_Handler               [WEAK
+]
+  173 00000012                 EXPORT           PTC_Handler               [WEAK
+]
+  174 00000012                 EXPORT           AES_Handler               [WEAK
+]
+  175 00000012                 EXPORT           TRNG_Handler              [WEAK
+]
+  176 00000012         
+  177 00000012         
+  178 00000012         SYSTEM_Handler
+  179 00000012         WDT_Handler
+  180 00000012         RTC_Handler
+  181 00000012         EIC_Handler
+  182 00000012         NVMCTRL_Handler
+  183 00000012         DMAC_Handler
+  184 00000012         USB_Handler
+  185 00000012         EVSYS_Handler
+  186 00000012         SERCOM0_Handler
+  187 00000012         SERCOM1_Handler
+  188 00000012         SERCOM2_Handler
+  189 00000012         SERCOM3_Handler
+  190 00000012         SERCOM4_Handler
+  191 00000012         SERCOM5_Handler
+  192 00000012         TCC0_Handler
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  193 00000012         TCC1_Handler
+  194 00000012         TCC2_Handler
+  195 00000012         TC0_Handler
+  196 00000012         TC1_Handler
+  197 00000012         TC4_Handler
+  198 00000012         ADC_Handler
+  199 00000012         AC_Handler
+  200 00000012         DAC_Handler
+  201 00000012         PTC_Handler
+  202 00000012         AES_Handler
+  203 00000012         TRNG_Handler
+  204 00000012 E7FE            B                .
+  205 00000014                 ENDP
+  206 00000014         
+  207 00000014         
+  208 00000014                 ALIGN
+  209 00000014         
+  210 00000014         
+  211 00000014         ; User Initial Stack & Heap
+  212 00000014         
+  213 00000014                 IF               :DEF:__MICROLIB
+  220 00000014         
+  221 00000014                 IMPORT           __use_two_region_memory
+  222 00000014                 EXPORT           __user_initial_stackheap
+  223 00000014         __user_initial_stackheap
+  224 00000014         
+  225 00000014 4804            LDR              R0, =  Heap_Mem
+  226 00000016 4905            LDR              R1, =(Stack_Mem + Stack_Size)
+  227 00000018 4A03            LDR              R2, = (Heap_Mem +  Heap_Size)
+  228 0000001A 4B05            LDR              R3, = Stack_Mem
+  229 0000001C 4770            BX               LR
+  230 0000001E         
+  231 0000001E 00 00           ALIGN
+  232 00000020         
+  233 00000020                 ENDIF
+  234 00000020         
+  235 00000020         
+  236 00000020                 END
+              00000000 
+              00000000 
+              00000000 
+              00000200 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
+work --depend=.\objects\startup_saml21g18b.d -o.\objects\startup_saml21g18b.o -
+I.\RTE\RTOS -I.\RTE\_Target_1 -IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMS
+IS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include -IC:\Users\Arteom\AppData\Local
+\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1 -IC:\Users\A
+rteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include -IC:\Use
+rs\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVD
+S\ARM_CM0 -IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\
+Include -IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\I
+nclude -IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\s
+aml21b\include --predefine="__UVISION_VERSION SETA 530" --predefine="_RTE_ SETA
+ 1" --predefine="_RTE_ SETA 1" --predefine="__SAML21G18B__ SETA 1" --list=.\lis
+tings\startup_saml21g18b.lst RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 32 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 33 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 226 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 228 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+__initial_sp 00000200
+
+Symbol: __initial_sp
+   Definitions
+      At line 34 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 60 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+Comment: __initial_sp used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HEAP 00000000
+
+Symbol: HEAP
+   Definitions
+      At line 43 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: HEAP unused
+Heap_Mem 00000000
+
+Symbol: Heap_Mem
+   Definitions
+      At line 45 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 225 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 227 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+__heap_base 00000000
+
+Symbol: __heap_base
+   Definitions
+      At line 44 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: __heap_base unused
+__heap_limit 00000000
+
+Symbol: __heap_limit
+   Definitions
+      At line 46 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: __heap_limit unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 55 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 60 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 56 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 108 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+__Vectors_End 000000B0
+
+Symbol: __Vectors_End
+   Definitions
+      At line 106 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 57 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 108 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 110 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: .text unused
+AC_Handler 00000012
+
+Symbol: AC_Handler
+   Definitions
+      At line 199 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 101 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 171 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+ADC_Handler 00000012
+
+Symbol: ADC_Handler
+   Definitions
+      At line 198 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 100 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 170 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+AES_Handler 00000012
+
+Symbol: AES_Handler
+   Definitions
+      At line 202 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 104 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 174 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+DAC_Handler 00000012
+
+Symbol: DAC_Handler
+   Definitions
+      At line 200 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 102 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 172 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+DMAC_Handler 00000012
+
+Symbol: DMAC_Handler
+   Definitions
+      At line 183 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 83 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 155 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+Default_Handler 00000012
+
+Symbol: Default_Handler
+   Definitions
+      At line 149 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      None
+Comment: Default_Handler unused
+EIC_Handler 00000012
+
+Symbol: EIC_Handler
+   Definitions
+      At line 181 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 81 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 153 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+EVSYS_Handler 00000012
+
+Symbol: EVSYS_Handler
+   Definitions
+      At line 185 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 85 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 157 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+HardFault_Handler 0000000A
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 132 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 63 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 133 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+NVMCTRL_Handler 00000012
+
+Symbol: NVMCTRL_Handler
+   Definitions
+      At line 182 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 82 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 154 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+NonMaskableInt_Handler 00000008
+
+Symbol: NonMaskableInt_Handler
+   Definitions
+      At line 128 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 62 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 129 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+PTC_Handler 00000012
+
+Symbol: PTC_Handler
+   Definitions
+      At line 201 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 103 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 173 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+PendSV_Handler 0000000E
+
+Symbol: PendSV_Handler
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 140 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 74 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 141 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+RTC_Handler 00000012
+
+Symbol: RTC_Handler
+   Definitions
+      At line 180 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 80 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 152 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 115 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 61 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 116 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SERCOM0_Handler 00000012
+
+Symbol: SERCOM0_Handler
+   Definitions
+      At line 186 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 86 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 158 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SERCOM1_Handler 00000012
+
+Symbol: SERCOM1_Handler
+   Definitions
+      At line 187 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 87 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 159 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SERCOM2_Handler 00000012
+
+Symbol: SERCOM2_Handler
+   Definitions
+      At line 188 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 88 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 160 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SERCOM3_Handler 00000012
+
+Symbol: SERCOM3_Handler
+   Definitions
+      At line 189 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 89 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 161 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+
+SERCOM4_Handler 00000012
+
+Symbol: SERCOM4_Handler
+   Definitions
+      At line 190 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 90 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 162 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SERCOM5_Handler 00000012
+
+Symbol: SERCOM5_Handler
+   Definitions
+      At line 191 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 91 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 163 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SVC_Handler 0000000C
+
+Symbol: SVC_Handler
+   Definitions
+      At line 136 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 71 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 137 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SYSTEM_Handler 00000012
+
+Symbol: SYSTEM_Handler
+   Definitions
+      At line 178 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 78 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 150 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+SysTick_Handler 00000010
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 144 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 75 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 145 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TC0_Handler 00000012
+
+Symbol: TC0_Handler
+   Definitions
+      At line 195 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 95 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 167 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TC1_Handler 00000012
+
+Symbol: TC1_Handler
+   Definitions
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 196 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 96 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 168 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TC4_Handler 00000012
+
+Symbol: TC4_Handler
+   Definitions
+      At line 197 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 99 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 169 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TCC0_Handler 00000012
+
+Symbol: TCC0_Handler
+   Definitions
+      At line 192 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 92 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 164 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TCC1_Handler 00000012
+
+Symbol: TCC1_Handler
+   Definitions
+      At line 193 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 93 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 165 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TCC2_Handler 00000012
+
+Symbol: TCC2_Handler
+   Definitions
+      At line 194 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 94 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 166 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+TRNG_Handler 00000012
+
+Symbol: TRNG_Handler
+   Definitions
+      At line 203 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 105 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 175 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+USB_Handler 00000012
+
+Symbol: USB_Handler
+   Definitions
+      At line 184 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 84 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 156 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
+WDT_Handler 00000012
+
+Symbol: WDT_Handler
+   Definitions
+      At line 179 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 79 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 151 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+__user_initial_stackheap 00000014
+
+Symbol: __user_initial_stackheap
+   Definitions
+      At line 223 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 222 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+Comment: __user_initial_stackheap used once
+35 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Heap_Size 00000000
+
+Symbol: Heap_Size
+   Definitions
+      At line 41 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 45 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 227 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+Stack_Size 00000200
+
+Symbol: Stack_Size
+   Definitions
+      At line 30 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 33 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 226 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+
+__Vectors_Size 000000B0
+
+Symbol: __Vectors_Size
+   Definitions
+      At line 108 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 58 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+Comment: __Vectors_Size used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+SystemInit 00000000
+
+Symbol: SystemInit
+   Definitions
+      At line 117 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 119 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+Comment: SystemInit used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 118 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      At line 121 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+Comment: __main used once
+__use_two_region_memory 00000000
+
+Symbol: __use_two_region_memory
+   Definitions
+      At line 221 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+   Uses
+      None
+Comment: __use_two_region_memory unused
+3 symbols
+388 symbols in table

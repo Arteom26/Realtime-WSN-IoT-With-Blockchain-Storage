@@ -1,0 +1,1363 @@
+Dependencies for Project 'Senior Deisgn', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\main.cpp)(0x633362DE)(--cpp -c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c)(0x6160E518)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\clib_arm.o --omf_browse .\objects\clib_arm.crf --depend .\objects\clib_arm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\cmsis_os1.c)(0x61535692)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\cmsis_os1.o --omf_browse .\objects\cmsis_os1.crf --depend .\objects\cmsis_os1.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1\cmsis_os.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include\cmsis_os2.h)(0x627001AE)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c)(0x6183DA5C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\cmsis_os2.o --omf_browse .\objects\cmsis_os2.crf --depend .\objects\cmsis_os2.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include\cmsis_os2.h)(0x627001AE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include\os_tick.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\event_groups.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_os2.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\os_systick.c)(0x61535692)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\os_systick.o --omf_browse .\objects\os_systick.crf --depend .\objects\os_systick.d)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include\os_tick.h)(0x627001AE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+F (RTE\Device\ATSAML21G18B\startup_saml21g18b.s)(0x62335BF8)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__SAML21G18B__ SETA 1"--list .\listings\startup_saml21g18b.lst --xref -o .\objects\startup_saml21g18b.o --depend .\objects\startup_saml21g18b.d)
+F (RTE\Device\ATSAML21G18B\system_saml21g18b.c)(0x62335BF8)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\system_saml21g18b.o --omf_browse .\objects\system_saml21g18b.crf --depend .\objects\system_saml21g18b.d)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c)(0x61535692)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\freertos_evr.o --omf_browse .\objects\freertos_evr.crf --depend .\objects\freertos_evr.d)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\event_groups.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\stream_buffer.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\event_groups.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\event_groups.o --omf_browse .\objects\event_groups.crf --depend .\objects\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\event_groups.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\list.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\list.o --omf_browse .\objects\list.crf --depend .\objects\list.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\MemMang\heap_5.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\heap_5.o --omf_browse .\objects\heap_5.crf --depend .\objects\heap_5.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\port.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\port.o --omf_browse .\objects\port.crf --depend .\objects\port.d)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\queue.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\queue.o --omf_browse .\objects\queue.crf --depend .\objects\queue.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\stream_buffer.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\stream_buffer.o --omf_browse .\objects\stream_buffer.crf --depend .\objects\stream_buffer.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\stream_buffer.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\tasks.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\tasks.o --omf_browse .\objects\tasks.crf --depend .\objects\tasks.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\stack_macros.h)(0x61833A9C)
+F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\timers.c)(0x61833A9C)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\timers.o --omf_browse .\objects\timers.crf --depend .\objects\timers.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63333308)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\sercom.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\tcc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\component\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\adc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\aes.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ccl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dmac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\dsu.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\eic.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\evsys.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\fuses.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\gclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mclk.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\mtb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\nvmctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\opamp.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\osc32kctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\oscctrl.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pac.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\pm.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\port.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\ptc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rstc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\rtc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom3.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\sercom5.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\supc.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tc4.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc0.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc1.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\tcc2.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\trng.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
+I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
+F (RTE\RTOS\FreeRTOSConfig.h)(0x633331FA)()
