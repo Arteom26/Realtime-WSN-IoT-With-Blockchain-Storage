@@ -1,5 +1,6 @@
 --cpu Cortex-M0+
 ".\objects\main.o"
+".\objects\sercom.o"
 ".\objects\clib_arm.o"
 ".\objects\cmsis_os1.o"
 ".\objects\cmsis_os2.o"

@@ -381,12 +381,27 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Main Source Files</GroupName>
           <Files>
             <File>
               <FileName>main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\main.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>SERCOM.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\SERCOM.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SERCOM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SERCOM.h</FilePath>
             </File>
           </Files>
         </Group>
