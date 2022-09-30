@@ -4,10 +4,9 @@
 #include "saml21g18b.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define UART_BUFFER_SIZE 128
-
-using namespace std;
 
 class UART{
 	public:

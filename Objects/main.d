@@ -76,3 +76,7 @@
 .\objects\main.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/usb.h
 .\objects\main.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/wdt.h
 .\objects\main.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
+.\objects\main.o: system_setup.h
+.\objects\main.o: SERCOM.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
