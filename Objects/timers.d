@@ -5,6 +5,7 @@
 .\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\timers.o: .\RTE\RTOS\FreeRTOSConfig.h
 .\objects\timers.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
@@ -80,7 +81,6 @@
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/usb.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/wdt.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
-.\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
 .\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\timers.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
