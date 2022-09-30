@@ -7,8 +7,10 @@
 
 // Global variables
 bool startFlag = false;
-uint8_t length = 0;
-uint8_t txbuffer[128];
+bool recievedBTData = false;// Bluetooth flag(TODO: semaphore)
+uint8_t length = 0;// TODO: add to queue (possibly)
+uint8_t txbuffer[128];// TODO: Convert to a queue
+UART usart = UART(SERCOM0_REGS, 115200);
 
 void mainTask(void* unused){
 	while(1);
@@ -20,8 +22,6 @@ void mainTask(void* unused){
 	* SERCOM1 for bluetooth
 	* SERCOM2 for GSM module
 */
-UART usart = UART(SERCOM0_REGS, 115200);;
-
 int main(){
 	//setup_system();
 	//usart = UART(SERCOM0_REGS, 115200);
@@ -73,15 +73,14 @@ extern "C"{
 		if(length > 133)// Packet failed to be found
 			startFlag = false;
 		
-		// Clear the interrupt
-		NVIC->ICPR[0] |= (1 << 8);
+		NVIC->ICPR[0] |= (1 << 8);// Clear the interrupt
 	}
 	
 	void SERCOM1_Handler(void){// Bluetooth handler
-		
+		NVIC->ICPR[0] |= (1 << 9);// Clear the interrupt
 	}
 	
 	void SERCOM2_Handler(void){// GSM Module handler
-	
+		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }
