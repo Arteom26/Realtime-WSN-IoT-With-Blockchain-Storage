@@ -27,7 +27,7 @@
 ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
 
-Stack_Size      EQU     0x00001000
+Stack_Size      EQU     0x00000500
 
                 AREA    STACK, NOINIT, READWRITE, ALIGN=3
 Stack_Mem       SPACE   Stack_Size
@@ -38,7 +38,7 @@ __initial_sp
 ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
 
-Heap_Size       EQU     0x00001000
+Heap_Size       EQU     0x00000500
 
                 AREA    HEAP, NOINIT, READWRITE, ALIGN=3
 __heap_base
@@ -132,6 +132,7 @@ NonMaskableInt_Handler    PROC
                           ENDP
 HardFault_Handler         PROC
                           EXPORT HardFault_Handler         [WEAK] 
+
                           B       .
                           ENDP
 SVC_Handler               PROC

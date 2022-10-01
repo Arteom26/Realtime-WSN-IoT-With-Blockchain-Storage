@@ -36,9 +36,6 @@
 /*  ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.4.6 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_FreeRTOS        /* CMSIS-RTOS2 FreeRTOS */
-/*  ARM::CMSIS:RTOS:FreeRTOS:10.4.6 */
-#define RTE_CMSIS_RTOS                  /* CMSIS-RTOS */
-        #define RTE_CMSIS_RTOS_FreeRTOS         /* CMSIS-RTOS FreeRTOS */
 
 
 #endif /* RTE_COMPONENTS_H */

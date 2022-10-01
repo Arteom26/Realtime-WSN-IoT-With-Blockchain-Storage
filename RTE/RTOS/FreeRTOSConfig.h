@@ -48,7 +48,6 @@
 #endif
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
-
 //  <o>Minimal stack size [words] <0-65535>
 //  <i> Stack for idle task and default task stack in words.
 //  <i> Default: 128
@@ -82,7 +81,7 @@
 //  <o>Preemption interrupt priority
 //  <i> Maximum priority of interrupts that are safe to call FreeRTOS API.
 //  <i> Default: 16
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY    16
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY    1
 
 //  <q>Use time slicing
 //  <i> Enable setting to use timeslicing.

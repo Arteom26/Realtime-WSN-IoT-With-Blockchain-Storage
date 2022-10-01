@@ -6,6 +6,9 @@
 #include "RTC.h"
 
 void setup_system(void){
+	PM_REGS->PM_PLCFG = 0x2;// Set to high power mode(PL2)
+	while(PM_REGS->PM_INTFLAG == 0);
+	PM_REGS->PM_STDBYCFG |= 0x40;
 	uint32_t *nvc = (uint32_t*)0x00806020;
 	uint32_t osc32k_cal = (*nvc >> 6)&0x7F;
 	
@@ -20,13 +23,13 @@ void setup_system(void){
 	// GCLK Setup
 	GCLK_REGS->GCLK_GENCTRL[1] = 0x104;// Setup 32kHz oscillator on clock source 1
 	GCLK_REGS->GCLK_GENCTRL[2] = 0x106;// Setup internal oscillator on clock source 2
-	GCLK_REGS->GCLK_PCHCTRL[1] = 0x40;// Enable DPLL and setup GCLK source => 32kHz oscillator
+	GCLK_REGS->GCLK_PCHCTRL[1] = 0x41;// Enable DPLL and setup GCLK source => 32kHz oscillator
 	GCLK_REGS->GCLK_PCHCTRL[2] = 0x41;// Enable DPLL and setup GCLK source => 32kHz oscillator
 	
 	// 48MHz main clock setup
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLB |= 0x20;// Use GCLK as the source and setup clock division
-	OSCCTRL_REGS->OSCCTRL_DPLLPRESC = 0x0;// Divide output clock by 0
-	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 4;
+	OSCCTRL_REGS->OSCCTRL_DPLLPRESC = 0x0;// Divide output clock by 1
+	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 750;// Current max value I can get out of PLL
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x4) != 0);
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLA = 0x2;// Enable PLL Output
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x2) != 0);
@@ -34,13 +37,13 @@ void setup_system(void){
 	
 	// 48Mhz DFLL Setup
 	uint32_t bits = (*nvc >> 26);// Get the proper bits
-	OSCCTRL_REGS->OSCCTRL_DFLLVAL = (bits << 10)|0x292;// Fine frequency control
+	OSCCTRL_REGS->OSCCTRL_DFLLVAL = (bits << 10)|0x0;// Fine frequency control(0x3FF max value)
 	OSCCTRL_REGS->OSCCTRL_DFLLCTRL = 0x2;
 	
-	SystemCoreClock = 16000000;// 32MHz system core clock
-	
-	GCLK_REGS->GCLK_GENCTRL[0] = 0x906;// Change cpu clock from internal clock to PLL
+	GCLK_REGS->GCLK_GENCTRL[0] = 0x108;// Change cpu clock from internal clock to PLL
 	OSCCTRL_REGS->OSCCTRL_OSC16MCTRL |= 0xC;// Setup internal oscillator speed to 16MHz
+	
+	SystemCoreClock = 26500000;// Current max freq. I could achieve
 	
 	// Real-time clock setup
 	setup_rtc();
