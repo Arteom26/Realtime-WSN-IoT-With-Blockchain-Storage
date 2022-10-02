@@ -78,3 +78,8 @@
 .\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
 .\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h
 .\objects\system_setup.o: RTC.h
+.\objects\system_setup.o: API.h
+.\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\system_setup.o: SERCOM.h
+.\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

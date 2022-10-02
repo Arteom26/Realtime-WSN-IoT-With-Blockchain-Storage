@@ -4,6 +4,17 @@
 #include "system_setup.h"
 #include "system_saml21.h"
 #include "RTC.h"
+#include "API.h"
+
+uint16_t verifyP(uint16_t fcs, uint8_t *data, uint16_t len){
+	//data++;
+	while(len--)
+		fcs = (fcs >> 8) ^ fcstab[(fcs ^ *data++) & 0xFF];
+	
+	fcs ^= 0xFFFF;
+	
+	return fcs;
+}
 
 void setup_system(void){
 	PM_REGS->PM_PLCFG = 0x2;// Set to high power mode(PL2)
@@ -48,7 +59,27 @@ void setup_system(void){
 	// Real-time clock setup
 	setup_rtc();
 	
-	// DMA setup
+	// DMA descriptor setup
+	uint32_t *desc = (uint32_t*)0x30000000;
+	*desc++ = 0x01000801;// Channel 0 descriptor
+	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_BAUD;
+	*desc++ = 0x30000100;
+	*desc++ = 0x00000000;
+	*desc++ = 0x01000401;// Channel 1 descriptor
+	*desc++ = 0x30000000;
+	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_DATA;
+	*desc++ = 0x00000000;
+	
+	// DMA initialization and setup
+	// Channel 0 => Possibly Smartmesh IP data copying 
+	// Channels 1-3 => UART TX data transfer for SERCOM0-SERCOM2
+	// Channel 4 => Misc. Copying tasks
+	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
+	DMAC_REGS->DMAC_BASEADDR = 0x30000000;
+	DMAC_REGS->DMAC_WRBADDR = 0x30000500;
+	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
+	DMAC_REGS->DMAC_CTRL = 0xF02;
+	//DMAC_REGS->DMAC_CHCTRLA = 0x2; Enables the channel
 }
 
 #endif

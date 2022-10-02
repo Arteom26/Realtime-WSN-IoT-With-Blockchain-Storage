@@ -15,6 +15,7 @@ class UART{
 		void send_array(uint8_t *data, uint8_t length);
 	private:
 		sercom_usart_int_registers_t* UART_port;// UART port to use
+		uint8_t dma_channel_id;
 };
 
 #endif

@@ -13,6 +13,7 @@ bool recievedBTData = false;// Bluetooth flag(TODO: semaphore)
 uint8_t length = 0;// TODO: add to queue (possibly)
 uint8_t txbuffer[128];// TODO: Convert to a queue
 UART usart = UART(SERCOM0_REGS, 115200);
+Smartmesh_API api = Smartmesh_API(&usart);
 
 QueueHandle_t managerData = xQueueCreate(1, sizeof(uint8_t));
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateBinary();
@@ -26,14 +27,6 @@ uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len){
 	fcs ^= 0xFFFF;
 	
 	return fcs;
-}
-
-void mainTask(void* unused){
-	usart = UART(SERCOM0_REGS, 115200);
-
-	while(1){
-		
-	}
 }
 
 void parseSmartmeshData(void* unused){
@@ -53,15 +46,17 @@ void parseSmartmeshData(void* unused){
 	* SERCOM1 for bluetooth
 	* SERCOM2 for GSM module
 */
-
-
-
 int main(){
-	BaseType_t x = xTaskCreate(mainTask, "Main Task", 256, NULL, 5, NULL);
-	x = xTaskCreate(parseSmartmeshData, "Parse", 256, NULL, 6, NULL);
+	xTaskCreate(parseSmartmeshData, "Parse", 256, NULL, 6, NULL);
 	
 	setup_system();
-
+	usart = UART(SERCOM0_REGS, 115200);
+	//api = Smartmesh_API(&usart);
+	//api.mgr_init();
+	
+	usart._printf("Hello World!");
+	usart._printf("Hello World!");
+	
 	vTaskStartScheduler();
 		
 	for(;;);
@@ -81,10 +76,9 @@ extern "C"{
 			uint16_t check = verifyPacket(START_CHECKSUM, txbuffer, length - 2);
 			uint16_t currCheck = txbuffer[length - 1] | (txbuffer[length] << 8);
 			txbuffer[length+1] = data;
-			if(check == currCheck){
-				startFlag = false;
+			startFlag = false;
+			if(check == currCheck)// Verification passed
 				xSemaphoreGiveFromISR(dataRecieved, NULL);
-			}
 		}else if(startFlag && data != 0x7E){// Copy to buffer
 			txbuffer[length+1] = data;
 			length++;
