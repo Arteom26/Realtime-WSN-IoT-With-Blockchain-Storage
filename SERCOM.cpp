@@ -40,6 +40,7 @@ int UART::_printf(const char *format, ...){
 	if(done > UART_BUFFER_SIZE)
 		return NULL;
 	
+	xSemaphoreTake(dma_in_use, portMAX_DELAY);// Wait for dma regs to become available
 	// Setup the dma transfer
 	DMAC_REGS->DMAC_CHID = dma_channel_id;
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
@@ -47,13 +48,7 @@ int UART::_printf(const char *format, ...){
 	*desc++ = (done << 16)|0x0401;
 	*desc = (uint32_t)(buffer + done);// Source address
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-	
-	/*
-	for(int i = 0;i < done;i++){// Send the data
-		//UART_port->SERCOM_DATA = buffer[i];
-		//while((UART_port->SERCOM_INTFLAG & 0x2) == 0);// Wait for data to be transmitted
-		//UART_port->SERCOM_INTFLAG |= 0x2;
-	}*/
+	xSemaphoreGive(dma_in_use);
 	
 	return 0;
 }
@@ -66,11 +61,4 @@ void UART::send_array(uint8_t *data, uint8_t length){
 	*desc++ = (length << 16)|0x0401;
 	*desc = (uint32_t)(data + length);// Source address end value
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-	
-	/*for(int i = 0;i < length;i++){
-		UART_port->SERCOM_DATA = *data;
-		while((UART_port->SERCOM_INTFLAG & 0x2) != 0);// Wait for data to be transmitted
-		UART_port->SERCOM_INTFLAG |= 0x2;
-		data++;
-	}*/
 }

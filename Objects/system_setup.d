@@ -83,3 +83,17 @@
 .\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\system_setup.o: SERCOM.h
 .\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h
+.\objects\system_setup.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\system_setup.o: .\RTE\RTOS\FreeRTOSConfig.h
+.\objects\system_setup.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0\portmacro.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\mpu_wrappers.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h
+.\objects\system_setup.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h

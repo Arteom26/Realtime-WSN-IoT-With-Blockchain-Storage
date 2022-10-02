@@ -10,10 +10,11 @@
 // Global variables
 bool startFlag = false;
 bool recievedBTData = false;// Bluetooth flag(TODO: semaphore)
-uint8_t length = 0;// TODO: add to queue (possibly)
-uint8_t txbuffer[128];// TODO: Convert to a queue
+uint8_t length = 0;
+uint8_t txbuffer[130];
 UART usart = UART(SERCOM0_REGS, 115200);
 Smartmesh_API api = Smartmesh_API(&usart);
+SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 
 QueueHandle_t managerData = xQueueCreate(1, sizeof(uint8_t));
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateBinary();
@@ -29,7 +30,17 @@ uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len){
 	return fcs;
 }
 
+// This task will be created spontaneously to parse a recieved packet
 void parseSmartmeshData(void* unused){
+	uint8_t buffer[130];// Buffer for stored data
+	
+	
+	while(1){
+		
+	}
+}
+
+void setupParse(void* unused){
 	BaseType_t xStatus;
 	uint8_t data;
 	uint8_t len;
@@ -37,6 +48,8 @@ void parseSmartmeshData(void* unused){
 	
 	while(1){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
+		
+		// TODO: Copy data over to a seperate buffer
 	}
 }
 
@@ -47,15 +60,13 @@ void parseSmartmeshData(void* unused){
 	* SERCOM2 for GSM module
 */
 int main(){
-	xTaskCreate(parseSmartmeshData, "Parse", 256, NULL, 6, NULL);
+	xTaskCreate(setupParse, "Parse", 256, NULL, 6, NULL);
 	
+	xSemaphoreGive(dma_in_use);
 	setup_system();
 	usart = UART(SERCOM0_REGS, 115200);
-	//api = Smartmesh_API(&usart);
-	//api.mgr_init();
-	
-	usart._printf("Hello World!");
-	usart._printf("Hello World!");
+	api = Smartmesh_API(&usart);
+	api.mgr_init();
 	
 	vTaskStartScheduler();
 		

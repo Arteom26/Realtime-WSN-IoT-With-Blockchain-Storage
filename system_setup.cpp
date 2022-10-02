@@ -60,15 +60,17 @@ void setup_system(void){
 	setup_rtc();
 	
 	// DMA descriptor setup
-	uint32_t *desc = (uint32_t*)0x30000000;
-	*desc++ = 0x01000801;// Channel 0 descriptor
+	uint32_t *desc = (uint32_t*)0x30000000;// Channel for copying data between buffers for Smartmesh IP
+	*desc++ = 0x01000C01;// Channel 0 descriptor
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_BAUD;
 	*desc++ = 0x30000100;
 	*desc++ = 0x00000000;
+	for(int i = 0;i < 3;i++){// SERCOM descriptors setup
 	*desc++ = 0x01000401;// Channel 1 descriptor
 	*desc++ = 0x30000000;
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_DATA;
 	*desc++ = 0x00000000;
+	}
 	
 	// DMA initialization and setup
 	// Channel 0 => Possibly Smartmesh IP data copying 
@@ -76,7 +78,7 @@ void setup_system(void){
 	// Channel 4 => Misc. Copying tasks
 	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
 	DMAC_REGS->DMAC_BASEADDR = 0x30000000;
-	DMAC_REGS->DMAC_WRBADDR = 0x30000500;
+	DMAC_REGS->DMAC_WRBADDR = 0x30000100;
 	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
 	DMAC_REGS->DMAC_CTRL = 0xF02;
 	//DMAC_REGS->DMAC_CHCTRLA = 0x2; Enables the channel

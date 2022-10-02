@@ -163,7 +163,6 @@ bool Smartmesh_API::parseDataNotification(data_notif *notif, uint8_t *data){
 	data+=2;
 	if(*data != NOTIF)
 		return CMD_FAIL;
-	//memcpy(notif, data+=4, sizeof(*notif)-90);
 	
 	memcpy(&notif->seconds, data+=4, sizeof(notif->seconds));
 	memcpy(&notif->us, data+=sizeof(notif->seconds), sizeof(notif->us));

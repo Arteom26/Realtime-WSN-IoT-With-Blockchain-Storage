@@ -5,8 +5,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "freertos.h"
+#include "semphr.h"
 
 #define UART_BUFFER_SIZE 128
+
+extern SemaphoreHandle_t dma_in_use;
 
 class UART{
 	public:
