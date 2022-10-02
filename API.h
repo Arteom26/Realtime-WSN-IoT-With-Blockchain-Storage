@@ -223,7 +223,7 @@ class Smartmesh_API{
 		bool clearStatistics(void);
 		bool getHardwareInfo(void);
 		bool parseHardwareInfo(system_info *info, uint8_t *data);
-		bool setNetworkConfig();
+		bool setNetworkConfig(uint16_t network_id);
     
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)

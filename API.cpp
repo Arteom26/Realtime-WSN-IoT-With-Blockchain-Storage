@@ -255,3 +255,31 @@ bool Smartmesh_API::parseHardwareInfo(system_info *info, uint8_t *data){
 	
 	return CMD_SUCCESS;
 }
+
+// Setup network manager
+bool Smartmesh_API::setNetworkConfig(uint16_t network_id){
+	init_packet(21, SET_NTWK_CONFIG);
+	memcpy(send_data + 5, &network_id, 2);
+	send_data[7] = 8;// Tx power(8dbm)
+	send_data[8] = 1;// Frame profile
+	send_data[9] = 33;// Max motes
+	send_data[10] = 0xE8;// Base bandwidth(1s between each packet)
+	send_data[11] = 0x3;
+	send_data[12] = 2;// Downstream frame multiplier
+	send_data[13] = 2;// Number of parents for each mote
+	send_data[14] = 3;// Both energy and carrier detect if network has congestion
+	send_data[15] = 0xFF;// Use all channels
+	send_data[16] = 0xFF;
+	send_data[17] = 1;// Autostart network
+	send_data[18] = 0;
+	send_data[19] = 2;// Backbone frame mode(bidirectional)
+	send_data[20] = 2;// Backbone size
+	send_data[21] = 0;// Radiotest is off
+	send_data[22] = 0xF4;// Bandwidth over-provisioning multiplier
+	send_data[23] = 0x1;
+	send_data[24] = 0xFF;// Once channel testing mode
+	checksumData(START_CHECKSUM, send_data, 25);
+	sendUart->send_array(send_data, 29);// Send the packet to the network manager
+	
+	return CMD_SUCCESS;
+}

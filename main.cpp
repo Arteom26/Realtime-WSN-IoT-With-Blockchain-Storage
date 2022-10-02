@@ -14,6 +14,7 @@ uint8_t length = 0;
 uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
 UART api_usart = UART(SERCOM0_REGS, 115200);
+UART bluetooth = UART(SERCOM1_REGS, 115200);
 Smartmesh_API api = Smartmesh_API(&api_usart);
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 
@@ -59,6 +60,9 @@ void parseSmartmeshData(void* unused){
 			break;
 		case 0x14:// Notification packet recieved. TODO: parse the data in a seperate task
 			break;
+		case 0x16:
+			bluetooth._printf("Setup!!\n\r");
+			break;
 		default:
 			break;
 	}
@@ -91,13 +95,12 @@ void bluetoothParse(void* unused){
 	* SERCOM2 for GSM module
 */
 int main(){
-	xTaskCreate(setupParse, "Parse", 128, NULL, 6, NULL);
-	xSemaphoreGive(dma_in_use);
-	setup_system();
+	xTaskCreate(setupParse, "Parse", 64, NULL, 6, NULL);
+	setup_system();// Setup all peripherals
+	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	api_usart = UART(SERCOM0_REGS, 115200);
 	api = Smartmesh_API(&api_usart);
-	//api_usart._printf("123");
-	api.mgr_init();
+	api.mgr_init();// Initialize connection with the network manager
 	
 	vTaskStartScheduler();
 		
