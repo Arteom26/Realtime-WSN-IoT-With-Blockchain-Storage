@@ -43,7 +43,7 @@ int UART::_printf(const char *format, ...){
 	// Setup the dma transfer
 	DMAC_REGS->DMAC_CHID = dma_channel_id;
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
-	uint32_t *desc = (uint32_t*)0x30000010;// If not send data
+	uint32_t *desc = (uint32_t*)(0x30000000 + 0x10*dma_channel_id);// If not send data
 	*desc++ = (done << 16)|0x0401;
 	*desc = (uint32_t)(buffer + done);// Source address
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
@@ -62,7 +62,7 @@ void UART::send_array(uint8_t *data, uint8_t length){
 	// Setup the dma transfer
 	DMAC_REGS->DMAC_CHID = dma_channel_id;
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
-	uint32_t *desc = (uint32_t*)0x30000010;// If not send data
+	uint32_t *desc = (uint32_t*)(0x30000000 + 0x10*dma_channel_id);// If not send data
 	*desc++ = (length << 16)|0x0401;
 	*desc = (uint32_t)(data + length);// Source address end value
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
