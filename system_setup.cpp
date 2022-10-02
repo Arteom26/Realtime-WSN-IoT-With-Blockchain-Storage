@@ -73,15 +73,14 @@ void setup_system(void){
 	}
 	
 	// DMA initialization and setup
-	// Channel 0 => Possibly Smartmesh IP data copying 
+	// Channel 0 => Smartmesh IP data copying
 	// Channels 1-3 => UART TX data transfer for SERCOM0-SERCOM2
 	// Channel 4 => Misc. Copying tasks
-	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
 	DMAC_REGS->DMAC_BASEADDR = 0x30000000;
 	DMAC_REGS->DMAC_WRBADDR = 0x30000100;
-	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
 	DMAC_REGS->DMAC_CTRL = 0xF02;
-	//DMAC_REGS->DMAC_CHCTRLA = 0x2; Enables the channel
+	DMAC_REGS->DMAC_CHCTRLB = 0x60;// Channel 0 config
+	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
+	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
 }
-
 #endif

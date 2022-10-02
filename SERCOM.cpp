@@ -48,7 +48,7 @@ int UART::_printf(const char *format, ...){
 	*desc++ = (done << 16)|0x0401;
 	*desc = (uint32_t)(buffer + done);// Source address
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-	xSemaphoreGive(dma_in_use);
+	xSemaphoreGive(dma_in_use);// Give back the semphore as done accessing the data
 	
 	return 0;
 }
