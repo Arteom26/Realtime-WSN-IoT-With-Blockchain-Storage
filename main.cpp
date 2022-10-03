@@ -52,7 +52,8 @@ void parseSmartmeshData(void* unused){
 	uint8_t packetType = buffer[2];
 	switch(packetType){
 		case 0x2:
-			api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
+			//api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
+			api.getNetworkInfo();
 			connectedToManager = true;
 			break;
 		case 0x3:// No communication was setup
@@ -62,6 +63,10 @@ void parseSmartmeshData(void* unused){
 			break;
 		case 0x16:
 			bluetooth._printf("Setup!!\n\r");
+			break;
+		case 0x40:
+			network_info info;
+			api.parseNetworkInfo(&info, buffer);
 			break;
 		default:
 			break;

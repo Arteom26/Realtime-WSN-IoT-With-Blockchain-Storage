@@ -198,16 +198,13 @@ bool Smartmesh_API::getNetworkInfo(){
 	return CMD_SUCCESS;
 }
 
-// Parses the get netowkr info command response
+// Parses the get network info command response
 bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
 	uint8_t *dataOriginal = data;
-	//data+=2;
-	if(*(data+2) != 0x40)
+	if(*(data+2) != 0x40)// Not a data packet
 		return CMD_FAIL;
-	// Copy data over to data struct
-	//memcpy(info, data+=5, sizeof(*info));
-	//data += 43;
 	
+	// Copy data over to data struct
 	memcpy((uint8_t*)&info->rc_code, data+=5, sizeof(info->rc_code));
 	memcpy((uint8_t*)&info->num_motes, data+=sizeof(info->rc_code), sizeof(info->num_motes));
 	memcpy((uint8_t*)&info->asnSize, data+=sizeof(info->num_motes), sizeof(info->asnSize));
@@ -224,6 +221,7 @@ bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
 	memcpy((uint8_t*)&info->maxHops, data+=sizeof(info->numArrivedPackets), sizeof(info->maxHops));	
 	data+=sizeof(info->maxHops);
 	// Verify the CRC
+	data += 48;
 	uint16_t temp = verifyPacket(START_CHECKSUM, dataOriginal, 43+4);
 	uint16_t fcs_temp = *(data - 1) | *(data - 2) << 8;
 	if(temp != fcs_temp)
@@ -235,6 +233,8 @@ bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
 // Clear network statistics
 bool Smartmesh_API::clearStatistics(){
 	init_packet(0, CLEAR_STAT);
+	checksumData(START_CHECKSUM, send_data, 4);
+	sendUart->send_array(send_data, 8);
 	
 	return CMD_SUCCESS;
 }
@@ -242,16 +242,25 @@ bool Smartmesh_API::clearStatistics(){
 // Get Hardware Information
 bool Smartmesh_API::getHardwareInfo(){
 	init_packet(0, GET_SYS_INFO);
+	checksumData(START_CHECKSUM, send_data, 4);
+	sendUart->send_array(send_data, 8);
 	
 	return CMD_SUCCESS;
 }
 
 // Parse hardware information
 bool Smartmesh_API::parseHardwareInfo(system_info *info, uint8_t *data){
-	data += 5;
-	memcpy(info, data, sizeof(*info));// Copy the data over
-	//toBigEndian((uint8_t*)info->mac_address, 8);// Swap bytes around
-	//toBigEndian((uint8_t*)info->sw_build, 2);
+	if(*(data+5) != RC_OK)
+		return CMD_FAIL;
+	
+	memcpy((uint8_t*)&info->rc_code, data+=5, sizeof(info->rc_code));
+	memcpy((uint8_t*)&info->mac_address, data+=sizeof(info->rc_code), sizeof(info->mac_address));
+	memcpy((uint8_t*)&info->hw_model, data+=sizeof(info->mac_address), sizeof(info->hw_model));
+	memcpy((uint8_t*)&info->hw_rev, data+=sizeof(info->hw_model), sizeof(info->hw_rev));
+	memcpy((uint8_t*)&info->sw_major, data+=sizeof(info->hw_rev), sizeof(info->sw_major));
+	memcpy((uint8_t*)&info->sw_minor, data+=sizeof(info->sw_major), sizeof(info->sw_minor));
+	memcpy((uint8_t*)&info->sw_patch, data+=sizeof(info->sw_minor), sizeof(info->sw_patch));
+	memcpy((uint8_t*)&info->sw_build, data+=sizeof(info->sw_patch), sizeof(info->sw_build));
 	
 	return CMD_SUCCESS;
 }
@@ -259,27 +268,48 @@ bool Smartmesh_API::parseHardwareInfo(system_info *info, uint8_t *data){
 // Setup network manager
 bool Smartmesh_API::setNetworkConfig(uint16_t network_id){
 	init_packet(21, SET_NTWK_CONFIG);
-	memcpy(send_data + 5, &network_id, 2);
+	//memcpy(send_data + 5, &network_id, 2);
+	send_data[5] = 1;
+	send_data[6] = 8;
 	send_data[7] = 8;// Tx power(8dbm)
 	send_data[8] = 1;// Frame profile
-	send_data[9] = 33;// Max motes
-	send_data[10] = 0xE8;// Base bandwidth(1s between each packet)
-	send_data[11] = 0x3;
-	send_data[12] = 2;// Downstream frame multiplier
-	send_data[13] = 2;// Number of parents for each mote
-	send_data[14] = 3;// Both energy and carrier detect if network has congestion
-	send_data[15] = 0xFF;// Use all channels
-	send_data[16] = 0xFF;
-	send_data[17] = 1;// Autostart network
-	send_data[18] = 0;
-	send_data[19] = 2;// Backbone frame mode(bidirectional)
-	send_data[20] = 2;// Backbone size
-	send_data[21] = 0;// Radiotest is off
-	send_data[22] = 0xF4;// Bandwidth over-provisioning multiplier
-	send_data[23] = 0x1;
-	send_data[24] = 0xFF;// Once channel testing mode
+	send_data[9] = 0;// Max motes
+	send_data[10] = 10;
+	send_data[11] = 23;// Base bandwidth(9s between each packet default)
+	send_data[12] = 28;
+	send_data[13] = 1;// Downstream frame multiplier
+	send_data[14] = 3;// Number of parents for each mote
+	send_data[15] = 0;// Both energy and carrier detect if network has congestion
+	send_data[16] = 0x7F;// Use all channels
+	send_data[17] = 0xFF;
+	send_data[18] = 0x1;// Autostart network
+	send_data[19] = 0;// Reserved
+	send_data[20] = 0;// Backbone frame mode
+	send_data[21] = 1;// Backbone size
+	send_data[22] = 0;// Radiotest is off
+	send_data[23] = 1;// Bandwidth over-provisioning multiplier
+	send_data[24] = 0x2C;
+	send_data[25] = 0xFF;// Use all channels
 	checksumData(START_CHECKSUM, send_data, 25);
 	sendUart->send_array(send_data, 29);// Send the packet to the network manager
+	
+	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::getNetworkConfig(){
+	init_packet(0, GET_NET_CONFIG);
+	
+	checksumData(START_CHECKSUM, send_data, 4);
+	sendUart->send_array(send_data, 8);
+	
+	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::setJoinKey(uint8_t *jkey){
+	init_packet(0, SET_COMMON_JKEY);
+	memcpy(send_data+5, jkey, 16);
+	checksumData(START_CHECKSUM, send_data, 20);
+	sendUart->send_array(send_data, 24);
 	
 	return CMD_SUCCESS;
 }

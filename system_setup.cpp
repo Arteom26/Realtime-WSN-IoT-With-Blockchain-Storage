@@ -17,8 +17,10 @@ uint16_t verifyP(uint16_t fcs, uint8_t *data, uint16_t len){
 }
 
 void setup_system(void){
-	PM_REGS->PM_PLCFG = 0x2;// Set to high power mode(PL2)
+	PM_REGS->PM_STDBYCFG |= 0x40;
+	PM_REGS->PM_PLCFG = 0x2;// Set to high power mode(PL2)SUPC_REGS->SUPC_VREG |= 0x4;
 	while(PM_REGS->PM_INTFLAG == 0);
+	while((SUPC_REGS->SUPC_STATUS&0x400) == 0);
 	PM_REGS->PM_STDBYCFG |= 0x40;
 	uint32_t *nvc = (uint32_t*)0x00806020;
 	uint32_t osc32k_cal = (*nvc >> 6)&0x7F;
@@ -71,6 +73,10 @@ void setup_system(void){
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_DATA;
 	*desc++ = 0x00000000;
 	}
+	*desc++ = 0x01000C01;// Channel 4 descriptor
+	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_BAUD;
+	*desc++ = 0x30000100;
+	*desc++ = 0x00000000;
 	
 	// DMA initialization and setup
 	// Channel 0 => Smartmesh IP data copying
@@ -82,5 +88,7 @@ void setup_system(void){
 	DMAC_REGS->DMAC_CHCTRLB = 0x60;// Channel 0 config
 	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
 	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
+	DMAC_REGS->DMAC_CHID = 0x4;// Set to channel 1
+	DMAC_REGS->DMAC_CHCTRLB = 0x60;
 }
 #endif

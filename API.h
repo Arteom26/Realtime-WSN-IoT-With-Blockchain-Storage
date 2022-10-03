@@ -168,6 +168,35 @@ typedef struct{
 	uint16_t sw_build;
 }system_info;
 
+// Mote info structure
+typedef struct{
+	uint8_t rc_code;
+	uint64_t mac_address;
+	uint8_t state;
+	uint8_t numNbrs;// Number of motes that could possibly be connected to this mote
+	uint8_t numGoodNbrs;// Number of motes that have a good connection to this mote
+	uint32_t requestedBw;
+	uint32_t totalNeededBw;
+	uint32_t assignedBw;
+	uint32_t packetsReceived;
+	uint32_t packetsLost;
+	uint32_t avgLatency;
+	uint32_t stateTime;
+	uint8_t numJoins;
+	uint8_t hopDepth;// Value is multiplied by 10
+}mote_info;
+
+// Mote configuration from mote ID structure
+typedef struct{
+	uint8_t rc_code;
+	uint64_t mac_address;
+	uint16_t mote_id;
+	uint8_t isAP;
+	uint8_t state;
+	uint8_t reserved;
+	uint8_t routing;
+}mote_config_from_id;
+
 #define START_CHECKSUM 0xFFFF
 
 static uint16_t fcstab[256] = {
@@ -224,6 +253,8 @@ class Smartmesh_API{
 		bool getHardwareInfo(void);
 		bool parseHardwareInfo(system_info *info, uint8_t *data);
 		bool setNetworkConfig(uint16_t network_id);
+		bool getNetworkConfig(void);
+		bool setJoinKey(uint8_t *jkey);
     
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
@@ -233,8 +264,6 @@ class Smartmesh_API{
     void init_packet(uint8_t length, uint8_t command);
     void checksumData(uint16_t fcs, uint8_t *data, uint16_t len);
     uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len);
-		template <typename T>
-		void swapEndianess(T &val);
 };
 
 #endif
