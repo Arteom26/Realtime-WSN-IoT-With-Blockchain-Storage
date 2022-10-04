@@ -17,6 +17,7 @@ uint16_t verifyP(uint16_t fcs, uint8_t *data, uint16_t len){
 }
 
 void setup_system(void){
+	NVMCTRL_REGS->NVMCTRL_CTRLB |= 0x6;
 	PM_REGS->PM_STDBYCFG |= 0x40;
 	PM_REGS->PM_PLCFG = 0x2;// Set to high power mode(PL2)SUPC_REGS->SUPC_VREG |= 0x4;
 	while(PM_REGS->PM_INTFLAG == 0);
@@ -42,7 +43,7 @@ void setup_system(void){
 	// 48MHz main clock setup
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLB |= 0x20;// Use GCLK as the source and setup clock division
 	OSCCTRL_REGS->OSCCTRL_DPLLPRESC = 0x0;// Divide output clock by 1
-	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 750;// Current max value I can get out of PLL
+	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 1400;// Current max value I can get out of PLL
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x4) != 0);
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLA = 0x2;// Enable PLL Output
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x2) != 0);
@@ -56,7 +57,7 @@ void setup_system(void){
 	GCLK_REGS->GCLK_GENCTRL[0] = 0x108;// Change cpu clock from internal clock to PLL
 	OSCCTRL_REGS->OSCCTRL_OSC16MCTRL |= 0xC;// Setup internal oscillator speed to 16MHz
 	
-	SystemCoreClock = 26500000;// Current max freq. I could achieve
+	SystemCoreClock = 48000000;// Current max freq. I could achieve
 	
 	// Real-time clock setup
 	setup_rtc();

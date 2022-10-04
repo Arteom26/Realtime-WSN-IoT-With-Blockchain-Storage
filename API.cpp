@@ -306,10 +306,29 @@ bool Smartmesh_API::getNetworkConfig(){
 }
 
 bool Smartmesh_API::setJoinKey(uint8_t *jkey){
-	init_packet(0, SET_COMMON_JKEY);
+	init_packet(16, SET_COMMON_JKEY);
 	memcpy(send_data+5, jkey, 16);
 	checksumData(START_CHECKSUM, send_data, 20);
 	sendUart->send_array(send_data, 24);
+
+	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::getMoteConfigFromMoteId(uint16_t moteid){
+	init_packet(2, GET_MOTE_CFG_BY_ID);
+	memcpy(send_data+5, &moteid, 2);
 	
+	checksumData(START_CHECKSUM, send_data, 6);
+	sendUart->send_array(send_data, 10);
+	
+	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::getMoteInfo(uint8_t *mac_address){
+	init_packet(8, GET_MOTE_INFO);
+	memcpy(send_data+5, mac_address, 8);
+	
+	checksumData(START_CHECKSUM, send_data, 12);
+	sendUart->send_array(send_data, 16);
 	return CMD_SUCCESS;
 }

@@ -19,10 +19,24 @@ UART::UART(sercom_registers_t *port, int baudrate){
 		PORT_REGS->GROUP[0].PORT_PINCFG[18] = 0x1;
 		PORT_REGS->GROUP[0].PORT_PMUX[8] = 0x3;
 		PORT_REGS->GROUP[0].PORT_PMUX[9] = 0x3;
+		NVIC->IP[2] |= (192 << 8);
+		NVIC->ISER[0] |= (1 << 9);
+		NVIC->ICPR[0] |= (1 << 9);
+	}else if(port == SERCOM2_REGS){
+		dma_channel_id = 3;
+		PORT_REGS->GROUP[0].PORT_PINCFG[12] = 0x1;
+		PORT_REGS->GROUP[0].PORT_PINCFG[14] = 0x1;
+		PORT_REGS->GROUP[0].PORT_PMUX[6] = 0x3;
+		PORT_REGS->GROUP[0].PORT_PMUX[7] = 0x3;
+		NVIC->IP[2] |= (192 << 16);
+		NVIC->ISER[0] |= (1 << 10);
+		NVIC->ICPR[0] |= (1 << 10);
 	}
 
 	// UART interface setup w/ proper baud rate
 	GCLK_REGS->GCLK_PCHCTRL[18] = 0x42;// Enable UART clock
+	GCLK_REGS->GCLK_PCHCTRL[19] = 0x42;// Enable UART clock
+	GCLK_REGS->GCLK_PCHCTRL[20] = 0x42;// Enable UART clock
 	UART_port->SERCOM_CTRLA = 0x40010004;// Internal clock => SERCOM_PAD[2] TX, SERCOM_PAD[0] RX(SERCOM0 PA4 and PA6)
 	UART_port->SERCOM_CTRLB |= 0x30000;// Enable tx and rx pins
 	UART_port->SERCOM_BAUD = 57987;// Always set to 115200 for now

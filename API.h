@@ -197,6 +197,12 @@ typedef struct{
 	uint8_t routing;
 }mote_config_from_id;
 
+// Netork configuration struct
+typedef struct{
+	uint8_t rc_code;
+	
+}network_config;
+
 #define START_CHECKSUM 0xFFFF
 
 static uint16_t fcstab[256] = {
@@ -255,7 +261,8 @@ class Smartmesh_API{
 		bool setNetworkConfig(uint16_t network_id);
 		bool getNetworkConfig(void);
 		bool setJoinKey(uint8_t *jkey);
-    
+    bool getMoteConfigFromMoteId(uint16_t moteid);
+		bool getMoteInfo(uint8_t *mac_address);
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
     uint8_t mgrSeqNum;
