@@ -398,6 +398,26 @@
               <FileType>8</FileType>
               <FilePath>.\system_setup.cpp</FilePath>
             </File>
+            <File>
+              <FileName>bluetooth.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\bluetooth.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\bluetooth.h</FilePath>
+            </File>
+            <File>
+              <FileName>SendingData.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\SendingData.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SendingData.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SendingData.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -449,6 +469,9 @@
               <FilePath>.\API.h</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>Ethereum</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

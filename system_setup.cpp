@@ -57,7 +57,7 @@ void setup_system(void){
 	GCLK_REGS->GCLK_GENCTRL[0] = 0x108;// Change cpu clock from internal clock to PLL
 	OSCCTRL_REGS->OSCCTRL_OSC16MCTRL |= 0xC;// Setup internal oscillator speed to 16MHz
 	
-	SystemCoreClock = 48000000;// Current max freq. I could achieve
+	SystemCoreClock = 48000000;
 	
 	// Real-time clock setup
 	setup_rtc();
@@ -68,12 +68,18 @@ void setup_system(void){
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_BAUD;
 	*desc++ = 0x30000100;
 	*desc++ = 0x00000000;
-	for(int i = 0;i < 3;i++){// SERCOM descriptors setup
 	*desc++ = 0x01000401;// Channel 1 descriptor
 	*desc++ = 0x30000000;
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_DATA;
 	*desc++ = 0x00000000;
-	}
+	*desc++ = 0x01000401;// Channel 2 descriptor
+	*desc++ = 0x30000000;
+	*desc++ = (uint32_t)&SERCOM1_REGS->USART_INT.SERCOM_DATA;
+	*desc++ = 0x00000000;
+	*desc++ = 0x01000401;// Channel 3 descriptor
+	*desc++ = 0x30000000;
+	*desc++ = (uint32_t)&SERCOM2_REGS->USART_INT.SERCOM_DATA;
+	*desc++ = 0x00000000;
 	*desc++ = 0x01000C01;// Channel 4 descriptor
 	*desc++ = (uint32_t)&SERCOM0_REGS->USART_INT.SERCOM_BAUD;
 	*desc++ = 0x30000100;
@@ -89,7 +95,9 @@ void setup_system(void){
 	DMAC_REGS->DMAC_CHCTRLB = 0x60;// Channel 0 config
 	DMAC_REGS->DMAC_CHID = 0x1;// Set to channel 1
 	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
-	DMAC_REGS->DMAC_CHID = 0x4;// Set to channel 1
+	DMAC_REGS->DMAC_CHID = 0x2;// Set to channel 2
+	DMAC_REGS->DMAC_CHCTRLB = 0x800460;
+	DMAC_REGS->DMAC_CHID = 0x4;// Set to channel 4
 	DMAC_REGS->DMAC_CHCTRLB = 0x60;
 }
 #endif

@@ -158,6 +158,16 @@ uint8_t Smartmesh_API::packetType(uint8_t *data){
 	return *data;
 }
 
+/**
+	\brief Parse a data notification that come in
+
+	\description Parses a data notification from packet form to a struct where the data can be more easily
+								accessed and manipulated. ALL data is copied in big endian format
+
+	\params data - array of bytes recieved
+
+	\retval bool - CMD_SUCCESS/CMD_FAIL
+**/
 bool Smartmesh_API::parseDataNotification(data_notif *notif, uint8_t *data){
 	uint8_t *dataOriginal = data;
 	data+=2;
@@ -296,6 +306,7 @@ bool Smartmesh_API::setNetworkConfig(uint16_t network_id){
 	return CMD_SUCCESS;
 }
 
+// Gets the current network configuration
 bool Smartmesh_API::getNetworkConfig(){
 	init_packet(0, GET_NET_CONFIG);
 	
@@ -305,6 +316,7 @@ bool Smartmesh_API::getNetworkConfig(){
 	return CMD_SUCCESS;
 }
 
+// Set the join key of the network manager
 bool Smartmesh_API::setJoinKey(uint8_t *jkey){
 	init_packet(16, SET_COMMON_JKEY);
 	memcpy(send_data+5, jkey, 16);
@@ -314,6 +326,7 @@ bool Smartmesh_API::setJoinKey(uint8_t *jkey){
 	return CMD_SUCCESS;
 }
 
+// Gets the mote configuration from its mote id
 bool Smartmesh_API::getMoteConfigFromMoteId(uint16_t moteid){
 	init_packet(2, GET_MOTE_CFG_BY_ID);
 	memcpy(send_data+5, &moteid, 2);
@@ -324,11 +337,37 @@ bool Smartmesh_API::getMoteConfigFromMoteId(uint16_t moteid){
 	return CMD_SUCCESS;
 }
 
+// Get mote information from its mac address
 bool Smartmesh_API::getMoteInfo(uint8_t *mac_address){
 	init_packet(8, GET_MOTE_INFO);
 	memcpy(send_data+5, mac_address, 8);
 	
 	checksumData(START_CHECKSUM, send_data, 12);
 	sendUart->send_array(send_data, 16);
+	
+	return CMD_SUCCESS;
+}
+
+// Parses the get mote info command
+bool Smartmesh_API::parseGetMoteInfo(mote_info *info, uint8_t *data){
+	if(*(data+5) != RC_OK)
+		return CMD_FAIL;
+	
+	// Copy the data over to the struct
+	memcpy((uint8_t*)&info->rc_code, data+=5, sizeof(info->rc_code));
+	memcpy((uint8_t*)&info->mac_address, data+=sizeof(info->rc_code), sizeof(info->mac_address));
+	memcpy((uint8_t*)&info->state, data+=sizeof(info->mac_address), sizeof(info->state));
+	memcpy((uint8_t*)&info->numNbrs, data+=sizeof(info->state), sizeof(info->numNbrs));
+	memcpy((uint8_t*)&info->numGoodNbrs, data+=sizeof(info->numNbrs), sizeof(info->numGoodNbrs));
+	memcpy((uint8_t*)&info->requestedBw, data+=sizeof(info->numGoodNbrs), sizeof(info->requestedBw));
+	memcpy((uint8_t*)&info->totalNeededBw, data+=sizeof(info->requestedBw), sizeof(info->totalNeededBw));
+	memcpy((uint8_t*)&info->assignedBw, data+=sizeof(info->totalNeededBw), sizeof(info->assignedBw));
+	memcpy((uint8_t*)&info->packetsReceived, data+=sizeof(info->assignedBw), sizeof(info->packetsReceived));
+	memcpy((uint8_t*)&info->packetsLost, data+=sizeof(info->packetsReceived), sizeof(info->packetsLost));
+	memcpy((uint8_t*)&info->avgLatency, data+=sizeof(info->packetsLost), sizeof(info->avgLatency));
+	memcpy((uint8_t*)&info->stateTime, data+=sizeof(info->avgLatency), sizeof(info->stateTime));
+	memcpy((uint8_t*)&info->numJoins, data+=sizeof(info->stateTime), sizeof(info->numJoins));
+	memcpy((uint8_t*)&info->hopDepth, data+=sizeof(info->numJoins), sizeof(info->hopDepth));
+	
 	return CMD_SUCCESS;
 }

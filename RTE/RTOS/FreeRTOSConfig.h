@@ -47,6 +47,10 @@
 #include "system_saml21.h"
 #endif
 
+#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for(;;); }
+
+#define CONFIG_ASSERT 1
+
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
 //  <o>Minimal stack size [words] <0-65535>
 //  <i> Stack for idle task and default task stack in words.
@@ -56,7 +60,7 @@
 //  <o>Total heap size [bytes] <0-0xFFFFFFFF>
 //  <i> Heap memory size in bytes.
 //  <i> Default: 8192
-#define configTOTAL_HEAP_SIZE                   ((size_t)8192)
+#define configTOTAL_HEAP_SIZE                   ((size_t)16384)
 
 //  <o>Kernel tick frequency [Hz] <0-0xFFFFFFFF>
 //  <i> Kernel tick rate in Hz.
@@ -81,7 +85,7 @@
 //  <o>Preemption interrupt priority
 //  <i> Maximum priority of interrupts that are safe to call FreeRTOS API.
 //  <i> Default: 16
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY    1
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY    0b01000000
 
 //  <q>Use time slicing
 //  <i> Enable setting to use timeslicing.
@@ -232,7 +236,7 @@
 #define configUSE_16_BIT_TICKS                  0
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION 0
 #define configMAX_PRIORITIES                    56
-#define configKERNEL_INTERRUPT_PRIORITY         255
+#define configKERNEL_INTERRUPT_PRIORITY         192
 
 /* Defines that include FreeRTOS functions which implement CMSIS RTOS2 API. Do not change! */
 #define INCLUDE_xEventGroupSetBitsFromISR       1

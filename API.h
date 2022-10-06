@@ -6,8 +6,9 @@
 #include <string.h>
 #include "SERCOM.h"
 
+// API and firmware versions
 #define API_APP_VER 4
-#define SW_VER 143
+#define SW_VER 143// (1.43)
 
 // Command Defines
 #define USR_HELLO 0x01
@@ -197,14 +198,30 @@ typedef struct{
 	uint8_t routing;
 }mote_config_from_id;
 
-// Netork configuration struct
+// Network configuration struct
 typedef struct{
 	uint8_t rc_code;
-	
+	uint16_t networkId;
+	uint8_t apTxPower;
+	uint8_t frameProfile;
+	uint16_t maxMotes;
+	uint16_t baseBandwidth;
+	uint8_t downFrameMultVal;
+	uint8_t numParents;
+	uint8_t ccaMode;
+	uint16_t channelList;
+	uint8_t autoStartNetwork;
+	uint8_t locMode;
+	uint8_t bbMode;
+	uint8_t bbSize;
+	uint8_t isRadioTest;
+	uint16_t bwMult;
+	uint8_t oneChannel;
 }network_config;
 
-#define START_CHECKSUM 0xFFFF
+#define START_CHECKSUM 0xFFFF// Start value for a new FCS
 
+// Lookup table for the 16-bit FCS
 static uint16_t fcstab[256] = {
 	0x0000, 0x1189, 0x2312, 0x329b, 0x4624, 0x57ad, 0x6536, 0x74bf,
   0x8c48, 0x9dc1, 0xaf5a, 0xbed3, 0xca6c, 0xdbe5, 0xe97e, 0xf8f7,
@@ -263,6 +280,7 @@ class Smartmesh_API{
 		bool setJoinKey(uint8_t *jkey);
     bool getMoteConfigFromMoteId(uint16_t moteid);
 		bool getMoteInfo(uint8_t *mac_address);
+		bool parseGetMoteInfo(mote_info *info, uint8_t *data);
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
     uint8_t mgrSeqNum;

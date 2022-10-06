@@ -11,6 +11,7 @@
 #define UART_BUFFER_SIZE 128
 
 extern SemaphoreHandle_t dma_in_use;
+extern SemaphoreHandle_t bluetoothInUse;
 
 class UART{
 	public:

@@ -6,6 +6,8 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
+#include "bluetooth.h"
+#include <string>
 
 // Global variables
 bool startFlag = false;
@@ -16,12 +18,14 @@ uint8_t smartmeshData[130];
 UART api_usart = UART(SERCOM0_REGS, 115200);
 UART bluetooth = UART(SERCOM1_REGS, 115200);
 Smartmesh_API api = Smartmesh_API(&api_usart);
-SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 
+// RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(32, sizeof(uint8_t));
-SemaphoreHandle_t dataRecieved = xSemaphoreCreateBinary();
-SemaphoreHandle_t configWasGot = xSemaphoreCreateBinary();
-SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();
+SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
+SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
+SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
+SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
+SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
 // Checksum verification for interrupt handler
 uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len){
@@ -55,7 +59,7 @@ void parseSmartmeshData(void* unused){
 	switch(packetType){
 		case 0x2:
 			//api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
-			api.getNetworkInfo();
+			api.setJoinKey(NULL);
 			connectedToManager = true;
 			break;
 		case 0x3:// No communication was setup
@@ -69,7 +73,7 @@ void parseSmartmeshData(void* unused){
 		case 0x40:
 			network_info info;
 			api.parseNetworkInfo(&info, buffer);
-			xSemaphoreGive(configWasGot);
+			xSemaphoreGive(getNetworkInfo);// Network info has been recieved
 			break;
 		default:
 			break;
@@ -79,66 +83,16 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
+	xSemaphoreGive(dma_in_use);// DMA can now be accessed
+	xSemaphoreGive(bluetoothInUse);
+	
+	api.mgr_init();// Initialize connection with the network manager
+	
 	while(1){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
 		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 6, NULL);
-	}
-}
-
-// This task will parse any data recived thorugh bluetooth
-void bluetoothParse(void* unused){
-	uint8_t recieved_data;
-	
-	while(1){
-		xQueueReceive(bluetoothData, &recieved_data, portMAX_DELAY);// Wait for data to come in
-		uint16_t motes;
-		switch(recieved_data){
-			case 'A':// Network ID recieved
-				uint8_t netid[2];
-				xQueueReceive(bluetoothData, &netid[0], portMAX_DELAY);
-				xQueueReceive(bluetoothData, &netid[1], portMAX_DELAY);
-				api.setNetworkConfig((uint16_t)(netid[1]|netid[0]<<8));// Setup the network config
-				bluetooth._printf("Connected!\n");
-				break;
-			case 'B':// Setup common join key
-				uint8_t jkey[16];
-				for(int i = 0;i < 16;i++)
-					xQueueReceive(bluetoothData, &netid[i], portMAX_DELAY);// Get the joinkey
-				api.setJoinKey(jkey);
-				bluetooth._printf("Join Key Set!");
-				break;
-			case 'C':// Get the mote list
-				api.getNetworkConfig();
-				xSemaphoreTake(configWasGot, portMAX_DELAY);// Wait for data to be ready
-				motes = (smartmeshData[6] << 8)|smartmeshData[7];
-				for(int i = 1;i <= motes;i++){// Step 2 => get all the mote mac addresses
-					api.getMoteConfigFromMoteId(i);
-					xSemaphoreTake(moteConfigWasGotFromID, portMAX_DELAY);
-					uint64_t mac_address = ((uint64_t)smartmeshData[6] << 56)|((uint64_t)smartmeshData[7] << 48)|
-					((uint64_t)smartmeshData[8] << 40)|((uint64_t)smartmeshData[9] << 32)|(smartmeshData[10] << 24)|
-					(smartmeshData[11] << 16)|(smartmeshData[12] << 8)|smartmeshData[13];
-					bluetooth._printf("Mac Address: %08X\n", mac_address);
-				}
-				break;
-			case 'D':// Reset Statistics
-				api.clearStatistics();
-				bluetooth._printf("Statistics Cleared!\n");
-				break;
-			case 'E':// Get the current network configuration
-				api.getNetworkConfig();
-				xSemaphoreTake(configWasGot, portMAX_DELAY);// Wait for data to be ready
-				network_info info;
-				api.parseNetworkInfo(&info, smartmeshData);
-				bluetooth._printf("Motes Connected: %d\n", info.num_motes);
-				bluetooth._printf("Latency: %d\n", info.latency);
-				bluetooth._printf("IPV6: %08X",info.ipv6AddrHigh);
-				bluetooth._printf("%08X\n",info.ipv6AddrLow);
-				break;
-			default:
-				break;
-		}
 	}
 }
 
@@ -149,17 +103,18 @@ void bluetoothParse(void* unused){
 	* SERCOM2 for GSM module
 */
 int main(){
-	xTaskCreate(setupParse, "Parse", 64, NULL, 6, NULL);
 	setup_system();// Setup all peripherals
-	xSemaphoreGive(dma_in_use);// DMA can now be accessed
+	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
+	xTaskCreate(bluetoothParse, "BT Parse", 128, NULL, 10, NULL);
 	api_usart = UART(SERCOM0_REGS, 115200);
+	bluetooth = UART(SERCOM1_REGS, 115200);
 	api = Smartmesh_API(&api_usart);
-	api.mgr_init();// Initialize connection with the network manager
+	
+	//bluetooth.send_array((uint8_t*)"Initialize\n", 10);
 	
 	vTaskStartScheduler();
 		
-	for(;;);
-	return 0;
+	for(;;);// SHOULD NOT REACH THIS POINT
 }
 
 //************************INTERRUPT HANDLERS**************************//
@@ -193,7 +148,7 @@ extern "C"{
 			length++;
 		}
 		
-		if(length > 133)// Packet failed to be found
+		if(length > 133)// Packet failed to be found => reset and search for a packet
 			startFlag = false;
 		
 		NVIC->ICPR[0] |= (1 << 8);// Clear the interrupt
@@ -201,7 +156,7 @@ extern "C"{
 	
 	void SERCOM1_Handler(void){// Bluetooth handler
 		uint8_t data = SERCOM1_REGS->USART_INT.SERCOM_DATA;
-		xQueueSendFromISR(bluetoothData, &data, NULL);
+		xQueueSendFromISR(bluetoothData, &data, NULL);// Send data to the queue
 		
 		NVIC->ICPR[0] |= (1 << 9);// Clear the interrupt
 	}
