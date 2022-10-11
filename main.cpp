@@ -25,6 +25,7 @@ SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
+SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
 // Checksum verification for interrupt handler
@@ -57,20 +58,32 @@ void parseSmartmeshData(void* unused){
 	// TODO: finish parsing section
 	uint8_t packetType = buffer[2];
 	switch(packetType){
-		case 0x2:
-			//api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
-			api.setJoinKey(NULL);
+		case MGR_HELLO_RESPONSE:
+			bluetooth._printf("Manager Connection Initialized!\n");
+			api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
 			connectedToManager = true;
 			break;
-		case 0x3:// No communication was setup
+		
+		case MGR_HELLO:// No communication was setup
+			connectedToManager = false;// No connection has been established
 			api.mgr_init();// Send hello packet
 			break;
-		case 0x14:// Notification packet recieved. TODO: parse the data in a seperate task
+		
+		case NOTIF:// Notification packet recieved. TODO: parse the data in a seperate task
 			break;
-		case 0x16:
-			bluetooth._printf("Setup!!\n\r");
+		
+		case SET_NTWK_CONFIG:
+			xSemaphoreGive(getNetworkConfig);
+		case SET_COMMON_JKEY:
+			bluetooth._printf("Rebooting...\n");
+			api.resetManager();// Reset the system
 			break;
-		case 0x40:
+		
+		case SUBSCRIBE:// Notifications were setup
+			bluetooth._printf("Subscribed to notifications!!\n");
+			break;
+		
+		case GET_NETWORK_INFO:// Network info data must be parsed
 			network_info info;
 			api.parseNetworkInfo(&info, buffer);
 			xSemaphoreGive(getNetworkInfo);// Network info has been recieved
@@ -83,9 +96,6 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
-	xSemaphoreGive(dma_in_use);// DMA can now be accessed
-	xSemaphoreGive(bluetoothInUse);
-	
 	api.mgr_init();// Initialize connection with the network manager
 	
 	while(1){
@@ -109,8 +119,10 @@ int main(){
 	api_usart = UART(SERCOM0_REGS, 115200);
 	bluetooth = UART(SERCOM1_REGS, 115200);
 	api = Smartmesh_API(&api_usart);
+	xSemaphoreGive(dma_in_use);// DMA can now be accessed
+	xSemaphoreGive(bluetoothInUse);
 	
-	//bluetooth.send_array((uint8_t*)"Initialize\n", 10);
+	bluetooth._printf("Initialized\n");
 	
 	vTaskStartScheduler();
 		
@@ -126,7 +138,8 @@ extern "C"{
 			length = 0;
 			startFlag = true;
 			txbuffer[length] = data;
-		}else if(startFlag && data == 0x7E){// Checksum to check if end of flag was found
+		}
+		else if(startFlag && data == 0x7E){// Checksum to check if end of flag was found
 			uint16_t check = verifyPacket(START_CHECKSUM, txbuffer, length - 2);
 			uint16_t currCheck = txbuffer[length - 1] | (txbuffer[length] << 8);
 			txbuffer[length+1] = data;
@@ -143,12 +156,13 @@ extern "C"{
 			startFlag = false;
 			if(check == currCheck)// Verification passed
 				xSemaphoreGiveFromISR(dataRecieved, NULL);
-		}else if(startFlag && data != 0x7E){// Copy to buffer
+		}
+		else if(startFlag && data != 0x7E){// Copy to buffer
 			txbuffer[length+1] = data;
 			length++;
 		}
 		
-		if(length > 133)// Packet failed to be found => reset and search for a packet
+		if(length > 133)// Packet failed to be found => reset and search for a new packet
 			startFlag = false;
 		
 		NVIC->ICPR[0] |= (1 << 8);// Clear the interrupt
@@ -156,7 +170,7 @@ extern "C"{
 	
 	void SERCOM1_Handler(void){// Bluetooth handler
 		uint8_t data = SERCOM1_REGS->USART_INT.SERCOM_DATA;
-		xQueueSendFromISR(bluetoothData, &data, NULL);// Send data to the queue
+		xQueueSendFromISR(bluetoothData, &data, NULL);// Send data to the bluetooth queue
 		
 		NVIC->ICPR[0] |= (1 << 9);// Clear the interrupt
 	}

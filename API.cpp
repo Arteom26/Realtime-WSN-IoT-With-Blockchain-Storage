@@ -276,11 +276,9 @@ bool Smartmesh_API::parseHardwareInfo(system_info *info, uint8_t *data){
 }
 
 // Setup network manager
-bool Smartmesh_API::setNetworkConfig(uint16_t network_id){
+bool Smartmesh_API::setNetworkConfig(uint8_t *network_id){
 	init_packet(21, SET_NTWK_CONFIG);
-	//memcpy(send_data + 5, &network_id, 2);
-	send_data[5] = 1;
-	send_data[6] = 8;
+	memcpy(send_data + 5, network_id, 2);
 	send_data[7] = 8;// Tx power(8dbm)
 	send_data[8] = 1;// Frame profile
 	send_data[9] = 0;// Max motes
@@ -370,4 +368,12 @@ bool Smartmesh_API::parseGetMoteInfo(mote_info *info, uint8_t *data){
 	memcpy((uint8_t*)&info->hopDepth, data+=sizeof(info->numJoins), sizeof(info->hopDepth));
 	
 	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::resetManager(){
+	init_packet(9, RESET_CMD);
+	memset(send_data + 5, 0, 9);
+	
+	checksumData(START_CHECKSUM, send_data, 13);
+	sendUart->send_array(send_data, 17);
 }

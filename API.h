@@ -275,12 +275,13 @@ class Smartmesh_API{
 		bool clearStatistics(void);
 		bool getHardwareInfo(void);
 		bool parseHardwareInfo(system_info *info, uint8_t *data);
-		bool setNetworkConfig(uint16_t network_id);
+		bool setNetworkConfig(uint8_t *network_id);
 		bool getNetworkConfig(void);
 		bool setJoinKey(uint8_t *jkey);
     bool getMoteConfigFromMoteId(uint16_t moteid);
 		bool getMoteInfo(uint8_t *mac_address);
 		bool parseGetMoteInfo(mote_info *info, uint8_t *data);
+		bool resetManager(void);
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
     uint8_t mgrSeqNum;

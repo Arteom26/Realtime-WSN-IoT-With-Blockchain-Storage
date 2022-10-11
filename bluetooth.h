@@ -13,6 +13,7 @@ extern UART bluetooth;
 extern Smartmesh_API api;
 extern uint8_t smartmeshData[130];
 extern SemaphoreHandle_t getNetworkInfo;
+extern SemaphoreHandle_t getNetworkConfig;
 extern SemaphoreHandle_t moteConfigWasGotFromID;
 
 void bluetoothParse(void* unused);
