@@ -1,0 +1,9 @@
+.\objects\uecc.o: uECC.c
+.\objects\uecc.o: uECC.h
+.\objects\uecc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uecc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\uecc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\uecc.o: uECC_vli.h
+.\objects\uecc.o: types.h
+.\objects\uecc.o: platform-specific.inc
+.\objects\uecc.o: curve-specific.inc

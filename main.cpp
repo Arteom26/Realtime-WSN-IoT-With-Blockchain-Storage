@@ -8,6 +8,7 @@
 #include "semphr.h"
 #include "bluetooth.h"
 #include <string>
+#include "uECC.h"
 
 // Global variables
 bool startFlag = false;
@@ -123,6 +124,8 @@ int main(){
 	xSemaphoreGive(bluetoothInUse);
 	
 	bluetooth._printf("Initialized\n");
+	
+	uECC_sign_deterministic(NULL, NULL, 0, NULL, NULL, NULL, NULL);
 	
 	vTaskStartScheduler();
 		
