@@ -97,6 +97,8 @@ void setup_system(void){
 	DMAC_REGS->DMAC_CHCTRLB = 0x800260;
 	DMAC_REGS->DMAC_CHID = 0x2;// Set to channel 2
 	DMAC_REGS->DMAC_CHCTRLB = 0x800460;
+	DMAC_REGS->DMAC_CHID = 0x3;// Set to channel 3
+	DMAC_REGS->DMAC_CHCTRLB = 0x800660;
 	DMAC_REGS->DMAC_CHID = 0x4;// Set to channel 4
 	DMAC_REGS->DMAC_CHCTRLB = 0x60;
 }

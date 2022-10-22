@@ -12,6 +12,7 @@
 
 extern SemaphoreHandle_t dma_in_use;
 extern SemaphoreHandle_t bluetoothInUse;
+extern SemaphoreHandle_t gsm_in_use;
 
 class UART{
 	public:

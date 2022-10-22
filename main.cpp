@@ -7,7 +7,10 @@
 #include "queue.h"
 #include "semphr.h"
 #include "bluetooth.h"
+#include "gsm_usart.h"
 #include <string>
+
+#define DELAY 200
 
 // Global variables
 bool startFlag = false;
@@ -17,12 +20,22 @@ uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
 UART api_usart = UART(SERCOM0_REGS, 115200);
 UART bluetooth = UART(SERCOM1_REGS, 115200);
+UART gsm_usart = UART(SERCOM2_REGS, 115200);
+
+
 Smartmesh_API api = Smartmesh_API(&api_usart);
 
 // RTOS Semaphores and queues
-QueueHandle_t bluetoothData = xQueueCreate(32, sizeof(uint8_t));
+QueueHandle_t bluetoothData = xQueueCreate(64, sizeof(uint8_t));
+QueueHandle_t gsmData = xQueueCreate(64, sizeof(uint8_t));
+
+
+
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
+SemaphoreHandle_t gsm_in_use = xSemaphoreCreateBinary();
+
+
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
@@ -104,6 +117,60 @@ void setupParse(void* unused){
 		// Create a new instance of smartmesh data parsing task
 		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 6, NULL);
 	}
+	
+//	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
+//	vTaskDelay(100);
+//	gsm_usart._printf("AT+CIICR\r\n");
+//	vTaskDelay(100);
+//	gsm_usart._printf("AT+CNACT=1,\"hologram\"\r\n");
+//	vTaskDelay(100);
+//	gsm_usart._printf("AT+CNACT?\r\n");
+//	vTaskDelay(100);
+	
+
+//	gsm_usart._printf("\r\nAT+SHDISC\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+CSSLCFG=\"sslversion\",1,3\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHSSL=1,\"\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHCONF=\"URL\",\"https://rinkeby-light.eth.linkpool.io\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHCONF=\"BODYLEN\",1024\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHCONF=\"HEADERLEN\",350\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHCONN\r\n");
+//	vTaskDelay(6000);
+//	gsm_usart._printf("AT+SHCHEAD\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHAHEAD=\"Content-Type\",\"application/json\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHAHEAD=\"Connection\",\"keep-alive\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHAHEAD=\"Accept\",\"*/*\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHAHEAD=\"Cache-control\",\"no-cache\"\r\n");
+//	vTaskDelay(DELAY);
+//	gsm_usart._printf("AT+SHBOD=\"{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"method\\\":\\\"web3_clientVersion\\\",\\\"params\\\":[],\\\"id\\\":\\\"1\\\"}\",68\r\n");
+//	vTaskDelay(500);
+
+
+
+	//gsm_usart._printf("AT+SHBOD?\r\n");
+//	vTaskDelay(500);
+//	gsm_usart._printf("AT+SHREQ=\"/post\",3\r\n");
+//	vTaskDelay(10000);
+	//gsm_usart._printf("AT+SHREAD=0,118\r\n");
+	//vTaskDelay(100000);
+	
+	//for(int i = 0;i < 10000000;i++);
+	/*gsm_usart._printf("AT+SHCONF=\"URL\",\"https://rinkeby-light.eth.linkpool.io\"\r\n");
+	gsm_usart._printf("AT+SHCONN\r\n");
+	for(int i = 0;i < 4000000;i++);
+	gsm_usart._printf("AT+SHCHEAD\r\n");
+	gsm_usart._printf("AT+SHAHEAD=\"content-type\",\"application/json\"\r\n");*/
+	
 }
 
 /*
@@ -116,13 +183,28 @@ int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 128, NULL, 10, NULL);
+	xTaskCreate(gsmParse, "GSM Parse", 128, NULL, 10, NULL);
+	
 	api_usart = UART(SERCOM0_REGS, 115200);
 	bluetooth = UART(SERCOM1_REGS, 115200);
+	gsm_usart = UART(SERCOM2_REGS, 115200);
+	
 	api = Smartmesh_API(&api_usart);
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
+	xSemaphoreGive(gsm_in_use);
 	
-	bluetooth._printf("Initialized\n");
+//	for (int i = 5; i < 250; i++)
+//	gsm_usart._printf("%d ", i);
+//	
+//	for (int i = 250; i < 500; i++)
+//	bluetooth._printf("%d ", i);
+	
+	//gsm_usart._printf("AT\r\n");
+//	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
+//	gsm_usart._printf("AT+CIICR\r\n");
+//	gsm_usart._printf("AT+CNACT=1,\"hologram\"\r\n");
+//	gsm_usart._printf("AT\r\n");
 	
 	vTaskStartScheduler();
 		
@@ -176,6 +258,8 @@ extern "C"{
 	}
 	
 	void SERCOM2_Handler(void){// GSM Module handler
+		uint8_t data = SERCOM2_REGS->USART_INT.SERCOM_DATA;
+		xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }
