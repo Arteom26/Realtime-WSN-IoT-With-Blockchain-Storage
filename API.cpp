@@ -377,3 +377,40 @@ bool Smartmesh_API::resetManager(){
 	checksumData(START_CHECKSUM, send_data, 13);
 	sendUart->send_array(send_data, 17);
 }
+
+bool Smartmesh_API::parseNetworkConfig(network_config *config, uint8_t *data){
+	if(data[5] != RC_OK)
+		return CMD_FAIL;
+	
+	// Copy the data over to the struct
+	memcpy((uint8_t*)&config->rc_code, data+=5, sizeof(config->rc_code));
+	memcpy((uint8_t*)&config->networkId, data+=sizeof(config->rc_code), sizeof(config->networkId));
+	memcpy((uint8_t*)&config->apTxPower, data+=sizeof(config->networkId), sizeof(config->apTxPower));
+	memcpy((uint8_t*)&config->frameProfile, data+=sizeof(config->apTxPower), sizeof(config->frameProfile));
+	memcpy((uint8_t*)&config->maxMotes, data+=sizeof(config->frameProfile), sizeof(config->maxMotes));
+	memcpy((uint8_t*)&config->baseBandwidth, data+=sizeof(config->maxMotes), sizeof(config->baseBandwidth));
+	memcpy((uint8_t*)&config->downFrameMultVal, data+=sizeof(config->baseBandwidth), sizeof(config->downFrameMultVal));
+	memcpy((uint8_t*)&config->numParents, data+=sizeof(config->downFrameMultVal), sizeof(config->numParents));
+	memcpy((uint8_t*)&config->ccaMode, data+=sizeof(config->numParents), sizeof(config->ccaMode));
+	memcpy((uint8_t*)&config->channelList, data+=sizeof(config->ccaMode), sizeof(config->channelList));
+	memcpy((uint8_t*)&config->autoStartNetwork, data+=sizeof(config->channelList), sizeof(config->autoStartNetwork));
+	memcpy((uint8_t*)&config->locMode, data+=sizeof(config->autoStartNetwork), sizeof(config->locMode));
+	memcpy((uint8_t*)&config->bbMode, data+=sizeof(config->locMode), sizeof(config->bbMode));
+	memcpy((uint8_t*)&config->bbSize, data+=sizeof(config->bbMode), sizeof(config->bbSize));
+	memcpy((uint8_t*)&config->isRadioTest, data+=sizeof(config->bbSize), sizeof(config->isRadioTest));
+	memcpy((uint8_t*)&config->bwMult, data+=sizeof(config->isRadioTest), sizeof(config->bwMult));
+	memcpy((uint8_t*)&config->oneChannel, data+=sizeof(config->bwMult), sizeof(config->oneChannel));
+	
+	return CMD_SUCCESS;
+}
+
+bool Smartmesh_API::getMoteConfigFromMac(uint8_t *mac_addr){
+	init_packet(9, GET_MOTE_CONFIG);
+	memcpy(send_data+5, mac_addr, 8);
+	memset(send_data+13, 0, 1);
+	
+	checksumData(START_CHECKSUM, send_data, 13);
+	sendUart->send_array(send_data, 17);
+	
+	return CMD_SUCCESS;
+}

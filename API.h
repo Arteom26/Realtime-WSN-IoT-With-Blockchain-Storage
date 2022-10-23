@@ -282,6 +282,8 @@ class Smartmesh_API{
 		bool getMoteInfo(uint8_t *mac_address);
 		bool parseGetMoteInfo(mote_info *info, uint8_t *data);
 		bool resetManager(void);
+		bool parseNetworkConfig(network_config *config, uint8_t *data);
+		bool getMoteConfigFromMac(uint8_t *mac_addr);
   private:
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
     uint8_t mgrSeqNum;

@@ -8,7 +8,6 @@
 #include "semphr.h"
 #include "bluetooth.h"
 #include <string>
-#include "uECC.h"
 
 // Global variables
 bool startFlag = false;
@@ -29,7 +28,7 @@ SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info pack
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
-// Checksum verification for interrupt handler
+// Checksum verification for interrupt handler(bypassing first byte)
 uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len){
 	data++;
 	while(len--)
@@ -71,13 +70,16 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case NOTIF:// Notification packet recieved. TODO: parse the data in a seperate task
+			bluetooth._printf("Recieved Notification\n");
 			break;
 		
 		case SET_NTWK_CONFIG:
-			xSemaphoreGive(getNetworkConfig);
+			//xSemaphoreGive(getNetworkConfig);
+			break;
+		
 		case SET_COMMON_JKEY:
 			bluetooth._printf("Rebooting...\n");
-			api.resetManager();// Reset the system
+			//api.resetManager();// Reset the system
 			break;
 		
 		case SUBSCRIBE:// Notifications were setup
@@ -89,6 +91,23 @@ void parseSmartmeshData(void* unused){
 			api.parseNetworkInfo(&info, buffer);
 			xSemaphoreGive(getNetworkInfo);// Network info has been recieved
 			break;
+		
+		case GET_NET_CONFIG:
+			xSemaphoreGive(getNetworkConfig);
+			break;
+		
+		case GET_MOTE_INFO:
+			bluetooth._printf("Got mote information!\n");
+			break;
+		
+		case GET_MOTE_CONFIG:
+			bluetooth._printf("Got mote configuration\n");
+			break;
+		
+		case GET_MOTE_CFG_BY_ID:
+			xSemaphoreGive(moteConfigWasGotFromID);
+			break;
+		
 		default:
 			break;
 	}
@@ -115,8 +134,8 @@ void setupParse(void* unused){
 */
 int main(){
 	setup_system();// Setup all peripherals
-	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
-	xTaskCreate(bluetoothParse, "BT Parse", 128, NULL, 10, NULL);
+	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
+	xTaskCreate(bluetoothParse, "BT Parse", 256, NULL, 10, NULL);
 	api_usart = UART(SERCOM0_REGS, 115200);
 	bluetooth = UART(SERCOM1_REGS, 115200);
 	api = Smartmesh_API(&api_usart);
@@ -124,8 +143,6 @@ int main(){
 	xSemaphoreGive(bluetoothInUse);
 	
 	bluetooth._printf("Initialized\n");
-	
-	uECC_sign_deterministic(NULL, NULL, 0, NULL, NULL, NULL, NULL);
 	
 	vTaskStartScheduler();
 		
@@ -173,6 +190,7 @@ extern "C"{
 	
 	void SERCOM1_Handler(void){// Bluetooth handler
 		uint8_t data = SERCOM1_REGS->USART_INT.SERCOM_DATA;
+		bluetooth._printf("%c",data);
 		xQueueSendFromISR(bluetoothData, &data, NULL);// Send data to the bluetooth queue
 		
 		NVIC->ICPR[0] |= (1 << 9);// Clear the interrupt

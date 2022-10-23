@@ -128,6 +128,3 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_traits.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdio
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_error.h
-.\objects\main.o: uECC.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -43,9 +43,11 @@ void bluetoothParse(void* unused){
 				api.getNetworkInfo();
 				xSemaphoreTake(getNetworkInfo, portMAX_DELAY);// Wait for data to be ready
 				motes = (smartmeshData[6] << 8)|smartmeshData[7];
-				bluetooth._printf("Number of Motes: %d", motes);// Print the number of motes to the GUI
-				for(int i = 1;i <= motes;i++){// Step 2 => get all the mote mac addresses
-					api.getMoteConfigFromMoteId(i);
+				bluetooth._printf("Number of Motes: %d\n", motes);// Print the number of motes to the GUI
+				if(motes == 0)// No motes are currently on the network
+					break;
+				for(int i = 0;i <= motes;i++){// Step 2 => get all the mote mac addresses
+					api.getMoteConfigFromMoteId(0);
 					xSemaphoreTake(moteConfigWasGotFromID, portMAX_DELAY);
 					uint64_t mac_address = ((uint64_t)smartmeshData[6] << 56)|((uint64_t)smartmeshData[7] << 48)|
 					((uint64_t)smartmeshData[8] << 40)|((uint64_t)smartmeshData[9] << 32)|(smartmeshData[10] << 24)|
@@ -77,15 +79,33 @@ void bluetoothParse(void* unused){
 				api.getNetworkConfig();
 				xSemaphoreTake(getNetworkConfig, portMAX_DELAY);
 				network_config config;
+				api.parseNetworkConfig(&config, smartmeshData);
 				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
-				bluetooth._printf("Network ID: %d\n", littleToBigEndian<uint16_t>(info.num_motes));
+				bluetooth._printf("Network ID: %d\n", littleToBigEndian<uint16_t>(config.networkId));
 				xSemaphoreGive(bluetoothInUse);
 				break;
 			
 			case 'G':// Get mote information
+				uint8_t mac_addr1[8];
+				for(int i = 0;i < 8;i++)
+					xQueueReceive(bluetoothData, &mac_addr1[i], portMAX_DELAY);// Get the joinkey
+				api.getMoteInfo(mac_addr1);
+				// TODO: add semaphore and parse
 				break;
 			
 			case 'H':// Get mote configuration(from mac address rather than mote id)
+				uint8_t mac_addr[8];
+				for(int i = 0;i < 8;i++)
+					xQueueReceive(bluetoothData, &mac_addr[i], portMAX_DELAY);// Get the joinkey
+				api.getMoteConfigFromMac(mac_addr);
+				// TODO: add semaphore and parse
+				break;
+			
+			case 'I':// Has a connection been established with the network manager
+				if(connectedToManager)
+					bluetooth._printf("Connection Established!\n");
+				else
+					bluetooth._printf("Connection Failed!\n");
 				break;
 			
 			default:// TODO: add improved default handling

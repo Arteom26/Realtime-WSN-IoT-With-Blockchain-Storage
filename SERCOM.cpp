@@ -45,16 +45,15 @@ UART::UART(sercom_registers_t *port, int baudrate){
 }
 
 int UART::_printf(const char *format, ...){
-	char **temp = (char**)0x30000300;// Memory location for _printf
+	char buffer[UART_BUFFER_SIZE];
 	
 	va_list args;
 	va_start(args, format);
 	
-	int done = vasprintf(temp, format, args);
+	int done = vsprintf(buffer, format, args);
+	
 	if(done > UART_BUFFER_SIZE)
 		return NULL;
-	
-	char *string = *temp;
 	
 	va_end(args);
 	xSemaphoreTake(dma_in_use, portMAX_DELAY);// Wait for dma regs to become available
@@ -63,7 +62,7 @@ int UART::_printf(const char *format, ...){
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
 	uint32_t *desc = (uint32_t*)(0x30000000 + 0x10*dma_channel_id);// If not send data
 	*desc++ = (done << 16)|0x0401;
-	*desc = (uint32_t)(string + done);// Source address end value
+	*desc = (uint32_t)(buffer + done);// Source address end value
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
 	xSemaphoreGive(dma_in_use);// Give back the semphore as done accessing the data
 	
