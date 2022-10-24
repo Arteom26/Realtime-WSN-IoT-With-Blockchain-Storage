@@ -84,7 +84,6 @@
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/wdt.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
-.\objects\cmsis_os2.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h
@@ -98,5 +97,4 @@
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_os2.h
-.\objects\cmsis_os2.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\cmsis_os2.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h

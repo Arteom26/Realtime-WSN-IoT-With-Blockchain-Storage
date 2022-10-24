@@ -76,8 +76,8 @@
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/usb.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/wdt.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
-.\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h
 .\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\sercom.o: .\RTE\RTOS\FreeRTOSConfig.h
@@ -85,7 +85,6 @@
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
 .\objects\sercom.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\sercom.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h
 .\objects\sercom.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h

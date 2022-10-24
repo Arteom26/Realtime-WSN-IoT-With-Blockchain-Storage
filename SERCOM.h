@@ -2,8 +2,8 @@
 #define __SERCOM_H
 
 #include "saml21g18b.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <stdint.h>
 #include "freertos.h"
 #include "semphr.h"

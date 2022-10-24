@@ -1,4 +1,5 @@
 #include "gsm_usart.h"
+#include "bluetooth.h"
 #include <string>
 #include <algorithm>
 
@@ -9,6 +10,6 @@ void gsmParse(void* unused){
 	
 	while(1){
 		xQueueReceive(gsmData, &recieved_data, portMAX_DELAY);// Wait for data to come in
-		gsm_usart._printf("%c", recieved_data);
+		bluetooth._printf("%c", recieved_data);
 	}
 }

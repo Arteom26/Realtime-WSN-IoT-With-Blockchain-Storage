@@ -22,7 +22,7 @@ void bluetoothParse(void* unused){
 	
 		while(1){
 		xQueueReceive(bluetoothData, &recieved_data, portMAX_DELAY);// Wait for data to come in
-		bluetooth._printf("%c", recieved_data);
+		gsm_usart._printf("%c", recieved_data);
 			
 	}
 }

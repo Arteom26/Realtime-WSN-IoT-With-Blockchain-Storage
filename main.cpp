@@ -109,15 +109,8 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
-	api.mgr_init();// Initialize connection with the network manager
 	
-	while(1){
-		xSemaphoreTake(dataRecieved, portMAX_DELAY);
-		
-		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 6, NULL);
-	}
-	
+		//gsm_usart._printf("AT\r\n");
 //	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
 //	vTaskDelay(100);
 //	gsm_usart._printf("AT+CIICR\r\n");
@@ -171,6 +164,12 @@ void setupParse(void* unused){
 	gsm_usart._printf("AT+SHCHEAD\r\n");
 	gsm_usart._printf("AT+SHAHEAD=\"content-type\",\"application/json\"\r\n");*/
 	
+	while(1){
+		xSemaphoreTake(dataRecieved, portMAX_DELAY);
+		
+		// Create a new instance of smartmesh data parsing task
+		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 6, NULL);
+	}
 }
 
 /*
@@ -194,17 +193,13 @@ int main(){
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(gsm_in_use);
 	
-//	for (int i = 5; i < 250; i++)
-//	gsm_usart._printf("%d ", i);
-//	
-//	for (int i = 250; i < 500; i++)
-//	bluetooth._printf("%d ", i);
 	
 	//gsm_usart._printf("AT\r\n");
 //	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
 //	gsm_usart._printf("AT+CIICR\r\n");
 //	gsm_usart._printf("AT+CNACT=1,\"hologram\"\r\n");
-//	gsm_usart._printf("AT\r\n");
+	
+	gsm_usart._printf("AT\r\n");
 	
 	vTaskStartScheduler();
 		
