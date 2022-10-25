@@ -119,41 +119,41 @@ void setupParse(void* unused){
 //	vTaskDelay(100);
 //	gsm_usart._printf("AT+CNACT?\r\n");
 //	vTaskDelay(100);
-	
+//	
 
-//	gsm_usart._printf("\r\nAT+SHDISC\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+CSSLCFG=\"sslversion\",1,3\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHSSL=1,\"\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHCONF=\"URL\",\"https://rinkeby-light.eth.linkpool.io\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHCONF=\"BODYLEN\",1024\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHCONF=\"HEADERLEN\",350\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHCONN\r\n");
-//	vTaskDelay(6000);
-//	gsm_usart._printf("AT+SHCHEAD\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHAHEAD=\"Content-Type\",\"application/json\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHAHEAD=\"Connection\",\"keep-alive\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHAHEAD=\"Accept\",\"*/*\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHAHEAD=\"Cache-control\",\"no-cache\"\r\n");
-//	vTaskDelay(DELAY);
-//	gsm_usart._printf("AT+SHBOD=\"{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"method\\\":\\\"web3_clientVersion\\\",\\\"params\\\":[],\\\"id\\\":\\\"1\\\"}\",68\r\n");
-//	vTaskDelay(500);
+	gsm_usart._printf("AT+SHDISC\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+CSSLCFG=\"sslversion\",1,3\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHSSL=1,\"\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHCONF=\"URL\",\"https://cloudflare-eth.com\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHCONF=\"BODYLEN\",1024\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHCONF=\"HEADERLEN\",350\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHCONN\r\n");
+	vTaskDelay(6000);
+	gsm_usart._printf("AT+SHCHEAD\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHAHEAD=\"Content-Type\",\"application/json\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHAHEAD=\"Connection\",\"keep-alive\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHAHEAD=\"Accept\",\"*/*\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHAHEAD=\"Cache-control\",\"no-cache\"\r\n");
+	vTaskDelay(DELAY);
+	gsm_usart._printf("AT+SHBOD=\"{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"method\\\":\\\"web3_clientVersion\\\",\\\"params\\\":[],\\\"id\\\":\\\"1\\\"}\",68\r\n");
+	vTaskDelay(500);
 
 
 
-	//gsm_usart._printf("AT+SHBOD?\r\n");
-//	vTaskDelay(500);
-//	gsm_usart._printf("AT+SHREQ=\"/post\",3\r\n");
-//	vTaskDelay(10000);
+	gsm_usart._printf("AT+SHBOD?\r\n");
+	vTaskDelay(500);
+	gsm_usart._printf("AT+SHREQ=\"/post\",3\r\n");
+	vTaskDelay(10000);
 	//gsm_usart._printf("AT+SHREAD=0,118\r\n");
 	//vTaskDelay(100000);
 	
@@ -199,7 +199,7 @@ int main(){
 //	gsm_usart._printf("AT+CIICR\r\n");
 //	gsm_usart._printf("AT+CNACT=1,\"hologram\"\r\n");
 	
-	gsm_usart._printf("AT\r\n");
+	//bluetooth._printf("Ready\r\n");
 	
 	vTaskStartScheduler();
 		

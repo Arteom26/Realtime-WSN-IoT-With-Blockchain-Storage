@@ -45,7 +45,7 @@ UART::UART(sercom_registers_t *port, int baudrate){
 }
 
 int UART::_printf(const char *format, ...){
-	static char buffer[128];
+	static char buffer[UART_BUFFER_SIZE];
 	
 	va_list args;
 	va_start(args, format);
