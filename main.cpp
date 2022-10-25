@@ -59,7 +59,7 @@ void parseSmartmeshData(void* unused){
 	uint8_t packetType = buffer[2];
 	switch(packetType){
 		case MGR_HELLO_RESPONSE:
-			bluetooth._printf("Manager Connection Initialized!\n");
+			//bluetooth._printf("Manager Connection Initialized!\n");
 			api.subscribe(0xFFFFFFFF,0xFFFFFFFF);// Subscribe to notifications
 			connectedToManager = true;
 			break;
@@ -78,12 +78,12 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case SET_COMMON_JKEY:
-			bluetooth._printf("Rebooting...\n");
+			//bluetooth._printf("Rebooting...\n");
 			//api.resetManager();// Reset the system
 			break;
 		
 		case SUBSCRIBE:// Notifications were setup
-			bluetooth._printf("Subscribed to notifications!!\n");
+			//bluetooth._printf("Subscribed to notifications!!\n");
 			break;
 		
 		case GET_NETWORK_INFO:// Network info data must be parsed
@@ -97,11 +97,11 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case GET_MOTE_INFO:
-			bluetooth._printf("Got mote information!\n");
+			//bluetooth._printf("Got mote information!\n");
 			break;
 		
 		case GET_MOTE_CONFIG:
-			bluetooth._printf("Got mote configuration\n");
+			//bluetooth._printf("Got mote configuration\n");
 			break;
 		
 		case GET_MOTE_CFG_BY_ID:
@@ -142,7 +142,7 @@ int main(){
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	
-	bluetooth._printf("Initialized\n");
+	//bluetooth._printf("XXXX");
 	
 	vTaskStartScheduler();
 		
@@ -190,7 +190,7 @@ extern "C"{
 	
 	void SERCOM1_Handler(void){// Bluetooth handler
 		uint8_t data = SERCOM1_REGS->USART_INT.SERCOM_DATA;
-		bluetooth._printf("%c",data);
+		//bluetooth._printf("%c",data);
 		xQueueSendFromISR(bluetoothData, &data, NULL);// Send data to the bluetooth queue
 		
 		NVIC->ICPR[0] |= (1 << 9);// Clear the interrupt

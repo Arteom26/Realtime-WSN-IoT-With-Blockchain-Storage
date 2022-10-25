@@ -23,20 +23,22 @@ void bluetoothParse(void* unused){
 		xQueueReceive(bluetoothData, &recieved_data, portMAX_DELAY);// Wait for data to come in
 		uint16_t motes;
 		switch(recieved_data){// Main state machine for bluetooth data
-			case 0xB:// Network ID recieved
+			case 'A':// Network ID recieved
 				uint8_t netid[2];
 				xQueueReceive(bluetoothData, &netid[0], portMAX_DELAY);
 				xQueueReceive(bluetoothData, &netid[1], portMAX_DELAY);
 				api.setNetworkConfig(netid);// Setup the network config
-				bluetooth._printf("Network ID Set!\n");
+				//bluetooth._printf("A");
+				bluetooth.send_array((uint8_t*)"A",1);
 				break;
 			
-			case 0xC:// Setup common join key
+			case 'B':// Setup common join key
 				uint8_t jkey[16];
 				for(int i = 0;i < 16;i++)
 					xQueueReceive(bluetoothData, &jkey[i], portMAX_DELAY);// Get the joinkey
 				api.setJoinKey(jkey);
-				bluetooth._printf("Join Key Set!\n");
+				bluetooth._printf("B");
+			//bluetooth.send_array((uint8_t*)"B",1);
 				break;
 			
 			case 'C':// Get the mote list
@@ -56,7 +58,7 @@ void bluetoothParse(void* unused){
 				}
 				break;
 				
-			case 'D':// Reset Statistics
+			case 'X':// Reset Statistics
 				api.clearStatistics();
 				bluetooth._printf("Statistics Cleared!\n");
 				break;
@@ -75,7 +77,7 @@ void bluetoothParse(void* unused){
 				xSemaphoreGive(bluetoothInUse);
 				break;
 			
-			case 0x1B:// Get the current network configuration
+			case 'J':// Get the current network configuration
 				api.getNetworkConfig();
 				xSemaphoreTake(getNetworkConfig, portMAX_DELAY);
 				network_config config;
@@ -85,7 +87,7 @@ void bluetoothParse(void* unused){
 				xSemaphoreGive(bluetoothInUse);
 				break;
 			
-			case 'G':// Get mote information
+			case 'Z':// Get mote information
 				uint8_t mac_addr1[8];
 				for(int i = 0;i < 8;i++)
 					xQueueReceive(bluetoothData, &mac_addr1[i], portMAX_DELAY);// Get the joinkey
@@ -93,7 +95,7 @@ void bluetoothParse(void* unused){
 				// TODO: add semaphore and parse
 				break;
 			
-			case 'H':// Get mote configuration(from mac address rather than mote id)
+			case 'D':// Get mote configuration(from mac address rather than mote id)
 				uint8_t mac_addr[8];
 				for(int i = 0;i < 8;i++)
 					xQueueReceive(bluetoothData, &mac_addr[i], portMAX_DELAY);// Get the joinkey
@@ -101,15 +103,19 @@ void bluetoothParse(void* unused){
 				// TODO: add semaphore and parse
 				break;
 			
-			case 'I':// Has a connection been established with the network manager
+			case 'E':// Has a connection been established with the network manager
 				if(connectedToManager)
-					bluetooth._printf("Connection Established!\n");
+					bluetooth._printf("K1");
 				else
-					bluetooth._printf("Connection Failed!\n");
+					bluetooth._printf("K0");
+				break;
+				
+			case 'F':// Send a reset command
+				api.resetManager();
 				break;
 			
 			default:// TODO: add improved default handling
-				bluetooth._printf("Error! Invalid Command\n");
+				bluetooth._printf("X");
 				break;
 		}
 	}

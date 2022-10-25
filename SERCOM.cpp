@@ -4,6 +4,8 @@
 UART::UART(sercom_registers_t *port, int baudrate){
 	UART_port = &port->USART_INT;
 	
+	// Setup the proper SERCOM registers to enable UART
+	// 16MHz clock used for all three SERCOMs
 	if(port == SERCOM0_REGS){
 		dma_channel_id = 1;
 		PORT_REGS->GROUP[0].PORT_PINCFG[8] = 0x1;
@@ -57,8 +59,7 @@ int UART::_printf(const char *format, ...){
 	
 	va_end(args);
 	xSemaphoreTake(dma_in_use, portMAX_DELAY);// Wait for dma regs to become available
-	// Setup the dma transfer
-	DMAC_REGS->DMAC_CHID = dma_channel_id;
+	DMAC_REGS->DMAC_CHID = dma_channel_id;// Setup the dma transfer
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
 	uint32_t *desc = (uint32_t*)(0x30000000 + 0x10*dma_channel_id);// If not send data
 	*desc++ = (done << 16)|0x0401;
@@ -71,8 +72,7 @@ int UART::_printf(const char *format, ...){
 
 void UART::send_array(uint8_t *data, uint8_t length){
 	xSemaphoreTake(dma_in_use, portMAX_DELAY);// Wait for dma regs to become available
-	// Setup the dma transfer
-	DMAC_REGS->DMAC_CHID = dma_channel_id;
+	DMAC_REGS->DMAC_CHID = dma_channel_id;// Setup the dma transfer
 	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
 	uint32_t *desc = (uint32_t*)(0x30000000 + 0x10*dma_channel_id);// If not send data
 	*desc++ = (length << 16)|0x0401;
