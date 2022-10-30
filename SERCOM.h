@@ -7,13 +7,13 @@
 #include <stdint.h>
 #include "freertos.h"
 #include "semphr.h"
+#include <string>
 
-#define UART_BUFFER_SIZE 128
+#define UART_BUFFER_SIZE 256
 
 extern SemaphoreHandle_t dma_in_use;
 extern SemaphoreHandle_t bluetoothInUse;
 extern SemaphoreHandle_t gsm_in_use;
-extern char buffer[UART_BUFFER_SIZE];
 
 class UART{
 	public:

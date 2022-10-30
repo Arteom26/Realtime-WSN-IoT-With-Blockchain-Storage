@@ -80,4 +80,3 @@ void UART::send_array(uint8_t *data, uint8_t length){
 	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
 	xSemaphoreGive(dma_in_use);// Give back the semphore as done accessing the data
 }
-

@@ -97,9 +97,6 @@
 .\objects\main.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h
 .\objects\main.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h
 .\objects\main.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h
-.\objects\main.o: API.h
-.\objects\main.o: bluetooth.h
-.\objects\main.o: gsm_usart.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\iosfwd
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_defs.h
@@ -130,3 +127,9 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_traits.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdio
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_error.h
+.\objects\main.o: API.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: bluetooth.h
+.\objects\main.o: gsm_usart.h
+.\objects\main.o: SendingData.h

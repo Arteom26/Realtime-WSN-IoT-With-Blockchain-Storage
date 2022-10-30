@@ -96,8 +96,6 @@
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\bluetooth.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h
-.\objects\bluetooth.o: API.h
-.\objects\bluetooth.o: gsm_usart.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\iosfwd
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_defs.h
@@ -128,6 +126,10 @@
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_traits.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdio
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_error.h
+.\objects\bluetooth.o: API.h
+.\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\bluetooth.o: gsm_usart.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\algorithm
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdlib
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
