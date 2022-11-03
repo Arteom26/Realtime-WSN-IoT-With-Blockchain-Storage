@@ -2,16 +2,18 @@
 #define __SERCOM_H
 
 #include "saml21g18b.h"
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <stdint.h>
 #include "freertos.h"
 #include "semphr.h"
+#include <string>
 
-#define UART_BUFFER_SIZE 128
+#define UART_BUFFER_SIZE 256
 
 extern SemaphoreHandle_t dma_in_use;
 extern SemaphoreHandle_t bluetoothInUse;
+extern SemaphoreHandle_t gsm_in_use;
 
 class UART{
 	public:
