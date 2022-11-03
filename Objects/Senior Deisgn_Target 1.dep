@@ -1,6 +1,6 @@
 Dependencies for Project 'Senior Deisgn', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (.\main.cpp)(0x63581FBF)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.cpp)(0x6363CD84)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
@@ -84,7 +84,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
@@ -98,8 +98,8 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\incl
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
-I (API.h)(0x6354A673)
-I (bluetooth.h)(0x6354A913)
+I (API.h)(0x635A9F96)
+I (bluetooth.h)(0x635A9FA5)
 I (C:\Keil_v5\ARM\ARMCC\include\string)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\iosfwd)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_defs.h)(0x5E54072A)
@@ -210,14 +210,14 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (RTC.h)(0x633501DD)
-I (API.h)(0x6354A673)
+I (API.h)(0x635A9F96)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
 I (SERCOM.h)(0x633CE292)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
@@ -229,12 +229,12 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\incl
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
-F (.\bluetooth.cpp)(0x6358409F)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\bluetooth.o --omf_browse .\objects\bluetooth.crf --depend .\objects\bluetooth.d)
-I (bluetooth.h)(0x6354A913)
+F (.\bluetooth.cpp)(0x635AA18B)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\bluetooth.o --omf_browse .\objects\bluetooth.crf --depend .\objects\bluetooth.d)
+I (bluetooth.h)(0x635A9FA5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -326,7 +326,7 @@ I (SERCOM.h)(0x633CE292)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
-I (API.h)(0x6354A673)
+I (API.h)(0x635A9F96)
 I (C:\Keil_v5\ARM\ARMCC\include\string)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\iosfwd)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_defs.h)(0x5E54072A)
@@ -359,7 +359,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x5E54072A)
 I (C:\Keil_v5\ARM\ARMCC\include\algorithm)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdlib)(0x5E54072A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
-F (.\bluetooth.h)(0x6354A913)()
+F (.\bluetooth.h)(0x635A9FA5)()
 F (.\SendingData.cpp)(0x633CDA93)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\sendingdata.o --omf_browse .\objects\sendingdata.crf --depend .\objects\sendingdata.d)
 F (.\SendingData.h)(0x633CDA9F)()
 F (.\SERCOM.h)(0x633CE292)()
@@ -524,7 +524,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
@@ -540,8 +540,8 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\incl
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
 F (.\DMA.cpp)(0x63385A1E)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\dma.o --omf_browse .\objects\dma.crf --depend .\objects\dma.d)
 F (.\DMA.h)(0x633984D1)()
-F (.\API.cpp)(0x6354A6F3)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\api.o --omf_browse .\objects\api.crf --depend .\objects\api.d)
-I (API.h)(0x6354A673)
+F (.\API.cpp)(0x635993C9)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\api.o --omf_browse .\objects\api.crf --depend .\objects\api.d)
+I (API.h)(0x635A9F96)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
@@ -624,7 +624,7 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
@@ -637,7 +637,7 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\incl
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\task.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
-F (.\API.h)(0x6354A673)()
+F (.\API.h)(0x635A9F96)()
 F (.\asm_arm.inc)(0x634721F4)()
 F (.\asm_arm_mult_square.inc)(0x632E22DE)()
 F (.\asm_arm_mult_square_umaal.inc)(0x632E22DE)()
@@ -701,7 +701,7 @@ F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -799,7 +799,7 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cm
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x627001AE)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include\os_tick.h)(0x627001AE)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -971,7 +971,7 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
-F (RTE\Device\ATSAML21G18B\startup_saml21g18b.s)(0x633DFD0E)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__SAML21G18B__ SETA 1"--list .\listings\startup_saml21g18b.lst --xref -o .\objects\startup_saml21g18b.o --depend .\objects\startup_saml21g18b.d)
+F (RTE\Device\ATSAML21G18B\startup_saml21g18b.s)(0x635A9CC9)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__SAML21G18B__ SETA 1"--list .\listings\startup_saml21g18b.lst --xref -o .\objects\startup_saml21g18b.o --depend .\objects\startup_saml21g18b.d)
 F (RTE\Device\ATSAML21G18B\system_saml21g18b.c)(0x62335BF8)(--c99 -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include-IC:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="530" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\system_saml21g18b.o --omf_browse .\objects\system_saml21g18b.crf --depend .\objects\system_saml21g18b.d)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
@@ -1053,7 +1053,7 @@ F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1149,7 +1149,7 @@ F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\crou
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1242,7 +1242,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1336,7 +1336,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1427,7 +1427,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1518,7 +1518,7 @@ F (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\port
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1611,7 +1611,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1703,7 +1703,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1796,7 +1796,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1889,7 +1889,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E54072C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E54072C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E54072C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6358072F)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1978,4 +1978,4 @@ I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\incl
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
 I (C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
-F (RTE\RTOS\FreeRTOSConfig.h)(0x633E0220)()
+F (RTE\RTOS\FreeRTOSConfig.h)(0x635A9C9C)()

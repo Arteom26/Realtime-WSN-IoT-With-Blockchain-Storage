@@ -22,10 +22,12 @@ Smartmesh_API api = Smartmesh_API(&api_usart);
 // RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(32, sizeof(uint8_t));
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
+SemaphoreHandle_t apiInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
+SemaphoreHandle_t getMoteInfo = xSemaphoreCreateBinary();
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
 // Checksum verification for interrupt handler(bypassing first byte)
@@ -70,7 +72,17 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case NOTIF:// Notification packet recieved. TODO: parse the data in a seperate task
-			bluetooth._printf("Recieved Notification\n");
+			if(buffer[5] != 0x4)
+				break;
+			data_notif notif;
+			xSemaphoreTake(apiInUse, portMAX_DELAY);
+			api.parseDataNotification(&notif, buffer);
+			xSemaphoreGive(apiInUse);
+			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
+			bluetooth._printf("I");// Send data to C#
+			bluetooth.send_array((uint8_t*)&notif.macAddr, 8);// Send the mac address
+			bluetooth.send_array(notif.data, 8);// Send the data that was recieved
+			xSemaphoreGive(bluetoothInUse);
 			break;
 		
 		case SET_NTWK_CONFIG:
@@ -80,6 +92,7 @@ void parseSmartmeshData(void* unused){
 		case SET_COMMON_JKEY:
 			//bluetooth._printf("Rebooting...\n");
 			//api.resetManager();// Reset the system
+			//NVIC_SystemReset();
 			break;
 		
 		case SUBSCRIBE:// Notifications were setup
@@ -87,8 +100,8 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case GET_NETWORK_INFO:// Network info data must be parsed
-			network_info info;
-			api.parseNetworkInfo(&info, buffer);
+			//network_info info;
+			//api.parseNetworkInfo(&info, buffer);
 			xSemaphoreGive(getNetworkInfo);// Network info has been recieved
 			break;
 		
@@ -97,7 +110,7 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case GET_MOTE_INFO:
-			//bluetooth._printf("Got mote information!\n");
+			xSemaphoreGive(getMoteInfo);
 			break;
 		
 		case GET_MOTE_CONFIG:
@@ -106,6 +119,10 @@ void parseSmartmeshData(void* unused){
 		
 		case GET_MOTE_CFG_BY_ID:
 			xSemaphoreGive(moteConfigWasGotFromID);
+			break;
+		
+		case RESET_CMD:
+			//api.mgr_init();// Send hello packet
 			break;
 		
 		default:
@@ -122,7 +139,7 @@ void setupParse(void* unused){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 6, NULL);
+		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 1, NULL);
 	}
 }
 
@@ -135,14 +152,13 @@ void setupParse(void* unused){
 int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
-	xTaskCreate(bluetoothParse, "BT Parse", 256, NULL, 10, NULL);
+	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
 	api_usart = UART(SERCOM0_REGS, 115200);
 	bluetooth = UART(SERCOM1_REGS, 115200);
 	api = Smartmesh_API(&api_usart);
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
-	
-	//bluetooth._printf("XXXX");
+	xSemaphoreGive(apiInUse);
 	
 	vTaskStartScheduler();
 		

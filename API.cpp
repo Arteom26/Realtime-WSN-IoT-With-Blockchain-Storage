@@ -327,7 +327,8 @@ bool Smartmesh_API::setJoinKey(uint8_t *jkey){
 // Gets the mote configuration from its mote id
 bool Smartmesh_API::getMoteConfigFromMoteId(uint16_t moteid){
 	init_packet(2, GET_MOTE_CFG_BY_ID);
-	memcpy(send_data+5, &moteid, 2);
+	send_data[5] = (moteid >> 8)&0xFF;
+	send_data[6] = moteid&0xFF;
 	
 	checksumData(START_CHECKSUM, send_data, 6);
 	sendUart->send_array(send_data, 10);
