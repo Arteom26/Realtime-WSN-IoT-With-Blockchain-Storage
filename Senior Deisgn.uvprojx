@@ -428,16 +428,6 @@
               <FileType>8</FileType>
               <FilePath>.\gsm_usart.cpp</FilePath>
             </File>
-            <File>
-              <FileName>GSM.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\GSM.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>GSM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\GSM.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

@@ -4,7 +4,6 @@
 ".\objects\bluetooth.o"
 ".\objects\sendingdata.o"
 ".\objects\gsm_usart.o"
-".\objects\gsm.o"
 ".\objects\rtc.o"
 ".\objects\sercom.o"
 ".\objects\dma.o"

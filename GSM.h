@@ -40,14 +40,14 @@ typedef enum ternary
  * 
  */
 
-typedef enum
-{
-    AT_COMMAND_READ,
-    AT_COMMAND_WRITE,
-    AT_COMMAND_TEST,
-    AT_COMMAND_RUN,
-		AT_COMMAND_UNKNOWN
-} AT_COMMAND_TYPE;
+//typedef enum
+//{
+//    AT_COMMAND_READ,
+//    AT_COMMAND_WRITE,
+//    AT_COMMAND_TEST,
+//    AT_COMMAND_RUN,
+//		AT_COMMAND_UNKNOWN
+//} AT_COMMAND_TYPE;
 
 /**
  * @brief at_command_t struct

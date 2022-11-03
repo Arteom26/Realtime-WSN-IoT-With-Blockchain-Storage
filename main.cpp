@@ -10,14 +10,19 @@
 #include "gsm_usart.h"
 #include <string>
 #include "SendingData.h"
-//GET https://api.thingspeak.com/update?api_key=3MFB6LHHEJKS2BU1&field1=1
+
+
+AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
 
 // Global variables
 bool startFlag = false;
 bool connectedToManager = false;
+bool gsmReady = true;
 uint8_t length = 0;
 uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
+//uint8_t gsmBuffer[200];
+
 UART api_usart = UART(SERCOM0_REGS, 115200);
 UART bluetooth = UART(SERCOM1_REGS, 115200);
 UART gsm_usart = UART(SERCOM2_REGS, 115200);
@@ -27,7 +32,7 @@ Smartmesh_API api = Smartmesh_API(&api_usart);
 
 // RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(64, sizeof(uint8_t));
-QueueHandle_t gsmData = xQueueCreate(64, sizeof(uint8_t));
+QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
 
 
 
@@ -37,6 +42,9 @@ SemaphoreHandle_t gsm_in_use = xSemaphoreCreateBinary();
 
 
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
+SemaphoreHandle_t gsmDataRecieved = xSemaphoreCreateBinary();// Data was recieved from GSM
+
+
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
@@ -111,8 +119,30 @@ void parseSmartmeshData(void* unused){
 void setupParse(void* unused){
 
 	//http_test();
-	tcp_write();
+//	tcp_write();
 	//gsm_usart._printf("AT\r\n");
+	//char cmd[] = "AT\r\n";
+	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	at_send_cmd("ATT\r\n", AT_COMMAND_RUN);
+//	at_send_cmd("AT\r\n", AT_COMMAND_WRITE);
+//	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
+	
+//	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
+//	//vTaskDelay(2000);
+//	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
+//	//vTaskDelay(100);
+//	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
+//	//vTaskDelay(100);
+//	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
+//	//vTaskDelay(100);
+//	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
+//	//vTaskDelay(2000);
+//	at_send_cmd("AT+CIPSEND=82\r\n", AT_COMMAND_WRITE);
+//	//vTaskDelay(100);
+//	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=7&field3=2\r\n",AT_COMMAND_WRITE);
+//	//vTaskDelay(2000);
+//	bluetooth._printf("done");
+	
 	while(1){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
@@ -141,7 +171,13 @@ int main(){
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(gsm_in_use);
-	
+//	bluetooth._printf("hello");
+//	if(at_cmd_type == AT_COMMAND_READ) 
+//	{
+//		bluetooth._printf("HI");
+//		at_cmd_type = AT_COMMAND_RUN;
+//		gsm_usart._printf("AT\r\n");
+//	}
 	
 	//gsm_usart._printf("AT\r\n");
 //	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");

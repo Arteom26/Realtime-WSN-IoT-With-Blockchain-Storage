@@ -68,38 +68,34 @@ void http_test(void)
 
 void tcp_write(void)
 {
-	
-	//for(int i = 0; i < 5; i++)
-	{
-		gsm_usart._printf("\r\nAT+CIPSHUT\r\n");
-		vTaskDelay(2000);
-		gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIICR\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIFSR\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n");
-		vTaskDelay(2000);
-		gsm_usart._printf("AT+CIPSEND=73\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field1=9\r\n");
-		//vTaskDelay(2000);
-	}
+	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
+	//vTaskDelay(2000);
+	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
+	//vTaskDelay(100);
+	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
+	//vTaskDelay(100);
+	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
+	//vTaskDelay(100);
+	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
+	//vTaskDelay(2000);
+	at_send_cmd("AT+CIPSEND=82\r\n", AT_COMMAND_WRITE);
+	//vTaskDelay(100);
+	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=7&field3=2\r\n",AT_COMMAND_WRITE);
+	//vTaskDelay(2000);
 }
 
 void tcp_read(void)
 {
 	gsm_usart._printf("\r\nAT+CIPSHUT\r\n");
-		vTaskDelay(2000);
-		gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIICR\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIFSR\r\n");
-		vTaskDelay(100);
-		gsm_usart._printf("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n");
-		vTaskDelay(2000);
-		gsm_usart._printf("AT+CIPSEND=73\r\n");
-		vTaskDelay(100);
+	vTaskDelay(2000);
+	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
+	vTaskDelay(100);
+	gsm_usart._printf("AT+CIICR\r\n");
+	vTaskDelay(100);
+	gsm_usart._printf("AT+CIFSR\r\n");
+	vTaskDelay(100);
+	gsm_usart._printf("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n");
+	vTaskDelay(2000);
+	gsm_usart._printf("AT+CIPSEND=73\r\n");
+	vTaskDelay(100);
 }

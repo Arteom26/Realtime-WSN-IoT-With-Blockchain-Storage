@@ -1,4 +1,4 @@
-#include "system_saml21.h"
+
 /*
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
@@ -15,6 +15,7 @@
  * Define the Device Header File: 
  */
 #define CMSIS_device_header "sam.h"
+#include "system_saml21.h"
 
 /* ARM.FreeRTOS::RTOS:Config:CMSIS RTOS2:10.4.6 */
 #define RTE_RTOS_FreeRTOS_CONFIG_RTOS2  /* RTOS FreeRTOS Config for CMSIS RTOS2 API */
