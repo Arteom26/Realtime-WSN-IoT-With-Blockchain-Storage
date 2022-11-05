@@ -88,6 +88,7 @@
 .\objects\system_setup.o: .\RTE\RTOS\FreeRTOSConfig.h
 .\objects\system_setup.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\system_setup.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
+.\objects\system_setup.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\system_setup.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
 .\objects\system_setup.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h
 .\objects\system_setup.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h

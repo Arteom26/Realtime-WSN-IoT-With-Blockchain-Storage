@@ -17,6 +17,13 @@ typedef enum
 		AT_COMMAND_UNKNOWN
 } AT_COMMAND_TYPE;
 
+
+extern char responseGsmBuffer[200];
+extern char txGsmBuffer[200];
+extern int responseLength;
+extern int responseLengthCopy;
+
+
 extern QueueHandle_t gsmData;
 extern SemaphoreHandle_t gsmDataRecieved;
 extern UART gsm_usart;

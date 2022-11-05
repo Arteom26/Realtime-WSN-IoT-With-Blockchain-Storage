@@ -21,6 +21,12 @@ bool gsmReady = true;
 uint8_t length = 0;
 uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
+
+char responseGsmBuffer[200];
+char txGsmBuffer[200];
+int responseLength = 0;
+int responseLengthCopy = 0;
+
 //uint8_t gsmBuffer[200];
 
 UART api_usart = UART(SERCOM0_REGS, 115200);
@@ -122,11 +128,24 @@ void setupParse(void* unused){
 //	tcp_write();
 	//gsm_usart._printf("AT\r\n");
 	//char cmd[] = "AT\r\n";
-	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
-	at_send_cmd("ATT\r\n", AT_COMMAND_RUN);
-//	at_send_cmd("AT\r\n", AT_COMMAND_WRITE);
-//	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
+//		gsm_usart._printf("ate0\r\n");
+//vTaskDelay(100);
+	gsm_usart._printf("ATE0\r\n");
+	vTaskDelay(500);
 	
+	//gsm_usart._printf("AT+CIPSHUT\r\n");
+	
+	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+
+	//at_send_cmd("ATT\r\n", AT_COMMAND_RUN);
+	vTaskDelay(500);
+	//at_send_cmd("AT\r\n", AT_COMMAND_WRITE);
+//	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
+		gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
+	vTaskDelay(500);
+	gsm_usart._printf("AT+CIICR\r\n");
+	vTaskDelay(500);
+	gsm_usart._printf("AT+CIFSR\r\n");
 //	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
 //	//vTaskDelay(2000);
 //	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
@@ -171,20 +190,9 @@ int main(){
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(gsm_in_use);
+	
 //	bluetooth._printf("hello");
-//	if(at_cmd_type == AT_COMMAND_READ) 
-//	{
-//		bluetooth._printf("HI");
-//		at_cmd_type = AT_COMMAND_RUN;
-//		gsm_usart._printf("AT\r\n");
-//	}
-	
-	//gsm_usart._printf("AT\r\n");
-//	gsm_usart._printf("AT+CSTT=\"hologram\"\r\n");
-//	gsm_usart._printf("AT+CIICR\r\n");
-//	gsm_usart._printf("AT+CNACT=1,\"hologram\"\r\n");
-	
-	//bluetooth._printf("Ready\r\n");
+
 	
 	vTaskStartScheduler();
 		
@@ -238,8 +246,53 @@ extern "C"{
 	}
 	
 	void SERCOM2_Handler(void){// GSM Module handler
-		uint8_t data = SERCOM2_REGS->USART_INT.SERCOM_DATA;
-		xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
+		char data = SERCOM2_REGS->USART_INT.SERCOM_DATA;
+		
+		txGsmBuffer[responseLength] = data;
+		responseLength++;
+		
+		//process data line by line
+		if ((strstr(txGsmBuffer, "\r\n") != NULL))
+		{
+			responseLengthCopy = responseLength;
+			
+			//xSemaphoreTakeFromISR(gsm_in_use, NULL);
+						
+			xSemaphoreTakeFromISR(dma_in_use, NULL);
+			DMAC_REGS->DMAC_CHID = 0;
+			while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
+			uint32_t *desc = (uint32_t*)0x30000000;
+			*desc++ = ((responseLength + 2) << 16)|0x0C01;
+			*desc++ = (uint32_t)(txGsmBuffer + responseLength + 2);// Source address
+			*desc = (uint32_t)(responseGsmBuffer + responseLength + 2);// Dest address
+			DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
+			DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
+			xSemaphoreGiveFromISR(dma_in_use, NULL);
+			
+			//xSemaphoreGiveFromISR(gsm_in_use, NULL);
+			
+			
+			{
+				
+				//bluetooth._printf(txGsmBuffer);
+				
+//				for(int i = 0; i < 200; i++)
+//				{
+//					responseLength = 0;
+//					txGsmBuffer[i] = '\0';
+//				}
+				
+				xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		//xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }

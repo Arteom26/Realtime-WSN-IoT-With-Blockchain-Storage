@@ -82,6 +82,7 @@
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance/wdt.h
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio/saml21g18b.h
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
+.\objects\stream_buffer.o: .\RTE\_Target_1\RTE_Components.h
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h
 .\objects\stream_buffer.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\deprecated_definitions.h
