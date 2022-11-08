@@ -2,7 +2,6 @@
 .\objects\os_systick.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include\os_tick.h
 .\objects\os_systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\os_systick.o: .\RTE\_Target_1\RTE_Components.h
-.\objects\os_systick.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h
 .\objects\os_systick.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h
 .\objects\os_systick.o: C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h
 .\objects\os_systick.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h

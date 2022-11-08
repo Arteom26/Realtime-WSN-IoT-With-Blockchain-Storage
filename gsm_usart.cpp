@@ -42,13 +42,21 @@ bool at_ERROR(const char *buf)
 	return false;
 }
 
-
+void clearBuffer(char *buf)
+{
+	for(int i = 0; i < 200; i++)
+	{
+		responseLength = 0;
+		buf[i] = '\0';
+	}
+}
 
 bool at_send_cmd(const char *cmd, AT_COMMAND_TYPE cmd_type)
 {
-	xSemaphoreTake(gsm_in_use, portMAX_DELAY); // wait for GSM data to be parsed
+	//vTaskDelay(50);
+	xSemaphoreTake(gsm_in_use, portMAX_DELAY);
 	
-	gsm_usart._printf("%s",cmd);
+	gsm_usart._printf(cmd);
 	at_cmd_type = cmd_type;
 	
 	gsmReady = false;
@@ -90,7 +98,6 @@ void parseGSMData(void* unused)
 {
 	char tempBuffer[200];
 
-	xSemaphoreTake(gsm_in_use, portMAX_DELAY);
 	
 	xSemaphoreTakeFromISR(dma_in_use, NULL);
 	DMAC_REGS->DMAC_CHID = 0;
@@ -103,32 +110,33 @@ void parseGSMData(void* unused)
 	DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
 	xSemaphoreGiveFromISR(dma_in_use, NULL);
 		
-	/*DMAC_REGS->DMAC_CHID = 3;
-	while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
-	uint32_t *desc = (uint32_t*)0x30000000;
-	*desc++ = ((responseLengthCopy + 2) << 16)|0x0C01;
-	*desc++ = (uint32_t)(responseGsmBuffer + responseLengthCopy + 2);// Source address
-	*desc = (uint32_t)(tempBuffer + responseLengthCopy + 2);// Dest address
-	DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-	DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;*/
-	
-	//bluetooth._printf("hello");
-		
 	responseLengthCopy = 0;
+	//clearBuffer(responseGsmBuffer);
 	
-	xSemaphoreGive(gsm_in_use); // GSM parsing done
+	if (isdigit(tempBuffer[0]) && !isValidIPAddress(tempBuffer)) 
+		bluetooth._printf(tempBuffer);
 		
 	if(strstr(tempBuffer, "OK") != NULL)
+	{
 		bluetooth._printf("OK\n\r");
+		xSemaphoreGive(gsm_in_use); // GSM parsing done
+	}
 	else if(strstr(tempBuffer, "ERROR") != NULL)
+	{
 		bluetooth._printf("ERROR\n\r");
-	else if( isValidIPAddress(tempBuffer) ) bluetooth._printf("good\n\r");
-	
+		xSemaphoreGive(gsm_in_use); // GSM parsing done
+	}
+	else if( isValidIPAddress(tempBuffer) ) 
+	{
+		bluetooth._printf("good\n\r");
+		xSemaphoreGive(gsm_in_use); // GSM parsing done
+	}
+	xSemaphoreGive(gsm_in_use);
 	vTaskDelete(NULL);
 }
 
 // This task will parse any data recived thorugh bluetooth
-void gsmParse(void* unused){
+void setupGsmParse(void* unused){
 	
 	
 	while(1)
@@ -140,7 +148,7 @@ void gsmParse(void* unused){
 		
 		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
 			
-		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 10, NULL);
+		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
 
 //		while (recieved_data != '\n' && recieved_data != '\r') 
 //		{
@@ -210,20 +218,7 @@ void gsmParse(void* unused){
 //			gsmReady = true;
 //		}
 		
-					//for(int i = 0; i <= count; i++) bluetooth._printf("%c", gsmBuffer[i]);
-//			gsmBuffer[count] = '\0';
-//			char* s = gsmBuffer;
-//		
-//		if (at_cmd_ERROR(gsmBuffer))
-//		{
-//			gsmBuffer[count] = '\0';
-//			char* s = gsmBuffer;
-//			bluetooth._printf("%s\r\n", s);
-//		}
-//		
-//		//bluetooth._printf("%c", recieved_data);
-//		count = 0;
-		//xSemaphoreGive(gsm_in_use); // GSM parsing done
+
 	}
 }
 

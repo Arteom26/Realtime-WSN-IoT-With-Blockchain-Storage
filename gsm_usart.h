@@ -20,8 +20,8 @@ typedef enum
 
 extern char responseGsmBuffer[200];
 extern char txGsmBuffer[200];
-extern int responseLength;
-extern int responseLengthCopy;
+extern uint8_t responseLength;
+extern uint8_t responseLengthCopy;
 
 
 extern QueueHandle_t gsmData;
@@ -30,8 +30,8 @@ extern UART gsm_usart;
 extern AT_COMMAND_TYPE at_cmd_type;
 extern bool gsmReady;
 
-void gsmParse(void* unused);
-
+void setupGsmParse(void* unused);
+void clearBuffer(char *buf);
 bool read_resp(const char *buf);
 bool at_OK(const char *buf);
 bool at_ERROR(const char *buf);

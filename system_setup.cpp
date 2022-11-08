@@ -86,7 +86,7 @@ void setup_system(void){
 	*desc++ = 0x00000000;
 	
 	// DMA initialization and setup
-	// Channel 0 => Smartmesh IP data copying
+	// Channel 0 => Smartmesh IP/GSM data copying
 	// Channels 1-3 => UART TX data transfer for SERCOM0-SERCOM2
 	// Channel 4 => Misc. Copying tasks
 	DMAC_REGS->DMAC_BASEADDR = 0x30000000;

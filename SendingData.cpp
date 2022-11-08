@@ -1,5 +1,10 @@
 #include "SendingData.h"
 
+void sendData(void* unused)
+{
+	
+}
+
 void http_test(void)
 {
 		
@@ -77,10 +82,10 @@ void tcp_write(void)
 	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(100);
 	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
-	//vTaskDelay(2000);
+	vTaskDelay(1000);
 	at_send_cmd("AT+CIPSEND=82\r\n", AT_COMMAND_WRITE);
 	//vTaskDelay(100);
-	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=7&field3=2\r\n",AT_COMMAND_WRITE);
+	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=5&field3=5\r\n",AT_COMMAND_WRITE);
 	//vTaskDelay(2000);
 }
 
