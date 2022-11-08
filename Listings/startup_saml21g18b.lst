@@ -206,169 +206,170 @@ ARM Macro Assembler    Page 4
   117 00000000                 IMPORT           SystemInit
   118 00000000                 IMPORT           __main
   119 00000000         
-  120 00000000 4807            LDR              R0, =SystemInit
-  121 00000002 4780            BLX              R0
-  122 00000004 4807            LDR              R0, =__main
-  123 00000006 4700            BX               R0
-  124 00000008                 ENDP
-  125 00000008         
+  120 00000000         
+  121 00000000 4807            LDR              R0, =SystemInit
+  122 00000002 4780            BLX              R0
+  123 00000004 4807            LDR              R0, =__main
+  124 00000006 4700            BX               R0
+  125 00000008                 ENDP
   126 00000008         
-  127 00000008         ; Dummy Exception Handlers (infinite loops which can be 
+  127 00000008         
+  128 00000008         ; Dummy Exception Handlers (infinite loops which can be 
                        modified)
-  128 00000008         
-  129 00000008         NonMaskableInt_Handler
+  129 00000008         
+  130 00000008         NonMaskableInt_Handler
                                PROC
-  130 00000008                 EXPORT           NonMaskableInt_Handler    [WEAK
+  131 00000008                 EXPORT           NonMaskableInt_Handler    [WEAK
 ]
-  131 00000008 E7FE            B                .
-  132 0000000A                 ENDP
-  133 0000000A         HardFault_Handler
+  132 00000008 E7FE            B                .
+  133 0000000A                 ENDP
+  134 0000000A         HardFault_Handler
                                PROC
-  134 0000000A                 EXPORT           HardFault_Handler         [WEAK
+  135 0000000A                 EXPORT           HardFault_Handler         [WEAK
 ]
-  135 0000000A         
-  136 0000000A E7FE            B                .
-  137 0000000C                 ENDP
-  138 0000000C         SVC_Handler
+  136 0000000A         
+  137 0000000A E7FE            B                .
+  138 0000000C                 ENDP
+  139 0000000C         SVC_Handler
                                PROC
-  139 0000000C                 EXPORT           SVC_Handler               [WEAK
+  140 0000000C                 EXPORT           SVC_Handler               [WEAK
 ]
-  140 0000000C E7FE            B                .
-  141 0000000E                 ENDP
-  142 0000000E         PendSV_Handler
+  141 0000000C E7FE            B                .
+  142 0000000E                 ENDP
+  143 0000000E         PendSV_Handler
                                PROC
-  143 0000000E                 EXPORT           PendSV_Handler            [WEAK
+  144 0000000E                 EXPORT           PendSV_Handler            [WEAK
 ]
-  144 0000000E E7FE            B                .
-  145 00000010                 ENDP
-  146 00000010         SysTick_Handler
+  145 0000000E E7FE            B                .
+  146 00000010                 ENDP
+  147 00000010         SysTick_Handler
                                PROC
-  147 00000010                 EXPORT           SysTick_Handler           [WEAK
+  148 00000010                 EXPORT           SysTick_Handler           [WEAK
 ]
-  148 00000010 E7FE            B                .
-  149 00000012                 ENDP
-  150 00000012         
-  151 00000012         Default_Handler
+  149 00000010 E7FE            B                .
+  150 00000012                 ENDP
+  151 00000012         
+  152 00000012         Default_Handler
                                PROC
-  152 00000012                 EXPORT           SYSTEM_Handler            [WEAK
+  153 00000012                 EXPORT           SYSTEM_Handler            [WEAK
 ]
-  153 00000012                 EXPORT           WDT_Handler               [WEAK
+  154 00000012                 EXPORT           WDT_Handler               [WEAK
 ]
-  154 00000012                 EXPORT           RTC_Handler               [WEAK
+  155 00000012                 EXPORT           RTC_Handler               [WEAK
 ]
-  155 00000012                 EXPORT           EIC_Handler               [WEAK
-]
+  156 00000012                 EXPORT           EIC_Handler               [WEAK
 
 
 
 ARM Macro Assembler    Page 5 
 
 
-  156 00000012                 EXPORT           NVMCTRL_Handler           [WEAK
 ]
-  157 00000012                 EXPORT           DMAC_Handler              [WEAK
+  157 00000012                 EXPORT           NVMCTRL_Handler           [WEAK
 ]
-  158 00000012                 EXPORT           USB_Handler               [WEAK
+  158 00000012                 EXPORT           DMAC_Handler              [WEAK
 ]
-  159 00000012                 EXPORT           EVSYS_Handler             [WEAK
+  159 00000012                 EXPORT           USB_Handler               [WEAK
 ]
-  160 00000012                 EXPORT           SERCOM0_Handler           [WEAK
+  160 00000012                 EXPORT           EVSYS_Handler             [WEAK
 ]
-  161 00000012                 EXPORT           SERCOM1_Handler           [WEAK
+  161 00000012                 EXPORT           SERCOM0_Handler           [WEAK
 ]
-  162 00000012                 EXPORT           SERCOM2_Handler           [WEAK
+  162 00000012                 EXPORT           SERCOM1_Handler           [WEAK
 ]
-  163 00000012                 EXPORT           SERCOM3_Handler           [WEAK
+  163 00000012                 EXPORT           SERCOM2_Handler           [WEAK
 ]
-  164 00000012                 EXPORT           SERCOM4_Handler           [WEAK
+  164 00000012                 EXPORT           SERCOM3_Handler           [WEAK
 ]
-  165 00000012                 EXPORT           SERCOM5_Handler           [WEAK
+  165 00000012                 EXPORT           SERCOM4_Handler           [WEAK
 ]
-  166 00000012                 EXPORT           TCC0_Handler              [WEAK
+  166 00000012                 EXPORT           SERCOM5_Handler           [WEAK
 ]
-  167 00000012                 EXPORT           TCC1_Handler              [WEAK
+  167 00000012                 EXPORT           TCC0_Handler              [WEAK
 ]
-  168 00000012                 EXPORT           TCC2_Handler              [WEAK
+  168 00000012                 EXPORT           TCC1_Handler              [WEAK
 ]
-  169 00000012                 EXPORT           TC0_Handler               [WEAK
+  169 00000012                 EXPORT           TCC2_Handler              [WEAK
 ]
-  170 00000012                 EXPORT           TC1_Handler               [WEAK
+  170 00000012                 EXPORT           TC0_Handler               [WEAK
 ]
-  171 00000012                 EXPORT           TC4_Handler               [WEAK
+  171 00000012                 EXPORT           TC1_Handler               [WEAK
 ]
-  172 00000012                 EXPORT           ADC_Handler               [WEAK
+  172 00000012                 EXPORT           TC4_Handler               [WEAK
 ]
-  173 00000012                 EXPORT           AC_Handler                [WEAK
+  173 00000012                 EXPORT           ADC_Handler               [WEAK
 ]
-  174 00000012                 EXPORT           DAC_Handler               [WEAK
+  174 00000012                 EXPORT           AC_Handler                [WEAK
 ]
-  175 00000012                 EXPORT           PTC_Handler               [WEAK
+  175 00000012                 EXPORT           DAC_Handler               [WEAK
 ]
-  176 00000012                 EXPORT           AES_Handler               [WEAK
+  176 00000012                 EXPORT           PTC_Handler               [WEAK
 ]
-  177 00000012                 EXPORT           TRNG_Handler              [WEAK
+  177 00000012                 EXPORT           AES_Handler               [WEAK
 ]
-  178 00000012         
+  178 00000012                 EXPORT           TRNG_Handler              [WEAK
+]
   179 00000012         
-  180 00000012         SYSTEM_Handler
-  181 00000012         WDT_Handler
-  182 00000012         RTC_Handler
-  183 00000012         EIC_Handler
-  184 00000012         NVMCTRL_Handler
-  185 00000012         DMAC_Handler
-  186 00000012         USB_Handler
-  187 00000012         EVSYS_Handler
-  188 00000012         SERCOM0_Handler
-  189 00000012         SERCOM1_Handler
-  190 00000012         SERCOM2_Handler
-  191 00000012         SERCOM3_Handler
-  192 00000012         SERCOM4_Handler
+  180 00000012         
+  181 00000012         SYSTEM_Handler
+  182 00000012         WDT_Handler
+  183 00000012         RTC_Handler
+  184 00000012         EIC_Handler
+  185 00000012         NVMCTRL_Handler
+  186 00000012         DMAC_Handler
+  187 00000012         USB_Handler
+  188 00000012         EVSYS_Handler
+  189 00000012         SERCOM0_Handler
+  190 00000012         SERCOM1_Handler
+  191 00000012         SERCOM2_Handler
+  192 00000012         SERCOM3_Handler
 
 
 
 ARM Macro Assembler    Page 6 
 
 
-  193 00000012         SERCOM5_Handler
-  194 00000012         TCC0_Handler
-  195 00000012         TCC1_Handler
-  196 00000012         TCC2_Handler
-  197 00000012         TC0_Handler
-  198 00000012         TC1_Handler
-  199 00000012         TC4_Handler
-  200 00000012         ADC_Handler
-  201 00000012         AC_Handler
-  202 00000012         DAC_Handler
-  203 00000012         PTC_Handler
-  204 00000012         AES_Handler
-  205 00000012         TRNG_Handler
-  206 00000012 E7FE            B                .
-  207 00000014                 ENDP
-  208 00000014         
+  193 00000012         SERCOM4_Handler
+  194 00000012         SERCOM5_Handler
+  195 00000012         TCC0_Handler
+  196 00000012         TCC1_Handler
+  197 00000012         TCC2_Handler
+  198 00000012         TC0_Handler
+  199 00000012         TC1_Handler
+  200 00000012         TC4_Handler
+  201 00000012         ADC_Handler
+  202 00000012         AC_Handler
+  203 00000012         DAC_Handler
+  204 00000012         PTC_Handler
+  205 00000012         AES_Handler
+  206 00000012         TRNG_Handler
+  207 00000012 E7FE            B                .
+  208 00000014                 ENDP
   209 00000014         
-  210 00000014                 ALIGN
-  211 00000014         
+  210 00000014         
+  211 00000014                 ALIGN
   212 00000014         
-  213 00000014         ; User Initial Stack & Heap
-  214 00000014         
-  215 00000014                 IF               :DEF:__MICROLIB
-  222 00000014         
-  223 00000014                 IMPORT           __use_two_region_memory
-  224 00000014                 EXPORT           __user_initial_stackheap
-  225 00000014         __user_initial_stackheap
-  226 00000014         
-  227 00000014 4804            LDR              R0, =  Heap_Mem
-  228 00000016 4905            LDR              R1, =(Stack_Mem + Stack_Size)
-  229 00000018 4A05            LDR              R2, = (Heap_Mem +  Heap_Size)
-  230 0000001A 4B06            LDR              R3, = Stack_Mem
-  231 0000001C 4770            BX               LR
-  232 0000001E         
-  233 0000001E 00 00           ALIGN
-  234 00000020         
-  235 00000020                 ENDIF
-  236 00000020         
+  213 00000014         
+  214 00000014         ; User Initial Stack & Heap
+  215 00000014         
+  216 00000014                 IF               :DEF:__MICROLIB
+  223 00000014         
+  224 00000014                 IMPORT           __use_two_region_memory
+  225 00000014                 EXPORT           __user_initial_stackheap
+  226 00000014         __user_initial_stackheap
+  227 00000014         
+  228 00000014 4804            LDR              R0, =  Heap_Mem
+  229 00000016 4905            LDR              R1, =(Stack_Mem + Stack_Size)
+  230 00000018 4A05            LDR              R2, = (Heap_Mem +  Heap_Size)
+  231 0000001A 4B06            LDR              R3, = Stack_Mem
+  232 0000001C 4770            BX               LR
+  233 0000001E         
+  234 0000001E 00 00           ALIGN
+  235 00000020         
+  236 00000020                 ENDIF
   237 00000020         
-  238 00000020                 END
+  238 00000020         
+  239 00000020                 END
               00000000 
               00000000 
               00000000 
@@ -407,8 +408,8 @@ Symbol: Stack_Mem
    Definitions
       At line 33 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
-      At line 228 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 230 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 229 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 231 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 __initial_sp 00000500
 
@@ -439,8 +440,8 @@ Symbol: Heap_Mem
    Definitions
       At line 45 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
-      At line 227 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 229 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 228 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 230 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 __heap_base 00000000
 
@@ -510,52 +511,52 @@ AC_Handler 00000012
 
 Symbol: AC_Handler
    Definitions
-      At line 201 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 202 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 101 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 173 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 174 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 ADC_Handler 00000012
 
 Symbol: ADC_Handler
    Definitions
-      At line 200 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 201 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 100 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 172 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 173 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 AES_Handler 00000012
 
 Symbol: AES_Handler
    Definitions
-      At line 204 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 205 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 104 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 176 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 177 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 DAC_Handler 00000012
 
 Symbol: DAC_Handler
    Definitions
-      At line 202 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 203 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 102 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 174 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 175 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 DMAC_Handler 00000012
 
 Symbol: DMAC_Handler
    Definitions
-      At line 185 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 186 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 83 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 157 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 158 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 Default_Handler 00000012
 
 Symbol: Default_Handler
    Definitions
-      At line 151 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 152 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
 
 
@@ -569,55 +570,55 @@ EIC_Handler 00000012
 
 Symbol: EIC_Handler
    Definitions
-      At line 183 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 184 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 81 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 155 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 156 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 EVSYS_Handler 00000012
 
 Symbol: EVSYS_Handler
    Definitions
-      At line 187 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 188 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 85 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 159 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 160 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 HardFault_Handler 0000000A
 
 Symbol: HardFault_Handler
    Definitions
-      At line 133 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 134 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 63 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 134 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 135 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 NVMCTRL_Handler 00000012
 
 Symbol: NVMCTRL_Handler
    Definitions
-      At line 184 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 185 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 82 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 156 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 157 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 NonMaskableInt_Handler 00000008
 
 Symbol: NonMaskableInt_Handler
    Definitions
-      At line 129 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 130 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 62 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 130 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 131 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 PTC_Handler 00000012
 
 Symbol: PTC_Handler
    Definitions
-      At line 203 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 204 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 103 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 175 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 176 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 PendSV_Handler 0000000E
 
@@ -629,19 +630,19 @@ ARM Macro Assembler    Page 3 Alphabetic symbol ordering
 Relocatable symbols
 
    Definitions
-      At line 142 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 143 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 74 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 143 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 144 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 RTC_Handler 00000012
 
 Symbol: RTC_Handler
    Definitions
-      At line 182 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 183 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 80 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 154 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 155 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 Reset_Handler 00000000
 
@@ -656,37 +657,37 @@ SERCOM0_Handler 00000012
 
 Symbol: SERCOM0_Handler
    Definitions
-      At line 188 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 189 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 86 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 160 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 161 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SERCOM1_Handler 00000012
 
 Symbol: SERCOM1_Handler
    Definitions
-      At line 189 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 190 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 87 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 161 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 162 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SERCOM2_Handler 00000012
 
 Symbol: SERCOM2_Handler
    Definitions
-      At line 190 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 191 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 88 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 162 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 163 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SERCOM3_Handler 00000012
 
 Symbol: SERCOM3_Handler
    Definitions
-      At line 191 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 192 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 89 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 163 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 164 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 
 
@@ -698,55 +699,55 @@ SERCOM4_Handler 00000012
 
 Symbol: SERCOM4_Handler
    Definitions
-      At line 192 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 193 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 90 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 164 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 165 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SERCOM5_Handler 00000012
 
 Symbol: SERCOM5_Handler
    Definitions
-      At line 193 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 194 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 91 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 165 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 166 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SVC_Handler 0000000C
 
 Symbol: SVC_Handler
    Definitions
-      At line 138 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 139 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 71 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 139 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 140 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SYSTEM_Handler 00000012
 
 Symbol: SYSTEM_Handler
    Definitions
-      At line 180 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 181 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 78 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 152 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 153 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 SysTick_Handler 00000010
 
 Symbol: SysTick_Handler
    Definitions
-      At line 146 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 147 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 75 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 147 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 148 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TC0_Handler 00000012
 
 Symbol: TC0_Handler
    Definitions
-      At line 197 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 198 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 95 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 169 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 170 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TC1_Handler 00000012
 
@@ -758,64 +759,64 @@ Symbol: TC1_Handler
 ARM Macro Assembler    Page 5 Alphabetic symbol ordering
 Relocatable symbols
 
-      At line 198 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 199 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 96 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 170 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 171 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TC4_Handler 00000012
 
 Symbol: TC4_Handler
    Definitions
-      At line 199 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 200 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 99 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 171 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 172 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TCC0_Handler 00000012
 
 Symbol: TCC0_Handler
    Definitions
-      At line 194 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 195 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 92 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 166 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 167 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TCC1_Handler 00000012
 
 Symbol: TCC1_Handler
    Definitions
-      At line 195 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 196 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 93 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 167 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 168 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TCC2_Handler 00000012
 
 Symbol: TCC2_Handler
    Definitions
-      At line 196 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 197 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 94 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 168 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 169 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 TRNG_Handler 00000012
 
 Symbol: TRNG_Handler
    Definitions
-      At line 205 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 206 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 105 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 177 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 178 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 USB_Handler 00000012
 
 Symbol: USB_Handler
    Definitions
-      At line 186 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 187 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 84 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 158 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 159 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 
 
@@ -827,18 +828,18 @@ WDT_Handler 00000012
 
 Symbol: WDT_Handler
    Definitions
-      At line 181 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 182 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 79 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 153 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 154 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 __user_initial_stackheap 00000014
 
 Symbol: __user_initial_stackheap
    Definitions
-      At line 225 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 226 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
-      At line 224 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 225 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 Comment: __user_initial_stackheap used once
 35 symbols
 
@@ -854,7 +855,7 @@ Symbol: Heap_Size
       At line 41 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 45 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 229 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 230 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 Stack_Size 00000500
 
@@ -863,7 +864,7 @@ Symbol: Stack_Size
       At line 30 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       At line 33 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
-      At line 228 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 229 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 
 __Vectors_Size 000000B0
 
@@ -886,7 +887,7 @@ Symbol: SystemInit
    Definitions
       At line 117 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
-      At line 120 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 121 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 Comment: SystemInit used once
 __main 00000000
 
@@ -894,13 +895,13 @@ Symbol: __main
    Definitions
       At line 118 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
-      At line 122 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 123 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
 Comment: __main used once
 __use_two_region_memory 00000000
 
 Symbol: __use_two_region_memory
    Definitions
-      At line 223 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
+      At line 224 in file RTE\Device\ATSAML21G18B\startup_saml21g18b.s
    Uses
       None
 Comment: __use_two_region_memory unused
