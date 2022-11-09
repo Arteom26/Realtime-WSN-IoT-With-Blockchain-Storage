@@ -105,6 +105,10 @@ void parseSmartmeshData(void* unused){
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("B");
 			xSemaphoreGive(bluetoothInUse);
+		
+			xSemaphoreTake(apiInUse, portMAX_DELAY);
+			api.resetManager();
+			xSemaphoreGive(apiInUse);
 			break;
 		
 		case SUBSCRIBE:// Notifications were setu;
@@ -130,7 +134,10 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case RESET_CMD:
-			//api.mgr_init();// Send hello packet
+			xSemaphoreTake(apiInUse, portMAX_DELAY);
+			api.mgr_init();// Send hello packet
+			xSemaphoreGive(apiInUse);
+			
 			break;
 		
 		default:
@@ -147,7 +154,7 @@ void setupParse(void* unused){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 1, NULL);
+		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 55, NULL);
 	}
 }
 

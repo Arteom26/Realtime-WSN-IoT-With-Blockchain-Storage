@@ -18,6 +18,8 @@ T littleToBigEndian(T value){
 // This task will parse any data recived thorugh bluetooth
 void bluetoothParse(void* unused){
 	uint8_t recieved_data;
+	network_config config;
+	network_info info;
 	
 	while(1){
 		xQueueReceive(bluetoothData, &recieved_data, portMAX_DELAY);// Wait for data to come in
@@ -29,8 +31,8 @@ void bluetoothParse(void* unused){
 				xQueueReceive(bluetoothData, &netid[1], portMAX_DELAY);
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.setNetworkConfig(netid);// Setup the network config
-				xSemaphoreGive(apiInUse);
 				
+				xSemaphoreGive(apiInUse);
 				break;
 			
 			case 'B':// Setup common join key
@@ -40,7 +42,6 @@ void bluetoothParse(void* unused){
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.setJoinKey(jkey);
 				xSemaphoreGive(apiInUse);
-				
 				//vTaskDelay(100);// Give time for the network manager to process data
 				break;
 			
@@ -76,22 +77,20 @@ void bluetoothParse(void* unused){
 			case 'G':// Get the current network information
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.getNetworkConfig();
+			
 				xSemaphoreTake(getNetworkConfig, portMAX_DELAY);
-				network_config config;
 				api.parseNetworkConfig(&config, smartmeshData);
-				//xSemaphoreGive(apiInUse);
-			
-				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
-				bluetooth._printf("J");// Send network/network manager configuration
-				bluetooth.send_array((uint8_t*)&config.networkId, 2);// 1. Send the network ID(2 bytes)
-				bluetooth.send_array((uint8_t*)&config.apTxPower, 1);// 2. Send the TX power of the manager(1 byte)
-			
-				//xSemaphoreTake(apiInUse, portMAX_DELAY);
+				
 				api.getNetworkInfo();
 				xSemaphoreTake(getNetworkInfo, portMAX_DELAY);// Wait for data to be ready
-				network_info info;
+				
 				api.parseNetworkInfo(&info, smartmeshData);
-				xSemaphoreGive(apiInUse);	
+				xSemaphoreGive(apiInUse);
+			
+				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
+				bluetooth._printf("J");// Send network manager configuration
+				bluetooth.send_array((uint8_t*)&config.networkId, 2);// 1. Send the network ID(2 bytes)
+				bluetooth.send_array((uint8_t*)&config.apTxPower, 1);// 2. Send the TX power of the manager(1 byte)	
 			
 				bluetooth.send_array((uint8_t*)&info.num_motes, 2);// 3. Number of motes currently connected(2 bytes)
 				bluetooth.send_array((uint8_t*)&info.ipv6AddrHigh, 16);// 4. Send IPV6 address(16 bytes)
@@ -123,6 +122,8 @@ void bluetoothParse(void* unused){
 			case 'H':// Clear statistics command
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.clearStatistics();
+				api.mgr_init();
+				vTaskDelay(100);
 				xSemaphoreGive(apiInUse);	
 				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 				bluetooth._printf("M");

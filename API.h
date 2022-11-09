@@ -288,6 +288,8 @@ class Smartmesh_API{
 		UART *sendUart;// Uart port for where to send data to(a seperate class)
     uint8_t mgrSeqNum;
     uint8_t cliSeqNum;
+	
+		SemaphoreHandle_t usingApi;
 
     void init_packet(uint8_t length, uint8_t command);
     void checksumData(uint16_t fcs, uint8_t *data, uint16_t len);

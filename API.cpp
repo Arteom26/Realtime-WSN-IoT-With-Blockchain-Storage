@@ -14,6 +14,9 @@ using namespace std;
 Smartmesh_API::Smartmesh_API(UART *uart){
 	sendUart = uart;
 	cliSeqNum = 0;
+	
+	usingApi = xSemaphoreCreateBinary();
+	xSemaphoreGive(usingApi);
 }
 
 /**
@@ -66,7 +69,7 @@ void Smartmesh_API::init_packet(uint8_t length, uint8_t command){
 	send_data[3] = cliSeqNum;
 	send_data[4] = length;
 	send_data[7+length] = 0x7E;// End of packet transmittion
-	cliSeqNum++;// Increment user sending number
+	cliSeqNum++;// Increment user sending numbers
 }
 
 /**
@@ -81,13 +84,18 @@ void Smartmesh_API::init_packet(uint8_t length, uint8_t command){
 					CMD_FAIL - command failed => TODO
 **/
 bool Smartmesh_API::mgr_init(){
+	xSemaphoreTake(usingApi, portMAX_DELAY);
+	cliSeqNum = 0;
+	
 	init_packet(3, USR_HELLO);
 	send_data[1] = 0x0;
 	send_data[5] = API_APP_VER;
-	send_data[6] = 0x00;//cliSeqNum - 1;// Must be same as one that was sent first
+	send_data[6] = cliSeqNum - 1;// Must be same as one that was sent first
 	send_data[7] = 0;
 	checksumData(START_CHECKSUM, send_data, 7);
 	sendUart->send_array(send_data, 11);
+	
+	xSemaphoreGive(usingApi);
 	return CMD_SUCCESS;
 }
 
@@ -105,6 +113,7 @@ bool Smartmesh_API::mgr_init(){
 					CMD_FAIL - command failed => TODO: add sub/unpack verification
 **/
 bool Smartmesh_API::subscribe(uint32_t sub, uint32_t unpack){
+	xSemaphoreTake(usingApi, portMAX_DELAY);
 	init_packet(8, SUBSCRIBE);
 	
 	memcpy(send_data + 5, &sub, 4);// Copy bytes over to array
@@ -112,6 +121,7 @@ bool Smartmesh_API::subscribe(uint32_t sub, uint32_t unpack){
 	checksumData(START_CHECKSUM, send_data, 12);
 	sendUart->send_array(send_data, 16);// Send whole payload including flags/checksum
 	
+	xSemaphoreGive(usingApi);
 	return CMD_SUCCESS;
 }
 
@@ -210,6 +220,7 @@ bool Smartmesh_API::getNetworkInfo(){
 
 // Parses the get network info command response
 bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
+	xSemaphoreTake(usingApi, portMAX_DELAY);
 	uint8_t *dataOriginal = data;
 	if(*(data+2) != 0x40)// Not a data packet
 		return CMD_FAIL;
@@ -237,15 +248,19 @@ bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
 	if(temp != fcs_temp)
 		return CMD_FAIL;
 	
+	xSemaphoreGive(usingApi);
+	
 	return CMD_SUCCESS;
 }
 
 // Clear network statistics
 bool Smartmesh_API::clearStatistics(){
+	xSemaphoreTake(usingApi, portMAX_DELAY);
 	init_packet(0, CLEAR_STAT);
 	checksumData(START_CHECKSUM, send_data, 4);
 	sendUart->send_array(send_data, 8);
 	
+	xSemaphoreGive(usingApi);
 	return CMD_SUCCESS;
 }
 
