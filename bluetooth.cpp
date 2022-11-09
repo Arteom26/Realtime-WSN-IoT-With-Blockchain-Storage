@@ -30,7 +30,7 @@ void bluetoothParse(void* unused){
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.setNetworkConfig(netid);// Setup the network config
 				xSemaphoreGive(apiInUse);
-				bluetooth._printf("A");
+				
 				break;
 			
 			case 'B':// Setup common join key
@@ -40,8 +40,8 @@ void bluetoothParse(void* unused){
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.setJoinKey(jkey);
 				xSemaphoreGive(apiInUse);
-				bluetooth._printf("B");
-				vTaskDelay(3500);// Give time for the network manager to process data
+				
+				//vTaskDelay(100);// Give time for the network manager to process data
 				break;
 			
 			case 'C':// Get the mote list
@@ -79,14 +79,14 @@ void bluetoothParse(void* unused){
 				xSemaphoreTake(getNetworkConfig, portMAX_DELAY);
 				network_config config;
 				api.parseNetworkConfig(&config, smartmeshData);
-				xSemaphoreGive(apiInUse);
+				//xSemaphoreGive(apiInUse);
 			
 				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 				bluetooth._printf("J");// Send network/network manager configuration
 				bluetooth.send_array((uint8_t*)&config.networkId, 2);// 1. Send the network ID(2 bytes)
 				bluetooth.send_array((uint8_t*)&config.apTxPower, 1);// 2. Send the TX power of the manager(1 byte)
 			
-				xSemaphoreTake(apiInUse, portMAX_DELAY);
+				//xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.getNetworkInfo();
 				xSemaphoreTake(getNetworkInfo, portMAX_DELAY);// Wait for data to be ready
 				network_info info;
