@@ -126,7 +126,7 @@ void setupParse(void* unused){
 
 	//http_test();
 	
-	//tcp_write();
+	tcp_write();
 	//gsm_usart._printf("AT\r\n");
 	//char cmd[] = "AT\r\n";
 //		gsm_usart._printf("ate0\r\n");
@@ -188,7 +188,7 @@ void setupParse(void* unused){
 int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
-	xTaskCreate(sendData, "Parse", 64, NULL, 1, NULL);
+	//xTaskCreate(sendData, "Parse", 64, NULL, 1, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 256, NULL, 5, NULL);
 	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
 	
@@ -258,30 +258,30 @@ extern "C"{
 	void SERCOM2_Handler(void){// GSM Module handler
 		uint8_t data = SERCOM2_REGS->USART_INT.SERCOM_DATA;
 		
-		txGsmBuffer[responseLength] = data;
-		responseLength++;
-		
-		//process response line by line
-		if ((strstr(txGsmBuffer, "\r\n") != NULL))
-		{
-			responseLengthCopy = responseLength;
+//		txGsmBuffer[responseLength] = data;
+//		responseLength++;
+//		
+//		//process response line by line
+//		if ((strstr(txGsmBuffer, "\r\n") != NULL))
+//		{
+//			responseLengthCopy = responseLength;
 
-			xSemaphoreTakeFromISR(dma_in_use, NULL);
-			DMAC_REGS->DMAC_CHID = 0;
-			while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
-			uint32_t *desc = (uint32_t*)0x30000000; //Base address
-			*desc++ = ((responseLength + 2) << 16)|0x0C01;
-			*desc++ = (uint32_t)(txGsmBuffer + responseLength + 2);// Source address
-			*desc = (uint32_t)(responseGsmBuffer + responseLength + 2);// Dest address
-			DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-			DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
-			xSemaphoreGiveFromISR(dma_in_use, NULL);
-				
-			clearBuffer(txGsmBuffer);
-			xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
-		}
+//			xSemaphoreTakeFromISR(dma_in_use, NULL);
+//			DMAC_REGS->DMAC_CHID = 0;
+//			while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
+//			uint32_t *desc = (uint32_t*)0x30000000; //Base address
+//			*desc++ = ((responseLength + 2) << 16)|0x0C01;
+//			*desc++ = (uint32_t)(txGsmBuffer + responseLength + 2);// Source address
+//			*desc = (uint32_t)(responseGsmBuffer + responseLength + 2);// Dest address
+//			DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
+//			DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
+//			xSemaphoreGiveFromISR(dma_in_use, NULL);
+//				
+//			clearBuffer(txGsmBuffer);
+//			xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
+//		}
 
-		//xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
+		xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }

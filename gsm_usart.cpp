@@ -53,8 +53,8 @@ void clearBuffer(char *buf)
 
 bool at_send_cmd(const char *cmd, AT_COMMAND_TYPE cmd_type)
 {
-	//vTaskDelay(50);
-	xSemaphoreTake(gsm_in_use, portMAX_DELAY);
+	vTaskDelay(100);
+	//xSemaphoreTake(gsm_in_use, portMAX_DELAY);
 	
 	gsm_usart._printf(cmd);
 	at_cmd_type = cmd_type;
@@ -141,14 +141,14 @@ void setupGsmParse(void* unused){
 	
 	while(1)
 		{
-		//xQueueReceive(gsmData, &recieved_data, portMAX_DELAY);// Wait for data to come in
-		//bluetooth._printf("%c", recieved_data);
-		
+		xQueueReceive(gsmData, &recieved_data, portMAX_DELAY);// Wait for data to come in
+		bluetooth._printf("%c", recieved_data);
+		//xSemaphoreGive(gsm_in_use);
 			
 		
-		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
-			
-		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
+//		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
+//			
+//		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
 
 //		while (recieved_data != '\n' && recieved_data != '\r') 
 //		{
