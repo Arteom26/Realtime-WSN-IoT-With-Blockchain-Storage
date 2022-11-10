@@ -47,7 +47,7 @@
 #include "system_saml21.h"
 #endif
 
-#define configASSERT( x ) if( x == 0 ) { taskDISABLE_INTERRUPTS(); for(;;); }
+#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for(;;); }
 
 #define CONFIG_ASSERT 1
 

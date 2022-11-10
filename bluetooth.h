@@ -15,9 +15,6 @@ extern uint8_t smartmeshData[130];
 extern SemaphoreHandle_t getNetworkInfo;
 extern SemaphoreHandle_t getNetworkConfig;
 extern SemaphoreHandle_t moteConfigWasGotFromID;
-extern SemaphoreHandle_t getMoteInfo;
-extern SemaphoreHandle_t apiInUse;
-extern bool connectedToManager;
 
 void bluetoothParse(void* unused);
 
