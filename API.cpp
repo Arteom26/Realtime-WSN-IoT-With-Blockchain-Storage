@@ -220,7 +220,7 @@ bool Smartmesh_API::getNetworkInfo(){
 
 // Parses the get network info command response
 bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
-	xSemaphoreTake(usingApi, portMAX_DELAY);
+	//xSemaphoreTake(usingApi, portMAX_DELAY);
 	uint8_t *dataOriginal = data;
 	if(*(data+2) != 0x40)// Not a data packet
 		return CMD_FAIL;
@@ -245,10 +245,10 @@ bool Smartmesh_API::parseNetworkInfo(network_info *info, uint8_t *data){
 	data += 48;
 	uint16_t temp = verifyPacket(START_CHECKSUM, dataOriginal, 43+4);
 	uint16_t fcs_temp = *(data - 1) | *(data - 2) << 8;
-	if(temp != fcs_temp)
-		return CMD_FAIL;
+	//if(temp != fcs_temp)
+	//	return CMD_FAIL;
 	
-	xSemaphoreGive(usingApi);
+	//xSemaphoreGive(usingApi);
 	
 	return CMD_SUCCESS;
 }

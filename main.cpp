@@ -25,12 +25,12 @@ Smartmesh_API api = Smartmesh_API(&api_usart);
 AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
 
 // RTOS Semaphores and queues
-QueueHandle_t bluetoothData = xQueueCreate(32, sizeof(uint8_t));
+QueueHandle_t bluetoothData = xQueueCreate(48, sizeof(uint8_t));
 QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t apiInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
-SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network manager
+SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network managers
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t getMoteInfo = xSemaphoreCreateBinary();
@@ -40,6 +40,8 @@ SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote conf
 // Checksum verification for interrupt handler(bypassing first byte)
 uint16_t verifyPacket(uint16_t fcs, uint8_t *data, uint16_t len){
 	data++;
+	if(len == 0xFFFF||len == 0)
+		while(1);
 	while(len--)
 		fcs = (fcs >> 8) ^ fcstab[(fcs ^ *data++) & 0xFF];
 	
@@ -96,33 +98,39 @@ void parseSmartmeshData(void* unused){
 			break;
 		
 		case SET_NTWK_CONFIG:// Network configuration was setup
+			vTaskDelay(100);
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("A");
 			xSemaphoreGive(bluetoothInUse);
 			break;
 		
 		case SET_COMMON_JKEY:// Network join key was set
+			vTaskDelay(100);
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("B");
 			xSemaphoreGive(bluetoothInUse);
-		
 			xSemaphoreTake(apiInUse, portMAX_DELAY);
 			api.resetManager();
 			xSemaphoreGive(apiInUse);
 			break;
 		
-		case SUBSCRIBE:// Notifications were setu;
-			break;
-		
 		case GET_NETWORK_INFO:// Network info data must be parsed
+			vTaskDelay(100);
 			xSemaphoreGive(getNetworkInfo);// Network info has been recieved
 			break;
 		
 		case GET_NET_CONFIG:
+			vTaskDelay(100);
 			xSemaphoreGive(getNetworkConfig);
 			break;
 		
 		case GET_MOTE_INFO:
+			vTaskDelay(100);
+			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
+			bluetooth._printf("F");// Mote information command
+			bluetooth.send_array(buffer + 6, 8);// Send mac address
+			bluetooth.send_array(buffer + 29, 12);
+			xSemaphoreGive(bluetoothInUse);
 			xSemaphoreGive(getMoteInfo);
 			break;
 		
@@ -137,7 +145,6 @@ void parseSmartmeshData(void* unused){
 			xSemaphoreTake(apiInUse, portMAX_DELAY);
 			api.mgr_init();// Send hello packet
 			xSemaphoreGive(apiInUse);
-			
 			break;
 		
 		default:
@@ -154,7 +161,7 @@ void setupParse(void* unused){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 55, NULL);
+		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 32, NULL);
 	}
 }
 
@@ -191,23 +198,27 @@ extern "C"{
 			startFlag = true;
 			txbuffer[length] = data;
 		}
-		else if(startFlag && data == 0x7E){// Checksum to check if end of flag was found
+		else if(startFlag && data == 0x7E && length > 2){// Checksum to check if end of flag was found
 			uint16_t check = verifyPacket(START_CHECKSUM, txbuffer, length - 2);
 			uint16_t currCheck = txbuffer[length - 1] | (txbuffer[length] << 8);
 			txbuffer[length+1] = data;
-			xSemaphoreTakeFromISR(dma_in_use, NULL);
-			DMAC_REGS->DMAC_CHID = 0;
-			while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
-			uint32_t *desc = (uint32_t*)0x30000000;
-			*desc++ = ((length+2) << 16)|0x0C01;
-			*desc++ = (uint32_t)(txbuffer + length + 2);// Source address
-			*desc = (uint32_t)(smartmeshData + length + 2);// Dest address
-			DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
-			DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
-			xSemaphoreGiveFromISR(dma_in_use, NULL);
-			startFlag = false;
-			if(check == currCheck)// Verification passed
+			if(check == currCheck || (txbuffer[2] == 0x3F && length == 0x1D)){// Verification passed
 				xSemaphoreGiveFromISR(dataRecieved, NULL);
+				startFlag = false;
+				xSemaphoreTakeFromISR(dma_in_use, NULL);
+				DMAC_REGS->DMAC_CHID = 0;
+				while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
+				uint32_t *desc = (uint32_t*)0x30000000;
+				*desc++ = ((length+2) << 16)|0x0C01;
+				*desc++ = (uint32_t)(txbuffer + length + 2);// Source address
+				*desc = (uint32_t)(smartmeshData + length + 2);// Dest address
+				DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
+				DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
+				xSemaphoreGiveFromISR(dma_in_use, NULL);
+			}
+			else{// End of packet not found
+				length++;
+			}
 		}
 		else if(startFlag && data != 0x7E){// Copy to buffer
 			txbuffer[length+1] = data;

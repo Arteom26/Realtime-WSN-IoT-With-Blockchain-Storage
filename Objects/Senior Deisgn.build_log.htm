@@ -29,7 +29,7 @@ Project File Date:  11/03/2022
 Build target 'Target 1'
 compiling main.cpp...
 linking...
-Program Size: Code=17840 RO-data=728 RW-data=1220 ZI-data=22796  
+Program Size: Code=17856 RO-data=728 RW-data=1220 ZI-data=22796  
 ".\Objects\Senior Deisgn.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -80,14 +80,14 @@ Package Vendor: Microchip
       Include file:  CMSIS\RTOS2\FreeRTOS\Config\ARMCM\FreeRTOSConfig.h
 
    * Component: ARM.FreeRTOS::RTOS:Core:Cortex-M:10.4.6
-      Include file:  Source\include\queue.h
-      Include file:  Source\include\semphr.h
-      Source file:   Source\tasks.c
+      Source file:   Source\list.c
       Source file:   Source\queue.c
       Source file:   Source\portable\RVDS\ARM_CM0\port.c
       Include file:  Source\include\FreeRTOS.h
+      Include file:  Source\include\semphr.h
+      Source file:   Source\tasks.c
       Include file:  Source\include\task.h
-      Source file:   Source\list.c
+      Include file:  Source\include\queue.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c
 
    * Component: ARM.FreeRTOS::RTOS:Coroutines:10.4.6
@@ -106,8 +106,8 @@ Package Vendor: Microchip
       Include file:  Source\include\message_buffer.h
 
    * Component: ARM.FreeRTOS::RTOS:Stream Buffer:10.4.6
-      Source file:   Source\stream_buffer.c
       Include file:  Source\include\stream_buffer.h
+      Source file:   Source\stream_buffer.c
 
    * Component: ARM.FreeRTOS::RTOS:Timers:10.4.6
       Source file:   Source\timers.c
@@ -116,17 +116,17 @@ Package Vendor: Microchip
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS:Cortex-M:10.4.6
+      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c
       Include file:  CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h
       Source file:   CMSIS\RTOS2\FreeRTOS\Source\os_systick.c
-      Source file:   CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c
 
    * Component: Microchip::Device:Startup:3.6.0
-      Source file:   saml21b\armcc\armcc\startup_saml21g18b.s
-      Source file:   saml21b\armcc\system_saml21g18b.c
-      Source file:   saml21b\templates\main.c
-      Source file:   saml21b\templates\main.cpp
       Include file:  saml21b\include\sam.h
+      Source file:   saml21b\templates\main.cpp
+      Source file:   saml21b\armcc\armcc\startup_saml21g18b.s
+      Source file:   saml21b\templates\main.c
+      Source file:   saml21b\armcc\system_saml21g18b.c
 Build Time Elapsed:  00:00:02
 </pre>
 </body>

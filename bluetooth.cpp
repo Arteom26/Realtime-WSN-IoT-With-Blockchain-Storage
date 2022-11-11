@@ -31,7 +31,6 @@ void bluetoothParse(void* unused){
 				xQueueReceive(bluetoothData, &netid[1], portMAX_DELAY);
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.setNetworkConfig(netid);// Setup the network config
-				
 				xSemaphoreGive(apiInUse);
 				break;
 			
@@ -78,11 +77,14 @@ void bluetoothParse(void* unused){
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.getNetworkConfig();
 			
-				xSemaphoreTake(getNetworkConfig, portMAX_DELAY);
+				if(xSemaphoreTake(getNetworkConfig, 1000) == pdFALSE)
+					break;
 				api.parseNetworkConfig(&config, smartmeshData);
 				
 				api.getNetworkInfo();
-				xSemaphoreTake(getNetworkInfo, portMAX_DELAY);// Wait for data to be ready
+				
+				if(xSemaphoreTake(getNetworkInfo, 1000) == pdFALSE)// Wait for data to be ready
+					break;
 				
 				api.parseNetworkInfo(&info, smartmeshData);
 				xSemaphoreGive(apiInUse);
@@ -102,12 +104,13 @@ void bluetoothParse(void* unused){
 				for(int i = 0;i < 8;i++)
 					xQueueReceive(bluetoothData, &mac_addr1[i], portMAX_DELAY);// Get the mac address
 				api.getMoteInfo(mac_addr1);
-				xSemaphoreTake(getMoteInfo, portMAX_DELAY);
-				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
-				bluetooth._printf("F");// Mote information command
-				bluetooth.send_array(smartmeshData + 6, 8);// Send mac address
-				bluetooth.send_array(smartmeshData + 29, 12);
-				xSemaphoreGive(bluetoothInUse);
+				if(xSemaphoreTake(getMoteInfo, 1000) == pdFALSE)
+					break;
+				//xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
+				//bluetooth._printf("F");// Mote information command
+				//bluetooth.send_array(smartmeshData + 6, 8);// Send mac address
+				//bluetooth.send_array(smartmeshData + 29, 12);
+				//xSemaphoreGive(bluetoothInUse);
 				break;
 			
 			case 'E':// Has a connection been established with the network manager
@@ -122,7 +125,7 @@ void bluetoothParse(void* unused){
 			case 'H':// Clear statistics command
 				xSemaphoreTake(apiInUse, portMAX_DELAY);
 				api.clearStatistics();
-				api.mgr_init();
+				//api.mgr_init();
 				vTaskDelay(100);
 				xSemaphoreGive(apiInUse);	
 				xSemaphoreTake(bluetoothInUse, portMAX_DELAY);

@@ -30,8 +30,8 @@ UART::UART(sercom_registers_t *port, int baudrate){
 		dma_channel_id = 3;
 		PORT_REGS->GROUP[0].PORT_PINCFG[12] = 0x1;
 		PORT_REGS->GROUP[0].PORT_PINCFG[14] = 0x1;
-		PORT_REGS->GROUP[0].PORT_PMUX[6] = 0x3;
-		PORT_REGS->GROUP[0].PORT_PMUX[7] = 0x3;
+		PORT_REGS->GROUP[0].PORT_PMUX[6] = 0x2;
+		PORT_REGS->GROUP[0].PORT_PMUX[7] = 0x2;
 		NVIC->IP[2] |= (64 << 16);
 		NVIC->ISER[0] |= (1 << 10);
 		NVIC->ICPR[0] |= (1 << 10);
