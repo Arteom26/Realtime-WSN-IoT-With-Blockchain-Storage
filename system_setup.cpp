@@ -43,7 +43,7 @@ void setup_system(void){
 	// 48MHz main clock setup
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLB |= 0x20;// Use GCLK as the source and setup clock division
 	OSCCTRL_REGS->OSCCTRL_DPLLPRESC = 0x0;// Divide output clock by 1
-	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 1400;// Current max value I can get out of PLL
+	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 1400;
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x4) != 0);
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLA = 0x2;// Enable PLL Output
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x2) != 0);

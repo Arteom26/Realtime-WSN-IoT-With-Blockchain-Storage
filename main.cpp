@@ -202,7 +202,7 @@ extern "C"{
 			uint16_t check = verifyPacket(START_CHECKSUM, txbuffer, length - 2);
 			uint16_t currCheck = txbuffer[length - 1] | (txbuffer[length] << 8);
 			txbuffer[length+1] = data;
-			if(check == currCheck || (txbuffer[2] == 0x3F && length == 0x1D)){// Verification passed
+			if(check == currCheck || (txbuffer[2] == 0x40 && length == 0x32) || (txbuffer[2] == 0x3F && length == 0x1D)){// Verification passed
 				xSemaphoreGiveFromISR(dataRecieved, NULL);
 				startFlag = false;
 				xSemaphoreTakeFromISR(dma_in_use, NULL);
