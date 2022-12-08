@@ -54,8 +54,8 @@ void clearBuffer(char *buf)
 
 bool at_send_cmd(const char *cmd, AT_COMMAND_TYPE cmd_type)
 {
-	vTaskDelay(100);
-	//xSemaphoreTake(gsm_in_use, portMAX_DELAY);
+	vTaskDelay(10);
+	xSemaphoreTake(gsm_in_use, portMAX_DELAY);
 	
 	gsm_usart._printf(cmd);
 	at_cmd_type = cmd_type;
@@ -139,7 +139,7 @@ void parseGSMData(void* unused)
 // This task will parse any data recived thorugh bluetooth
 void setupGsmParse(void* unused){
 	
-	gsm_init();
+	
 	
 	while(1)
 		{

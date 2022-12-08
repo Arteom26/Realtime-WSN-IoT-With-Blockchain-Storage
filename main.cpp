@@ -136,7 +136,7 @@ void setupParse(void* unused){
 	
 	//http_test();
 	
-	tcp_write();
+	//tcp_write();
 	//gsm_usart._printf("AT\r\n");
 	//char cmd[] = "AT\r\n";
 //		gsm_usart._printf("ate0\r\n");
@@ -180,10 +180,10 @@ void setupParse(void* unused){
 */
 int main(){
 	setup_system();// Setup all peripherals
+	xTaskCreate(setupGsmParse, "GSM Parse", 64, NULL, 1, NULL);
 	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
-	//xTaskCreate(sendData, "Parse", 64, NULL, 1, NULL);
+	xTaskCreate(sendData, "Sending Data", 64, NULL, 1, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 256, NULL, 5, NULL);
-	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
 	
 	api_usart = UART(SERCOM1_REGS, 115200);
 	bluetooth = UART(SERCOM0_REGS, 115200);

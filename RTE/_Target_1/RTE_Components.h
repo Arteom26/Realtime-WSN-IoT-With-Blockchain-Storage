@@ -1,4 +1,4 @@
-#include "system_saml21.h"
+
 /*
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
@@ -9,6 +9,7 @@
 
 #ifndef RTE_COMPONENTS_H
 #define RTE_COMPONENTS_H
+#include "system_saml21.h"
 
 
 /*

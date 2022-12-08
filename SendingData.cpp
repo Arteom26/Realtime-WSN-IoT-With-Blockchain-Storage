@@ -1,9 +1,11 @@
 #include "SendingData.h"
 
-//void sendData(void* unused)
-//{
-//	
-//}
+void sendData(void* unused)
+{
+	//bluetooth._printf("HELLO");
+	//gsm_init();
+	tcp_write();
+}
 
 void gsm_init(void)
 {
