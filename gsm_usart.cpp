@@ -142,12 +142,8 @@ void parseGSMData(void* unused)
 
 
 
-// This task will parse any data recived thorugh bluetooth
+// This task will parse any data recived through gsm uart
 void setupGsmParse(void* unused){
-	//gsm_usart._printf("AT\r\n");
-	//gsm_init();
-	
-	tcp_write();
 	
 	while(1)
 		{

@@ -129,3 +129,5 @@
 .\objects\sendingdata.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\sendingdata.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\sendingdata.o: C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h
+.\objects\sendingdata.o: bluetooth.h
+.\objects\sendingdata.o: API.h

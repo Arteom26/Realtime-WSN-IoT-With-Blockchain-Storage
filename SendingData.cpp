@@ -1,9 +1,12 @@
 #include "SendingData.h"
 
-//void sendData(void* unused)
-//{
-//	
-//}
+void sendData(void* unused)
+{
+	//gsm_usart._printf("AT\r\n");
+	//gsm_init();
+	
+	tcp_write();
+}
 
 void gsm_init(void)
 {
