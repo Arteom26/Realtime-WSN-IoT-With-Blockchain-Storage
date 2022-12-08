@@ -17,14 +17,21 @@ typedef enum
 		AT_COMMAND_UNKNOWN
 } AT_COMMAND_TYPE;
 
+
+extern char responseGsmBuffer[200];
+extern char txGsmBuffer[200];
+extern uint8_t responseLength;
+extern uint8_t responseLengthCopy;
+
+
 extern QueueHandle_t gsmData;
 extern SemaphoreHandle_t gsmDataRecieved;
 extern UART gsm_usart;
 extern AT_COMMAND_TYPE at_cmd_type;
 extern bool gsmReady;
 
-void gsmParse(void* unused);
-
+void setupGsmParse(void* unused);
+void clearBuffer(char *buf);
 bool read_resp(const char *buf);
 bool at_OK(const char *buf);
 bool at_ERROR(const char *buf);

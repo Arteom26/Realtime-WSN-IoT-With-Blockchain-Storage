@@ -8,8 +8,8 @@
 #include "semphr.h"
 #include "bluetooth.h"
 #include "gsm_usart.h"
-#include "SendingData.h"
 #include <string>
+#include "SendingData.h"
 
 // Global variables
 bool startFlag = false;
@@ -24,9 +24,13 @@ UART gsm_usart = UART(SERCOM2_REGS, 115200);
 Smartmesh_API api = Smartmesh_API(&api_usart);
 AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
 
+char responseGsmBuffer[200];
+char txGsmBuffer[200];
+uint8_t responseLength = 0;
+uint8_t responseLengthCopy = 0;
+
 // RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(48, sizeof(uint8_t));
-QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t apiInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
@@ -35,6 +39,8 @@ SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info pack
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t getMoteInfo = xSemaphoreCreateBinary();
 SemaphoreHandle_t gsm_in_use = xSemaphoreCreateBinary();
+QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
+SemaphoreHandle_t gsmDataRecieved = xSemaphoreCreateBinary();// Data was recieved from GSM
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
 // Checksum verification for interrupt handler(bypassing first byte)
@@ -240,6 +246,32 @@ extern "C"{
 	}
 	
 	void SERCOM2_Handler(void){// GSM Module handler
+		uint8_t data = SERCOM2_REGS->USART_INT.SERCOM_DATA;
+		
+		txGsmBuffer[responseLength] = data;
+		responseLength++;
+		
+		//process response line by line
+		if ((strstr(txGsmBuffer, "\r\n") != NULL))
+		{
+			responseLengthCopy = responseLength;
+
+			xSemaphoreTakeFromISR(dma_in_use, NULL);
+			DMAC_REGS->DMAC_CHID = 0;
+			while(DMAC_REGS->DMAC_CHCTRLA != 0);// Check to see if DMA is still running
+			uint32_t *desc = (uint32_t*)0x30000000; //Base address
+			*desc++ = ((responseLength + 2) << 16)|0x0C01;
+			*desc++ = (uint32_t)(txGsmBuffer + responseLength + 2);// Source address
+			*desc = (uint32_t)(responseGsmBuffer + responseLength + 2);// Dest address
+			DMAC_REGS->DMAC_CHCTRLA = 0x2;// Enable the channel
+			DMAC_REGS->DMAC_SWTRIGCTRL |= 0x1;
+			xSemaphoreGiveFromISR(dma_in_use, NULL);
+				
+			clearBuffer(txGsmBuffer);
+			xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
+		}
+
+		//xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }

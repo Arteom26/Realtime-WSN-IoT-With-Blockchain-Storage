@@ -43,7 +43,7 @@ void setup_system(void){
 	// 48MHz main clock setup
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLB |= 0x20;// Use GCLK as the source and setup clock division
 	OSCCTRL_REGS->OSCCTRL_DPLLPRESC = 0x0;// Divide output clock by 1
-	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 1400;
+	OSCCTRL_REGS->OSCCTRL_DPLLRATIO = 1400;// Current max value I can get out of PLL
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x4) != 0);
 	OSCCTRL_REGS->OSCCTRL_DPLLCTRLA = 0x2;// Enable PLL Output
 	while((OSCCTRL_REGS->OSCCTRL_DPLLSYNCBUSY&0x2) != 0);
@@ -86,7 +86,7 @@ void setup_system(void){
 	*desc++ = 0x00000000;
 	
 	// DMA initialization and setup
-	// Channel 0 => Smartmesh IP data copying
+	// Channel 0 => Smartmesh IP/GSM data copying
 	// Channels 1-3 => UART TX data transfer for SERCOM0-SERCOM2
 	// Channel 4 => Misc. Copying tasks
 	DMAC_REGS->DMAC_BASEADDR = 0x30000000;

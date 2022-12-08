@@ -1,5 +1,20 @@
 #include "SendingData.h"
 
+//void sendData(void* unused)
+//{
+//	
+//}
+
+void gsm_init(void)
+{
+	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CFUN=1\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CNMP=38\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CMNB=1\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
+	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
+}
+
 void http_test(void)
 {
 		
@@ -77,10 +92,10 @@ void tcp_write(void)
 	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(100);
 	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
-	//vTaskDelay(2000);
-	at_send_cmd("AT+CIPSEND=82\r\n", AT_COMMAND_WRITE);
+	vTaskDelay(1000);
+	at_send_cmd("AT+CIPSEND=84\r\n", AT_COMMAND_WRITE);
 	//vTaskDelay(100);
-	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=7&field3=2\r\n",AT_COMMAND_WRITE);
+	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=22&field3=44\r\n",AT_COMMAND_WRITE);
 	//vTaskDelay(2000);
 }
 
@@ -99,3 +114,4 @@ void tcp_read(void)
 	gsm_usart._printf("AT+CIPSEND=73\r\n");
 	vTaskDelay(100);
 }
+
