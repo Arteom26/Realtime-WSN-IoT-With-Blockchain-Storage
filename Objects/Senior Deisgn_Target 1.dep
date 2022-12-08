@@ -1,6 +1,6 @@
 Dependencies for Project 'Senior Deisgn', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.cpp)(0x636D69D5)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.cpp)(0x639111CC)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
@@ -84,8 +84,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
@@ -127,12 +127,12 @@ I (C:\Keil_v5\ARM\ARMCC\include\cstring)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_traits.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdio)(0x6025DA46)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
-I (API.h)(0x636D3916)
-I (bluetooth.h)(0x636D3916)
-I (gsm_usart.h)(0x636D3722)
-I (SendingData.h)(0x636D6755)
+I (API.h)(0x636E6D7B)
+I (bluetooth.h)(0x636E6D7C)
+I (gsm_usart.h)(0x636E6D7C)
+I (SendingData.h)(0x639111CC)
 F (.\system_setup.h)(0x6352FC4B)()
-F (.\system_setup.cpp)(0x636D3722)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\system_setup.o --omf_browse .\objects\system_setup.crf --depend .\objects\system_setup.d)
+F (.\system_setup.cpp)(0x636E6D7C)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\system_setup.o --omf_browse .\objects\system_setup.crf --depend .\objects\system_setup.d)
 I (system_setup.h)(0x6352FC4B)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
@@ -212,15 +212,15 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\in
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (RTC.h)(0x6352FC4B)
-I (API.h)(0x636D3916)
+I (API.h)(0x636E6D7B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
 I (SERCOM.h)(0x63642B80)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\portable.h)(0x61833A9C)
@@ -260,13 +260,13 @@ I (C:\Keil_v5\ARM\ARMCC\include\cstring)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_traits.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdio)(0x6025DA46)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
-F (.\bluetooth.cpp)(0x636D6821)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\bluetooth.o --omf_browse .\objects\bluetooth.crf --depend .\objects\bluetooth.d)
-I (bluetooth.h)(0x636D3916)
+F (.\bluetooth.cpp)(0x63910745)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\bluetooth.o --omf_browse .\objects\bluetooth.crf --depend .\objects\bluetooth.d)
+I (bluetooth.h)(0x636E6D7C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -386,15 +386,15 @@ I (C:\Keil_v5\ARM\ARMCC\include\cstring)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_traits.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdio)(0x6025DA46)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
-I (API.h)(0x636D3916)
-I (gsm_usart.h)(0x636D3722)
+I (API.h)(0x636E6D7B)
+I (gsm_usart.h)(0x636E6D7C)
 I (C:\Keil_v5\ARM\ARMCC\include\algorithm)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdlib)(0x6025DA48)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
-F (.\bluetooth.h)(0x636D3916)()
-F (.\SendingData.cpp)(0x636D6A72)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\sendingdata.o --omf_browse .\objects\sendingdata.crf --depend .\objects\sendingdata.d)
-I (SendingData.h)(0x636D6755)
-I (gsm_usart.h)(0x636D3722)
+F (.\bluetooth.h)(0x636E6D7C)()
+F (.\SendingData.cpp)(0x639111CC)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\sendingdata.o --omf_browse .\objects\sendingdata.crf --depend .\objects\sendingdata.d)
+I (SendingData.h)(0x639111CC)
+I (gsm_usart.h)(0x636E6D7C)
 I (C:\Keil_v5\ARM\ARMCC\include\string)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\iosfwd)(0x6025DA4C)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_defs.h)(0x6025DA48)
@@ -429,8 +429,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -519,10 +519,10 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\includ
 I (SERCOM.h)(0x63642B80)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
-F (.\SendingData.h)(0x636D6755)()
-F (.\gsm_usart.h)(0x636D3722)()
-F (.\gsm_usart.cpp)(0x636D6A11)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\gsm_usart.o --omf_browse .\objects\gsm_usart.crf --depend .\objects\gsm_usart.d)
-I (gsm_usart.h)(0x636D3722)
+F (.\SendingData.h)(0x639111CC)()
+F (.\gsm_usart.h)(0x636E6D7C)()
+F (.\gsm_usart.cpp)(0x6391128A)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\gsm_usart.o --omf_browse .\objects\gsm_usart.crf --depend .\objects\gsm_usart.d)
+I (gsm_usart.h)(0x636E6D7C)
 I (C:\Keil_v5\ARM\ARMCC\include\string)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\iosfwd)(0x6025DA4C)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_defs.h)(0x6025DA48)
@@ -557,8 +557,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -647,12 +647,13 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\includ
 I (SERCOM.h)(0x63642B80)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h)(0x61833A9C)
-I (bluetooth.h)(0x636D3916)
-I (API.h)(0x636D3916)
+I (bluetooth.h)(0x636E6D7C)
+I (API.h)(0x636E6D7B)
 I (C:\Keil_v5\ARM\ARMCC\include\algorithm)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdlib)(0x6025DA48)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x6025DA46)
+I (SendingData.h)(0x639111CC)
 F (.\SERCOM.h)(0x63642B80)()
 F (.\RTC.h)(0x6352FC4B)()
 F (.\RTC.cpp)(0x6352FC4B)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\rtc.o --omf_browse .\objects\rtc.crf --depend .\objects\rtc.d)
@@ -733,7 +734,7 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\in
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
-F (.\SERCOM.cpp)(0x636D3916)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\sercom.o --omf_browse .\objects\sercom.crf --depend .\objects\sercom.d)
+F (.\SERCOM.cpp)(0x636E6D7C)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\sercom.o --omf_browse .\objects\sercom.crf --depend .\objects\sercom.d)
 I (SERCOM.h)(0x63642B80)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
@@ -815,8 +816,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
@@ -860,8 +861,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\cstdio)(0x6025DA46)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
 F (.\DMA.cpp)(0x6352FC4B)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\dma.o --omf_browse .\objects\dma.crf --depend .\objects\dma.d)
 F (.\DMA.h)(0x6352FC4B)()
-F (.\API.cpp)(0x636D3916)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\api.o --omf_browse .\objects\api.crf --depend .\objects\api.d)
-I (API.h)(0x636D3916)
+F (.\API.cpp)(0x636E6D7B)(--cpp -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\api.o --omf_browse .\objects\api.crf --depend .\objects\api.d)
+I (API.h)(0x636E6D7B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
@@ -944,8 +945,8 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\in
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x6025DA46)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\freertos.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x61535692)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\projdefs.h)(0x61833A9C)
@@ -986,13 +987,13 @@ I (C:\Keil_v5\ARM\ARMCC\include\cstring)(0x6025DA44)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_traits.h)(0x6025DA4A)
 I (C:\Keil_v5\ARM\ARMCC\include\cstdio)(0x6025DA46)
 I (C:\Keil_v5\ARM\ARMCC\include\rw\_error.h)(0x6025DA4A)
-F (.\API.h)(0x636D3916)()
+F (.\API.h)(0x636E6D7B)()
 F (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c)(0x6160E518)(--c99 -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\clib_arm.o --omf_browse .\objects\clib_arm.crf --depend .\objects\clib_arm.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1089,8 +1090,8 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsi
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D4ADC2)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include\os_tick.h)(0x60D4ADC2)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1183,7 +1184,7 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\in
 F (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Source\os_systick.c)(0x61535692)(--c99 -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\os_systick.o --omf_browse .\objects\os_systick.crf --depend .\objects\os_systick.d)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include\os_tick.h)(0x60D4ADC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\sam.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
@@ -1261,7 +1262,7 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\in
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\usb.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\instance\wdt.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\pio\saml21g18b.h)(0x62335BF8)
-F (RTE\Device\ATSAML21G18B\startup_saml21g18b.s)(0x636D3916)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include--pd "__UVISION_VERSION SETA 535" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__SAML21G18B__ SETA 1"--list .\listings\startup_saml21g18b.lst --xref -o .\objects\startup_saml21g18b.o --depend .\objects\startup_saml21g18b.d)
+F (RTE\Device\ATSAML21G18B\startup_saml21g18b.s)(0x636E6D7C)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include--pd "__UVISION_VERSION SETA 535" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__SAML21G18B__ SETA 1"--list .\listings\startup_saml21g18b.lst --xref -o .\objects\startup_saml21g18b.o --depend .\objects\startup_saml21g18b.d)
 F (RTE\Device\ATSAML21G18B\system_saml21g18b.c)(0x63336BC0)(--c99 -c --cpu Cortex-M0+ -g -O1 --apcs=interwork --split_sections-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portable\RVDS\ARM_CM0-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include-IC:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include-D__UVISION_VERSION="535" -D_RTE_ -D_RTE_ -D__SAML21G18B__-o .\objects\system_saml21g18b.o --omf_browse .\objects\system_saml21g18b.crf --depend .\objects\system_saml21g18b.d)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
@@ -1343,8 +1344,8 @@ F (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\F
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1439,8 +1440,8 @@ F (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\crouti
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1532,8 +1533,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1626,8 +1627,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1717,8 +1718,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1808,8 +1809,8 @@ F (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\portab
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1901,8 +1902,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -1993,8 +1994,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -2086,8 +2087,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025DA4E)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -2179,8 +2180,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x6025DA44)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\FreeRTOS.h)(0x61833A9C)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025DA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025DA4E)
-I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)
-I (.\RTE\_Target_1\RTE_Components.h)(0x636D651F)
+I (.\RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)
+I (.\RTE\_Target_1\RTE_Components.h)(0x63910648)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\system_saml21.h)(0x62335C08)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\Microchip\SAML21_DFP\3.6.105\saml21b\include\saml21g18b.h)(0x62335BF8)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm0plus.h)(0x60D4ADC2)
@@ -2268,4 +2269,4 @@ I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\includ
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\list.h)(0x61833A9C)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\queue.h)(0x61833A9C)
 I (C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\timers.h)(0x61833A9C)
-F (RTE\RTOS\FreeRTOSConfig.h)(0x636D3916)()
+F (RTE\RTOS\FreeRTOSConfig.h)(0x636E6D7C)()

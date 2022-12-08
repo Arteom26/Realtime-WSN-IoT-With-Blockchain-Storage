@@ -134,3 +134,4 @@
 .\objects\gsm_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdlib
 .\objects\gsm_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\gsm_usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\gsm_usart.o: SendingData.h

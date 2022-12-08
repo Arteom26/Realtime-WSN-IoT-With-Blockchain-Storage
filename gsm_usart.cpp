@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <ctype.h> 
+#include "SendingData.h"
 //#include "GSM.h"
 
 int count = 0;
@@ -138,17 +139,18 @@ void parseGSMData(void* unused)
 // This task will parse any data recived thorugh bluetooth
 void setupGsmParse(void* unused){
 	
+	gsm_init();
 	
 	while(1)
 		{
-		xQueueReceive(gsmData, &recieved_data, portMAX_DELAY);// Wait for data to come in
-		bluetooth._printf("%c", recieved_data);
+		//xQueueReceive(gsmData, &recieved_data, portMAX_DELAY);// Wait for data to come in
+		//bluetooth._printf("%c", recieved_data);
 		//xSemaphoreGive(gsm_in_use);
 			
 		
-//		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
-//			
-//		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
+		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
+			
+		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
 
 //		while (recieved_data != '\n' && recieved_data != '\r') 
 //		{
