@@ -123,6 +123,8 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
+	//gsm_init();
+	tcp_write();
 	//gsm_usart._printf("AT\r\n");
 //	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
 //	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
@@ -182,7 +184,7 @@ int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupGsmParse, "GSM Parse", 64, NULL, 1, NULL);
 	xTaskCreate(setupParse, "Parse", 64, NULL, 1, NULL);
-	xTaskCreate(sendData, "Sending Data", 64, NULL, 1, NULL);
+	//xTaskCreate(sendData, "Sending Data", 64, NULL, 1, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 256, NULL, 5, NULL);
 	
 	api_usart = UART(SERCOM1_REGS, 115200);

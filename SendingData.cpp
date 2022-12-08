@@ -4,7 +4,7 @@ void sendData(void* unused)
 {
 	//bluetooth._printf("HELLO");
 	//gsm_init();
-	tcp_write();
+	//tcp_write();
 }
 
 void gsm_init(void)
@@ -97,7 +97,7 @@ void tcp_write(void)
 	vTaskDelay(1000);
 	at_send_cmd("AT+CIPSEND=84\r\n", AT_COMMAND_WRITE);
 	//vTaskDelay(100);
-	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=22&field3=44\r\n",AT_COMMAND_WRITE);
+	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=55&field3=55\r\n",AT_COMMAND_WRITE);
 	//vTaskDelay(2000);
 }
 

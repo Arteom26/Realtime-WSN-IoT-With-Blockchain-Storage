@@ -9,9 +9,8 @@
 
 #ifndef RTE_COMPONENTS_H
 #define RTE_COMPONENTS_H
+
 #include "system_saml21.h"
-
-
 /*
  * Define the Device Header File: 
  */
