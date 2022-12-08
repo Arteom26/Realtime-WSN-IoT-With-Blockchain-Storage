@@ -18,29 +18,32 @@ bool gsmReady = true;
 uint8_t length = 0;
 uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
-UART api_usart = UART(SERCOM1_REGS, 115200);
-UART bluetooth = UART(SERCOM0_REGS, 115200);
-UART gsm_usart = UART(SERCOM2_REGS, 115200);
-Smartmesh_API api = Smartmesh_API(&api_usart);
-AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
 
 char responseGsmBuffer[200];
 char txGsmBuffer[200];
 uint8_t responseLength = 0;
 uint8_t responseLengthCopy = 0;
 
+UART api_usart = UART(SERCOM1_REGS, 115200);
+UART bluetooth = UART(SERCOM0_REGS, 115200);
+UART gsm_usart = UART(SERCOM2_REGS, 115200);
+Smartmesh_API api = Smartmesh_API(&api_usart);
+AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
+
+
+
 // RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(48, sizeof(uint8_t));
+QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
 SemaphoreHandle_t dma_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t apiInUse = xSemaphoreCreateBinary();
+SemaphoreHandle_t gsm_in_use = xSemaphoreCreateBinary();
 SemaphoreHandle_t bluetoothInUse = xSemaphoreCreateBinary();
 SemaphoreHandle_t dataRecieved = xSemaphoreCreateCounting(10,0);// Data was recieved from network managers
+SemaphoreHandle_t gsmDataRecieved = xSemaphoreCreateBinary();// Data was recieved from GSM
 SemaphoreHandle_t getNetworkInfo = xSemaphoreCreateBinary();// Network info packet is ready
 SemaphoreHandle_t getNetworkConfig = xSemaphoreCreateBinary();
 SemaphoreHandle_t getMoteInfo = xSemaphoreCreateBinary();
-SemaphoreHandle_t gsm_in_use = xSemaphoreCreateBinary();
-QueueHandle_t gsmData = xQueueCreate(128, sizeof(uint8_t));
-SemaphoreHandle_t gsmDataRecieved = xSemaphoreCreateBinary();// Data was recieved from GSM
 SemaphoreHandle_t moteConfigWasGotFromID = xSemaphoreCreateBinary();// Mote config from id packet is ready
 
 // Checksum verification for interrupt handler(bypassing first byte)
@@ -179,10 +182,12 @@ void setupParse(void* unused){
 */
 int main(){
 	setup_system();// Setup all peripherals
-	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
-	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
 	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
-	xTaskCreate(sendData, "Parse", 64, NULL, 1, NULL);
+	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
+	//xTaskCreate(sendData, "Send Data", 64, NULL, 55, NULL);
+	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
+
+	
 	api_usart = UART(SERCOM1_REGS, 115200);
 	bluetooth = UART(SERCOM0_REGS, 115200);
 	gsm_usart = UART(SERCOM2_REGS, 115200);
@@ -191,8 +196,9 @@ int main(){
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(apiInUse);
 	xSemaphoreGive(gsm_in_use);
+
+
 	
-	//bluetooth._printf("HELLO");
 	vTaskStartScheduler();
 		
 	for(;;);// SHOULD NOT REACH THIS POINT
@@ -275,7 +281,8 @@ extern "C"{
 			xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
 		}
 
-//		xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
+		//xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
+
 }

@@ -2,10 +2,12 @@
 
 void sendData(void* unused)
 {
-	//gsm_usart._printf("AT\r\n");
+	//bluetooth._printf("HELLO");
 	//gsm_init();
-	
 	tcp_write();
+	while(1){
+		vTaskDelay(1000);
+	};
 }
 
 void gsm_init(void)
@@ -19,6 +21,7 @@ void gsm_init(void)
 	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
 	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
 }
+
 
 void http_test(void)
 {
