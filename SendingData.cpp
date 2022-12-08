@@ -7,8 +7,10 @@
 
 void gsm_init(void)
 {
+	at_send_cmd("AT+CFUN=0\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CFUN=1\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CIPSHUT\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CNMP=38\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CMNB=1\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);

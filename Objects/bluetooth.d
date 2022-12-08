@@ -129,6 +129,7 @@
 .\objects\bluetooth.o: API.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\bluetooth.o: gsm_usart.h
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\algorithm
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdlib
 .\objects\bluetooth.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

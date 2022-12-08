@@ -181,6 +181,8 @@ int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
+	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
+	//xTaskCreate(sendData, "Parse", 64, NULL, 1, NULL);
 	api_usart = UART(SERCOM1_REGS, 115200);
 	bluetooth = UART(SERCOM0_REGS, 115200);
 	gsm_usart = UART(SERCOM2_REGS, 115200);
@@ -188,7 +190,9 @@ int main(){
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(apiInUse);
+	xSemaphoreGive(gsm_in_use);
 	
+	//bluetooth._printf("HELLO");
 	vTaskStartScheduler();
 		
 	for(;;);// SHOULD NOT REACH THIS POINT
@@ -271,7 +275,7 @@ extern "C"{
 			xSemaphoreGiveFromISR(gsmDataRecieved, NULL);
 		}
 
-		//xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
+//		xQueueSendFromISR(gsmData, &data, NULL);// Send data to the gsm queue
 		NVIC->ICPR[0] |= (1 << 10);// Clear the interrupt
 	}
 }
