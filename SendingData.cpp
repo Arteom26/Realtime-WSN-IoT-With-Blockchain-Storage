@@ -3,8 +3,9 @@
 void sendData(void* unused)
 {
 	//bluetooth._printf("HELLO");
-	//gsm_init();
-	tcp_write();
+	gsm_init();
+	uint8_t dat[] = {0, 0, 0, 0, 0, 0, 0xFF, 0xFF};
+	tcp_write(dat);
 	while(1){
 		vTaskDelay(1000);
 	};
@@ -12,8 +13,10 @@ void sendData(void* unused)
 
 void gsm_init(void)
 {
-	at_send_cmd("AT+CFUN=0\r\n", AT_COMMAND_RUN);
-	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	at_send_cmd("ATE0\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+CFUN=0\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CFUN=1\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CIPSHUT\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CNMP=38\r\n", AT_COMMAND_RUN);
@@ -89,8 +92,25 @@ void http_test(void)
 	gsm_usart._printf("AT+SHAHEAD=\"content-type\",\"application/json\"\r\n");*/
 }
 
-void tcp_write(void)
+void tcp_write(uint8_t *data, int field)
 {
+	char ass[128];
+	// Convert to ascii
+	uint32_t val = ((uint64_t)data[0] << 56) | ((uint64_t)data[1] << 48) | ((uint64_t)data[2] << 40) | ((uint64_t)data[3] << 32)\
+			 | (data[4] << 24) | (data[5] << 16) | (data[6] << 8) | data[7];
+	
+	int count = 0;
+	for(int i = 10000;i >= 1; i /= 10){
+		char x = (val - (val % i))/i % 10 + 0x30;
+		ass[count] = x;
+		count++;
+	}
+	
+	char *buffer = new char[72 + count + 1];
+	std::memcpy(buffer, "GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=", 70);
+	std::memcpy(buffer + 70, ass, count + 1);
+	std::memcpy(buffer + 70 + count, "\r\n\0", 3);
+	
 	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(2000);
 	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
@@ -101,9 +121,9 @@ void tcp_write(void)
 	//vTaskDelay(100);
 	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
 	vTaskDelay(1000);
-	at_send_cmd("AT+CIPSEND=84\r\n", AT_COMMAND_WRITE);
+	at_send_cmd("AT+CIPSEND=77\r\n", AT_COMMAND_WRITE);
 	//vTaskDelay(100);
-	at_send_cmd("GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=22&field3=44\r\n",AT_COMMAND_WRITE);
+	at_send_cmd(buffer,AT_COMMAND_WRITE);
 	//vTaskDelay(2000);
 }
 

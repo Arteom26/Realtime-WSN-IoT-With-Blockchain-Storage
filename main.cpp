@@ -184,13 +184,15 @@ int main(){
 	setup_system();// Setup all peripherals
 	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
 	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
-	//xTaskCreate(sendData, "Send Data", 64, NULL, 55, NULL);
+	xTaskCreate(sendData, "Send Data", 256, NULL, 55, NULL);
 	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
-
 	
 	api_usart = UART(SERCOM1_REGS, 115200);
 	bluetooth = UART(SERCOM0_REGS, 115200);
 	gsm_usart = UART(SERCOM2_REGS, 115200);
+	//gsm_usart._printf("AT\r\n");
+	//gsm_usart._printf("AT\r\n");
+	//gsm_usart._printf("AT\r\n");
 	api = Smartmesh_API(&api_usart);
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
