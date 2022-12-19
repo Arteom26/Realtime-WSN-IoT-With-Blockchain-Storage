@@ -92,6 +92,10 @@ void http_test(void)
 	gsm_usart._printf("AT+SHAHEAD=\"content-type\",\"application/json\"\r\n");*/
 }
 
+void https_write(void){
+	
+}
+
 void tcp_write(uint8_t *data, int field)
 {
 	char ass[128];
@@ -107,9 +111,19 @@ void tcp_write(uint8_t *data, int field)
 	}
 	
 	char *buffer = new char[72 + count + 1];
-	std::memcpy(buffer, "GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=", 70);
-	std::memcpy(buffer + 70, ass, count + 1);
-	std::memcpy(buffer + 70 + count, "\r\n\0", 3);
+	if(field == 1){
+		std::memcpy(buffer, "GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field1=", 70);
+		std::memcpy(buffer + 70, ass, count + 1);
+		std::memcpy(buffer + 70 + count, "\r\n\0", 3);
+	}else if(field == 2){
+		std::memcpy(buffer, "GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field2=", 70);
+		std::memcpy(buffer + 70, ass, count + 1);
+		std::memcpy(buffer + 70 + count, "\r\n\0", 3);
+	}else if(field == 3){
+		std::memcpy(buffer, "GET https://api.thingspeak.com/update?api_key=XB4GKI5NFDXXS0VU&field3=", 70);
+		std::memcpy(buffer + 70, ass, count + 1);
+		std::memcpy(buffer + 70 + count, "\r\n\0", 3);
+	}
 	
 	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(2000);

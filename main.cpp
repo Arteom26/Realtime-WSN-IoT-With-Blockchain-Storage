@@ -9,6 +9,7 @@
 #include "bluetooth.h"
 #include "gsm_usart.h"
 #include <string>
+#include <vector>
 #include "SendingData.h"
 
 // Global variables
@@ -18,6 +19,9 @@ bool gsmReady = true;
 uint8_t length = 0;
 uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
+
+struct S{uint8_t mac[8];};
+std::vector<S> mac_addresses;
 
 char responseGsmBuffer[200];
 char txGsmBuffer[200];
@@ -29,8 +33,6 @@ UART bluetooth = UART(SERCOM0_REGS, 115200);
 UART gsm_usart = UART(SERCOM2_REGS, 115200);
 Smartmesh_API api = Smartmesh_API(&api_usart);
 AT_COMMAND_TYPE at_cmd_type = AT_COMMAND_UNKNOWN;
-
-
 
 // RTOS Semaphores and queues
 QueueHandle_t bluetoothData = xQueueCreate(48, sizeof(uint8_t));
@@ -99,6 +101,34 @@ void parseSmartmeshData(void* unused){
 			xSemaphoreTake(apiInUse, portMAX_DELAY);
 			api.parseDataNotification(&notif, buffer);
 			xSemaphoreGive(apiInUse);
+			
+			// Check if mac address exists
+			uint8_t *temp = (uint8_t*)&notif.macAddr;
+			int field_num = 1;
+			bool mac_address_found = false;
+			for(int i = 0;i < mac_addresses.size();i++){
+				for(int j = 0;j < 8;j++){// Compare each byte
+					if(mac_addresses[i].mac[j] != temp[j])// If not equal break
+						break;
+					else if(mac_addresses[i].mac[j] == temp[j] && j == 7)// Mac Address was found in list
+						mac_address_found = true;
+				}
+				// Check if mac address was found
+				if(mac_address_found){
+					break;
+				}
+				field_num++;
+			}
+			
+			if(!mac_address_found){// Not such mac address exists
+				S maca = {};
+				for(int i = 0;i < 8;i++)
+					maca.mac[i] = temp[i];
+				mac_addresses.push_back(maca);// Add to vector list
+			}
+			
+			tcp_write(notif.data, field_num);// Send data to the correct field number
+			
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("I");// Send data to C#
 			bluetooth.send_array((uint8_t*)&notif.macAddr, 8);// Send the mac address

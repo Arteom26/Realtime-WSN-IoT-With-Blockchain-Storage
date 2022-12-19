@@ -21,8 +21,6 @@ bool at_OK(const char *buf)
 	return false;
 }
 
-
-
 bool read_resp(const char *buf)
 {
 	if (strncmp (buf,"+xx",1) == 0)

@@ -131,4 +131,7 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: bluetooth.h
 .\objects\main.o: gsm_usart.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\vector
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rw/_dispatch.h
 .\objects\main.o: SendingData.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\vector.CC
