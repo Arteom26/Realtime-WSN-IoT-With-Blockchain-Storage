@@ -158,7 +158,7 @@
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>3</SubType>
-          <ItemText>buffer</ItemText>
+          <ItemText>field_num</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
@@ -173,9 +173,9 @@
       <MemoryWindow3>
         <Mm>
           <WinNumber>3</WinNumber>
-          <SubType>8</SubType>
-          <ItemText>ass</ItemText>
-          <AccSizeX>0</AccSizeX>
+          <SubType>1</SubType>
+          <ItemText>mac_addresses</ItemText>
+          <AccSizeX>1</AccSizeX>
         </Mm>
       </MemoryWindow3>
       <MemoryWindow4>
@@ -187,7 +187,7 @@
         </Mm>
       </MemoryWindow4>
       <ScvdPack>
-        <Filename>C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\FreeRTOS.scvd</Filename>
+        <Filename>C:\Users\zaka\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\CMSIS\RTOS2\FreeRTOS\FreeRTOS.scvd</Filename>
         <Type>ARM.CMSIS-FreeRTOS.10.4.6</Type>
         <SubType>1</SubType>
       </ScvdPack>

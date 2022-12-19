@@ -121,13 +121,17 @@ void parseSmartmeshData(void* unused){
 			}
 			
 			if(!mac_address_found){// Not such mac address exists
-				S maca = {};
+				S MAGA = {};
 				for(int i = 0;i < 8;i++)
-					maca.mac[i] = temp[i];
-				mac_addresses.push_back(maca);// Add to vector list
+					MAGA.mac[i] = temp[i];
+				mac_addresses.push_back(MAGA);// Add to vector list
 			}
 			
-			tcp_write(notif.data, field_num);// Send data to the correct field number
+			/*if(field_num == 1)
+				bluetooth._printf("one\r\n");
+			else if(field_num == 2)
+				bluetooth._printf("two\r\n");*/
+			//tcp_write(notif.data, field_num);// Send data to the correct field number
 			
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("I");// Send data to C#
@@ -194,6 +198,7 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
+	
 	api.mgr_init();// Initialize connection with the network manager
 	
 	while(1){
@@ -212,24 +217,21 @@ void setupParse(void* unused){
 */
 int main(){
 	setup_system();// Setup all peripherals
-	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
-	xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
-	xTaskCreate(sendData, "Send Data", 256, NULL, 55, NULL);
-	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
 	
-	api_usart = UART(SERCOM1_REGS, 115200);
-	bluetooth = UART(SERCOM0_REGS, 115200);
-	gsm_usart = UART(SERCOM2_REGS, 115200);
-	//gsm_usart._printf("AT\r\n");
-	//gsm_usart._printf("AT\r\n");
-	//gsm_usart._printf("AT\r\n");
-	api = Smartmesh_API(&api_usart);
+	xTaskCreate(sendData, "Send Data", 256, NULL, 25, NULL);
+	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
+	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
+	//xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
+	
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(apiInUse);
 	xSemaphoreGive(gsm_in_use);
-
-
+	
+	api_usart = UART(SERCOM1_REGS, 115200);
+	bluetooth = UART(SERCOM0_REGS, 115200);
+	gsm_usart = UART(SERCOM2_REGS, 115200);
+	api = Smartmesh_API(&api_usart);
 	
 	vTaskStartScheduler();
 		

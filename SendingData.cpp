@@ -2,10 +2,17 @@
 
 void sendData(void* unused)
 {
-	//bluetooth._printf("HELLO");
+	//gsm_usart._printf("HELLO");
+	do{
+		xSemaphoreGive(gsm_in_use);
+	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
+	vTaskDelay(100);
+	}while(xSemaphoreTake(gsm_in_use, 250) == pdFALSE);
+
+	xSemaphoreGive(gsm_in_use);
 	gsm_init();
 	uint8_t dat[] = {0, 0, 0, 0, 0, 0, 0xFF, 0xFF};
-	tcp_write(dat);
+	//tcp_write(dat);
 	while(1){
 		vTaskDelay(1000);
 	};
@@ -13,7 +20,6 @@ void sendData(void* unused)
 
 void gsm_init(void)
 {
-	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
 	at_send_cmd("ATE0\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+CFUN=0\r\n", AT_COMMAND_RUN);
