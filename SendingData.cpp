@@ -13,9 +13,7 @@ void sendData(void* unused)
 	gsm_init();
 	uint8_t dat[] = {0, 0, 0, 0, 0, 0, 0xFF, 0xFF};
 	//tcp_write(dat);
-	while(1){
-		vTaskDelay(1000);
-	};
+	vTaskDelete(NULL);
 }
 
 void gsm_init(void)
@@ -131,20 +129,33 @@ void tcp_write(uint8_t *data, int field)
 		std::memcpy(buffer + 70 + count, "\r\n\0", 3);
 	}
 	
+	count = 72+count;
+	int assCount = 0;
+	for(int i = 10; i >= 1;i /= 10){
+		char x = (count - (count % i))/i % 10 + 0x30;
+		ass[assCount] = x;
+		assCount++;
+	}
+	
+	char *assBuffer = new char[16];
+	std::memcpy(assBuffer, "AT+CIPSEND=", 11);
+	std::memcpy(assBuffer + 11, ass, assCount);
+	std::memcpy(assBuffer + 11 + assCount, "\r\n\0", 3);
 	at_send_cmd("\r\nAT+CIPSHUT\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(2000);
 	at_send_cmd("AT+CSTT=\"hologram\"\r\n", AT_COMMAND_WRITE);
-	//vTaskDelay(100);
+	vTaskDelay(100);
 	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
 	//vTaskDelay(100);
 	at_send_cmd("AT+CIFSR\r\n", AT_COMMAND_RUN);
-	//vTaskDelay(100);
 	at_send_cmd("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"\r\n", AT_COMMAND_WRITE);
 	vTaskDelay(1000);
-	at_send_cmd("AT+CIPSEND=77\r\n", AT_COMMAND_WRITE);
-	//vTaskDelay(100);
+	at_send_cmd(assBuffer, AT_COMMAND_WRITE);
 	at_send_cmd(buffer,AT_COMMAND_WRITE);
-	//vTaskDelay(2000);
+	vTaskDelay(200);
+	
+	delete[] assBuffer;
+	delete[] buffer;
 }
 
 void tcp_read(void)

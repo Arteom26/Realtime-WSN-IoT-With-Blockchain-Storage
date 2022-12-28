@@ -84,7 +84,7 @@ void Smartmesh_API::init_packet(uint8_t length, uint8_t command){
 					CMD_FAIL - command failed => TODO
 **/
 bool Smartmesh_API::mgr_init(){
-	xSemaphoreTake(usingApi, portMAX_DELAY);
+	//xSemaphoreTake(usingApi, portMAX_DELAY);
 	cliSeqNum = 0;
 	
 	init_packet(3, USR_HELLO);
@@ -95,7 +95,7 @@ bool Smartmesh_API::mgr_init(){
 	checksumData(START_CHECKSUM, send_data, 7);
 	sendUart->send_array(send_data, 11);
 	
-	xSemaphoreGive(usingApi);
+	//xSemaphoreGive(usingApi);
 	return CMD_SUCCESS;
 }
 

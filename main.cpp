@@ -21,7 +21,10 @@ uint8_t txbuffer[130];
 uint8_t smartmeshData[130];
 
 struct S{uint8_t mac[8];};
-std::vector<S> mac_addresses;
+S mac_addresses[10];
+int macsAdded = 0;
+
+int slow = 0;
 
 char responseGsmBuffer[200];
 char txGsmBuffer[200];
@@ -106,7 +109,7 @@ void parseSmartmeshData(void* unused){
 			uint8_t *temp = (uint8_t*)&notif.macAddr;
 			int field_num = 1;
 			bool mac_address_found = false;
-			for(int i = 0;i < mac_addresses.size();i++){
+			for(int i = 0;i < 2;i++){
 				for(int j = 0;j < 8;j++){// Compare each byte
 					if(mac_addresses[i].mac[j] != temp[j])// If not equal break
 						break;
@@ -121,17 +124,22 @@ void parseSmartmeshData(void* unused){
 			}
 			
 			if(!mac_address_found){// Not such mac address exists
-				S MAGA = {};
 				for(int i = 0;i < 8;i++)
-					MAGA.mac[i] = temp[i];
-				mac_addresses.push_back(MAGA);// Add to vector list
+					mac_addresses[macsAdded].mac[i] = temp[i];
+				if(slow % 10 == 0)
+					tcp_write(notif.data, macsAdded+1);// Send data to the correct field number
+				macsAdded++;
+			}else{
+				if(slow % 10 == 0)
+					tcp_write(notif.data, field_num);// Send data to the correct field number
 			}
-			
+				
+			slow++;
 			/*if(field_num == 1)
 				bluetooth._printf("one\r\n");
 			else if(field_num == 2)
 				bluetooth._printf("two\r\n");*/
-			//tcp_write(notif.data, field_num);// Send data to the correct field number
+			
 			
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("I");// Send data to C#
@@ -198,14 +206,14 @@ void parseSmartmeshData(void* unused){
 }
 
 void setupParse(void* unused){
-	
+	vTaskDelay(2500);
 	api.mgr_init();// Initialize connection with the network manager
 	
 	while(1){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 256, NULL, 32, NULL);
+		xTaskCreate(parseSmartmeshData, "Smart", 2000, NULL, 1, NULL);
 	}
 }
 
@@ -216,22 +224,23 @@ void setupParse(void* unused){
 	* SERCOM2 for GSM module
 */
 int main(){
+	BaseType_t temp;
 	setup_system();// Setup all peripherals
 	
-	xTaskCreate(sendData, "Send Data", 256, NULL, 25, NULL);
-	xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
-	xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
-	//xTaskCreate(setupParse, "SM Parse", 64, NULL, 1, NULL);
+	api_usart = UART(SERCOM1_REGS, 115200);
+	bluetooth = UART(SERCOM0_REGS, 115200);
+	gsm_usart = UART(SERCOM2_REGS, 115200);
+	api = Smartmesh_API(&api_usart);
 	
 	xSemaphoreGive(dma_in_use);// DMA can now be accessed
 	xSemaphoreGive(bluetoothInUse);
 	xSemaphoreGive(apiInUse);
 	xSemaphoreGive(gsm_in_use);
 	
-	api_usart = UART(SERCOM1_REGS, 115200);
-	bluetooth = UART(SERCOM0_REGS, 115200);
-	gsm_usart = UART(SERCOM2_REGS, 115200);
-	api = Smartmesh_API(&api_usart);
+	temp = xTaskCreate(sendData, "Send Data", 256, NULL, 25, NULL);
+	temp = xTaskCreate(setupGsmParse, "GSM Parse", 256, NULL, 1, NULL);
+	temp = xTaskCreate(bluetoothParse, "BT Parse", 384, NULL, 55, NULL);
+	temp = xTaskCreate(setupParse, "SM Parse", 128, NULL, 1, NULL);
 	
 	vTaskStartScheduler();
 		
