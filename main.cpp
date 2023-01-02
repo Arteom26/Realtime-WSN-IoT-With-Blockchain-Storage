@@ -127,11 +127,11 @@ void parseSmartmeshData(void* unused){
 				for(int i = 0;i < 8;i++)
 					mac_addresses[macsAdded].mac[i] = temp[i];
 				if(slow % 10 == 0)
-					tcp_write(notif.data, macsAdded+1);// Send data to the correct field number
+					send_to_firebase(notif.data, (uint8_t*)&notif.macAddr, slow/10);// Send data to the correct field number
 				macsAdded++;
 			}else{
 				if(slow % 10 == 0)
-					tcp_write(notif.data, field_num);// Send data to the correct field number
+					send_to_firebase(notif.data, (uint8_t*)&notif.macAddr, slow/10);// Send data to the correct field number// Send data to the correct field number
 			}
 				
 			slow++;

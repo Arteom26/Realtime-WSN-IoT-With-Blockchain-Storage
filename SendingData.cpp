@@ -13,6 +13,7 @@ void sendData(void* unused)
 	gsm_init();
 	uint8_t dat[] = {0, 0, 0, 0, 0, 0, 0xFF, 0xFF};
 	//tcp_write(dat);
+	//send_to_firebase(dat, dat, 1);
 	vTaskDelete(NULL);
 }
 
@@ -29,6 +30,97 @@ void gsm_init(void)
 	at_send_cmd("AT+CIICR\r\n", AT_COMMAND_RUN);
 }
 
+void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
+	//at_send_cmd("AT+CCLK=\"23/01/02,12:55:00-24\"\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CSSLCFG=\"sslversion\",1,3\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+SHSSL=1,\"\"\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+CNACT=0\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+CNACT=1\r\n", AT_COMMAND_RUN);
+	
+	at_send_cmd("AT+SHDISC\r\n", AT_COMMAND_RUN);// Make sure it is not connected to anything
+	at_send_cmd("AT+SHCONF=\"URL\",\"https://wsn-iot-default-rtdb.firebaseio.com\"\r\n", AT_COMMAND_RUN);
+	// These two commmands most likely are not needed
+	at_send_cmd("AT+SHCONF=\"BODYLEN\",1024\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+SHCONF=\"HEADERLEN\",350\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+SHCONF?\r\n", AT_COMMAND_RUN);
+
+	at_send_cmd("AT+SHCONN\r\n", AT_COMMAND_RUN);// Connect to server
+	
+	//vTaskDelay(200);
+	// Setup the header
+	at_send_cmd("AT+SHCHEAD\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+SHAHEAD=\"Content-Type\",\"application/json\"\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+SHAHEAD=\"Cache-control\",\"no-cache\"\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+SHAHEAD=\"Accept\",\"*/*\"\r\n", AT_COMMAND_RUN);
+	at_send_cmd("AT+SHAHEAD=\"Connection\",\"keep-alive\"\r\n", AT_COMMAND_RUN);// Currently the only one needed
+	
+	// Convert data to ascii
+	uint32_t val = ((uint64_t)data[0] << 56) | ((uint64_t)data[1] << 48) | ((uint64_t)data[2] << 40) | ((uint64_t)data[3] << 32)\
+			 | (data[4] << 24) | (data[5] << 16) | (data[6] << 8) | data[7];
+	char asciiData[10];
+	int dataCount = 0;
+	for(int i = 100000;i >= 1; i /= 10){
+		char x = (val - (val % i))/i % 10 + 0x30;
+		asciiData[dataCount] = x;
+		dataCount++;
+	}
+	
+	// Setup the body
+	char dat[6];
+	int ass = 0;
+	for(int i = 1000;i >= 1; i /= 10){
+		char x = (position - (position % i))/i % 10 + 0x30;
+		dat[ass] = x;
+		ass++;
+	}
+	char buffer[128];
+	std::memcpy(buffer, "AT+SHBOD=\"{\\\"", 13);
+	std::memcpy(buffer+13, dat, ass);
+	std::memcpy(buffer+13+ass, "\\\":\\\"", 5);
+	std::memcpy(buffer+18+ass, asciiData, dataCount);
+	std::memcpy(buffer+18+ass+dataCount, "\\\"}\",", 5);
+	
+	char cntChar[2];
+	int charCount = 7 + ass + dataCount;
+	int countPos = 0;
+	for(int i = 10;i >= 1; i /= 10){
+		char x = (charCount - (charCount % i))/i % 10 + 0x30;
+		cntChar[countPos] = x;
+		countPos++;
+	}
+	
+	std::memcpy(buffer+23+ass+dataCount, cntChar, 2);
+	std::memcpy(buffer+25+ass+dataCount, "\r\n\0", 3);
+	at_send_cmd(buffer, AT_COMMAND_RUN);
+	//at_send_cmd("AT+SHBOD=\"{\\\"last\\\":\\\"Arteom\\\"}\",17\r\n", AT_COMMAND_RUN);// Only JSON within the body
+	//vTaskDelay(200);
+	// Send the data and disconnect from server
+	
+	char mac_addy[23];
+	int byt = 0;
+	for(int i = 0;i < 8;i++){
+		for(int j = 1;j >= 0;j--){
+			byt = mac[i];
+			byt = (byt >> 4*j)&0xF;
+			if(byt < 10)
+				mac_addy[i*3+(1-j)] = byt + 0x30;
+			else
+				mac_addy[i*3+(1-j)] = byt + 0x37;
+		}
+		if(i == 7) break;
+		mac_addy[2+i*3] = ':';
+	}
+	
+	ass = 0;
+	std::memcpy(buffer, "AT+SHREQ=\"/", 11);
+	std::memcpy(buffer+11, mac_addy, 23);
+	std::memcpy(buffer+34, ".json\",4\r\n\0",11);
+	
+	at_send_cmd(buffer, AT_COMMAND_RUN);// Runs a PUT command
+	//at_send_cmd("AT+SHREQ=\"/namse.json\",4\r\n", AT_COMMAND_RUN);// Runs a PUT command
+	//at_send_cmd("AT+SHREQ=\"/names.json\",1\r\n", AT_COMMAND_RUN); // For the GET command
+	at_send_cmd("AT+SHDISC\r\n", AT_COMMAND_RUN);// Disconnect from the server
+}
 
 void http_test(void)
 {
@@ -96,9 +188,6 @@ void http_test(void)
 	gsm_usart._printf("AT+SHAHEAD=\"content-type\",\"application/json\"\r\n");*/
 }
 
-void https_write(void){
-	
-}
 
 void tcp_write(uint8_t *data, int field)
 {

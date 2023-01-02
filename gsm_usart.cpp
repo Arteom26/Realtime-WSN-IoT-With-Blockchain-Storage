@@ -11,6 +11,7 @@ int count = 0;
 char gsmBuffer[128];
 bool new_line = false;
 uint8_t recieved_data;
+bool isError = false;
 
 bool at_OK(const char *buf)
 {
@@ -118,11 +119,13 @@ void parseGSMData(void* unused)
 		
 	if(strstr(tempBuffer, "OK") != NULL)
 	{
+		isError = false;
 		//bluetooth._printf("OK\n\r");
 		xSemaphoreGive(gsm_in_use); // GSM parsing done
 	}
 	else if(strstr(tempBuffer, "ERROR") != NULL)
 	{
+		isError = true;
 		//bluetooth._printf("ERROR\n\r");
 		xSemaphoreGive(gsm_in_use); // GSM parsing done
 	}
