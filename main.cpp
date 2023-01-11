@@ -100,6 +100,7 @@ void parseSmartmeshData(void* unused){
 		case NOTIF:// Notification packet recieved
 			if(buffer[5] != 0x4)
 				break;
+			
 			data_notif notif;
 			xSemaphoreTake(apiInUse, portMAX_DELAY);
 			api.parseDataNotification(&notif, buffer);
@@ -126,20 +127,15 @@ void parseSmartmeshData(void* unused){
 			if(!mac_address_found){// Not such mac address exists
 				for(int i = 0;i < 8;i++)
 					mac_addresses[macsAdded].mac[i] = temp[i];
-				if(slow % 10 == 0)
+				//if(slow % 5 == 0)
 					send_to_firebase(notif.data, (uint8_t*)&notif.macAddr, slow/10);// Send data to the correct field number
 				macsAdded++;
 			}else{
-				if(slow % 10 == 0)
+				//if(slow % 5 == 0)
 					send_to_firebase(notif.data, (uint8_t*)&notif.macAddr, slow/10);// Send data to the correct field number// Send data to the correct field number
 			}
 				
 			slow++;
-			/*if(field_num == 1)
-				bluetooth._printf("one\r\n");
-			else if(field_num == 2)
-				bluetooth._printf("two\r\n");*/
-			
 			
 			xSemaphoreTake(bluetoothInUse, portMAX_DELAY);
 			bluetooth._printf("I");// Send data to C#
@@ -213,7 +209,7 @@ void setupParse(void* unused){
 		xSemaphoreTake(dataRecieved, portMAX_DELAY);
 		
 		// Create a new instance of smartmesh data parsing task
-		xTaskCreate(parseSmartmeshData, "Smart", 2000, NULL, 1, NULL);
+		xTaskCreate(parseSmartmeshData, "Smart", 750, NULL, 1, NULL);
 	}
 }
 

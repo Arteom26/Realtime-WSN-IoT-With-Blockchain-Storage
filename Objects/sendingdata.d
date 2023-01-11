@@ -130,3 +130,5 @@
 .\objects\sendingdata.o: C:\Users\Arteom\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.4.6\Source\include\semphr.h
 .\objects\sendingdata.o: bluetooth.h
 .\objects\sendingdata.o: API.h
+.\objects\sendingdata.o: RTC.h
+.\objects\sendingdata.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\Math.h

@@ -58,6 +58,8 @@ bool at_send_cmd(const char *cmd, AT_COMMAND_TYPE cmd_type)
 	xSemaphoreTake(gsm_in_use, portMAX_DELAY);
 	
 	gsm_usart._printf(cmd);
+	if(strstr(cmd, "AT+SHCONN"))
+		vTaskDelay(10);
 	at_cmd_type = cmd_type;
 	
 	gsmReady = false;
@@ -151,9 +153,7 @@ void setupGsmParse(void* unused){
 		
 		xSemaphoreTake(gsmDataRecieved, portMAX_DELAY);
 			
-		xTaskCreate(parseGSMData, "parse gsm data", 256, NULL, 11, NULL);
-
-		
+		xTaskCreate(parseGSMData, "parse gsm data", 512, NULL, 11, NULL);	
 
 	}
 }

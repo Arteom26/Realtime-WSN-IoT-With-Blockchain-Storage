@@ -16,8 +16,19 @@ typedef struct{
 	uint8_t second;
 }timestamp;
 
-void setup_rtc();
-void set_timestamp(timestamp* current_time);
-void get_timestamp(timestamp* time);
+class RTC{
+	public:
+		RTC();
+		void set_timestamp(timestamp);
+		timestamp get_timestamp();
+		char* get_string_timestamp();
+	
+	private:
+		timestamp time;
+	
+		timestamp get_timestamp_from_reg();
+};
+
+extern RTC rtc;
 
 #endif

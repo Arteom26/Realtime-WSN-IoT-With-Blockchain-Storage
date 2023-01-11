@@ -7,6 +7,7 @@ void http_test(void);
 void tcp_write(uint8_t*, int = 1);
 void tcp_read(void);
 void send_to_firebase(uint8_t*, uint8_t*, int);
+char* int_to_ascii_base10(int number, int max_value);
 
 void sendData(void* unused);
 

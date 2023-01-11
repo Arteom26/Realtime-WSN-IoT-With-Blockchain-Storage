@@ -6,6 +6,8 @@
 #include "RTC.h"
 #include "API.h"
 
+RTC rtc = RTC();
+
 uint16_t verifyP(uint16_t fcs, uint8_t *data, uint16_t len){
 	//data++;
 	while(len--)
@@ -27,7 +29,7 @@ void setup_system(void){
 	uint32_t osc32k_cal = (*nvc >> 6)&0x7F;
 	
 	// 32kHz and 1kHz Oscillator Setup => will output on clock source 0
-	OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x407;// Enable the 32kHz internal oscillator => use 18 clock cycles for startup
+	OSC32KCTRL_REGS->OSC32KCTRL_OSC32K = 0x40E;// Enable the 32kHz internal oscillator => use 18 clock cycles for startup
 	OSC32KCTRL_REGS->OSC32KCTRL_OSC32K |= (osc32k_cal << 16);
 	OSC32KCTRL_REGS->OSC32KCTRL_RTCCTRL = 0x2;// 1kHz oscillator input source to RTC
 	while((OSC32KCTRL_REGS->OSC32KCTRL_STATUS&0x2) == 0);
@@ -60,7 +62,16 @@ void setup_system(void){
 	SystemCoreClock = 48000000;
 	
 	// Real-time clock setup
-	setup_rtc();
+	rtc = RTC();
+	timestamp stamp = {
+		2023,
+		1,
+		9,
+		11,
+		45,
+		0
+	};
+	rtc.set_timestamp(stamp);
 	
 	// DMA descriptor setup
 	uint32_t *desc = (uint32_t*)0x30000000;// Channel for copying data between buffers for Smartmesh IP

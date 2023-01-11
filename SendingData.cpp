@@ -1,8 +1,27 @@
 #include "SendingData.h"
+#include "RTC.h"
+#include <Math.h>
+
+SemaphoreHandle_t sendingData = xSemaphoreCreateBinary();
+
+// Converts integer to ascii
+char* int_to_ascii_base10(int number, int places){
+	int buffer_size = (int)log10f((float)places);
+	char* buffer = new char[buffer_size];
+	
+	int dataCount = 0;
+	for(int i = places; i >=1; i/=10){
+		char x = (number - (number % i))/i % 10 + 0x30;
+		buffer[dataCount] = x;
+		dataCount++;
+	}
+	
+	return buffer;// Use sizeof to get character length
+}
 
 void sendData(void* unused)
 {
-	//gsm_usart._printf("HELLO");
+	xSemaphoreGive(sendingData);
 	do{
 		xSemaphoreGive(gsm_in_use);
 	at_send_cmd("AT\r\n", AT_COMMAND_RUN);
@@ -20,7 +39,7 @@ void sendData(void* unused)
 void gsm_init(void)
 {
 	//at_send_cmd("AT\r\n", AT_COMMAND_RUN);
-	at_send_cmd("ATE0\r\n", AT_COMMAND_RUN);
+	at_send_cmd("ATE1\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+CFUN=0\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CFUN=1\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CIPSHUT\r\n", AT_COMMAND_RUN);
@@ -31,11 +50,13 @@ void gsm_init(void)
 }
 
 void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
-	//at_send_cmd("AT+CCLK=\"23/01/02,12:55:00-24\"\r\n", AT_COMMAND_RUN);
+	xSemaphoreTake(sendingData, portMAX_DELAY);
+	//at_send_cmd("AT+CCLK=\"23/01/09,14:35:00-24\"\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CSSLCFG=\"sslversion\",1,3\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+SHSSL=1,\"\"\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+CNACT=0\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+CNACT=1\r\n", AT_COMMAND_RUN);
+	//at_send_cmd("AT+CNACT?\r\n", AT_COMMAND_RUN);
 	
 	at_send_cmd("AT+SHDISC\r\n", AT_COMMAND_RUN);// Make sure it is not connected to anything
 	at_send_cmd("AT+SHCONF=\"URL\",\"https://wsn-iot-default-rtdb.firebaseio.com\"\r\n", AT_COMMAND_RUN);
@@ -46,13 +67,14 @@ void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
 
 	at_send_cmd("AT+SHCONN\r\n", AT_COMMAND_RUN);// Connect to server
 	
-	//vTaskDelay(200);
 	// Setup the header
 	at_send_cmd("AT+SHCHEAD\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+SHAHEAD=\"Content-Type\",\"application/json\"\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+SHAHEAD=\"Cache-control\",\"no-cache\"\r\n", AT_COMMAND_RUN);
 	//at_send_cmd("AT+SHAHEAD=\"Accept\",\"*/*\"\r\n", AT_COMMAND_RUN);
 	at_send_cmd("AT+SHAHEAD=\"Connection\",\"keep-alive\"\r\n", AT_COMMAND_RUN);// Currently the only one needed
+	
+	//char* d = int_to_ascii_base10(10, 1000000);
 	
 	// Convert data to ascii
 	uint32_t val = ((uint64_t)data[0] << 56) | ((uint64_t)data[1] << 48) | ((uint64_t)data[2] << 40) | ((uint64_t)data[3] << 32)\
@@ -66,19 +88,27 @@ void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
 	}
 	
 	// Setup the body
-	char dat[6];
+	// First need to convert position to ascii
+	/*char dat[6];
 	int ass = 0;
 	for(int i = 1000;i >= 1; i /= 10){
 		char x = (position - (position % i))/i % 10 + 0x30;
 		dat[ass] = x;
 		ass++;
-	}
+	}*/
+	
+	char* dat = rtc.get_string_timestamp();
+	int ass = 17;
+	
+	// Setup main body command with JSON embedded
 	char buffer[128];
 	std::memcpy(buffer, "AT+SHBOD=\"{\\\"", 13);
-	std::memcpy(buffer+13, dat, ass);
+	std::memcpy(buffer+13, dat , ass);
 	std::memcpy(buffer+13+ass, "\\\":\\\"", 5);
 	std::memcpy(buffer+18+ass, asciiData, dataCount);
 	std::memcpy(buffer+18+ass+dataCount, "\\\"}\",", 5);
+	
+	delete dat;
 	
 	char cntChar[2];
 	int charCount = 7 + ass + dataCount;
@@ -92,10 +122,8 @@ void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
 	std::memcpy(buffer+23+ass+dataCount, cntChar, 2);
 	std::memcpy(buffer+25+ass+dataCount, "\r\n\0", 3);
 	at_send_cmd(buffer, AT_COMMAND_RUN);
-	//at_send_cmd("AT+SHBOD=\"{\\\"last\\\":\\\"Arteom\\\"}\",17\r\n", AT_COMMAND_RUN);// Only JSON within the body
-	//vTaskDelay(200);
 	// Send the data and disconnect from server
-	
+	// Convert mac address to ascii format
 	char mac_addy[23];
 	int byt = 0;
 	for(int i = 0;i < 8;i++){
@@ -120,6 +148,8 @@ void send_to_firebase(uint8_t *data, uint8_t* mac, int position){
 	//at_send_cmd("AT+SHREQ=\"/namse.json\",4\r\n", AT_COMMAND_RUN);// Runs a PUT command
 	//at_send_cmd("AT+SHREQ=\"/names.json\",1\r\n", AT_COMMAND_RUN); // For the GET command
 	at_send_cmd("AT+SHDISC\r\n", AT_COMMAND_RUN);// Disconnect from the server
+	
+	xSemaphoreGive(sendingData);
 }
 
 void http_test(void)
